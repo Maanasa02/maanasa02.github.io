@@ -1,0 +1,37 @@
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+
+# Dev/QA byproducts
+screenshots/
+
+# Content source files (kept locally, not published)
+*.docx
+Screenshot 2026-05-19 at *.png
+
+# Reference images (not used in site)
+123.png
+
+# Original asset files no longer referenced from the site
+p1-1.png
+p1-2.png
+p1-3.png
+p1-4.png
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Logs and temp
+*.log
+.tmp/
+tmp/
+
+# Orphan reference image (not used in site)
+challenge.png
+
+# Node manifests (only existed for screenshots/ tooling, which is itself ignored)
+package.json
+package-lock.json
