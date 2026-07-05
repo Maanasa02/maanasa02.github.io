@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Police Hiring Redesign · Maanasa Sivashankar</title>
+  <title>Fixing a Two-Year Police Hiring Pipeline · Maanasa Sivashankar</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
+<body class="cs-redesign">
   <header class="site-header">
     <div class="container nav">
       <ul class="nav-links">
@@ -20,196 +20,393 @@
     </div>
   </header>
 
-  <main class="page container project-detail">
-    <header>
-      <a href="index.html#work" class="back-link">&larr; Back to work</a>
-      <h1 class="page-title">Police Hiring Redesign</h1>
-      <p class="page-lede">Redesigning San Francisco's police hiring pipeline to fix a leaky funnel, producing the first net positive year of sworn-officer growth since 2020.</p>
+  <main class="cs-main">
+    <!-- ============ HERO ============ -->
+    <header class="cs-hero container">
+      <figure class="cs-hero-media">
+        <img src="executive-scoreboard.png" alt="The Scoreboard — the executive and funder view of the police hiring dashboard, showing headline hiring metrics, the shortage projection, cost of the shortage, and a human story." />
+      </figure>
+      <h1 class="cs-title">Fixing a two-year police hiring pipeline</h1>
+      <p class="cs-lede">How I made a dashboard and operational improvements that helped SFPD fix a leaky hiring pipeline.</p>
     </header>
 
-    <dl class="project-meta">
-      <div>
-        <dt>Client</dt>
-        <dd>Mayor's Office of Innovation, San Francisco</dd>
+    <!-- ============ META STRIP ============ -->
+    <div class="cs-meta container">
+      <div class="cs-meta-item">
+        <span class="cs-meta-label">Domain</span>
+        <span class="cs-meta-value">Public-sector service &amp; product design</span>
       </div>
-      <div>
-        <dt>Role</dt>
-        <dd>Service Design &amp; Project Lead</dd>
+      <div class="cs-meta-item">
+        <span class="cs-meta-label">Timeline</span>
+        <span class="cs-meta-value">April 2025 &ndash; Sept 2025</span>
       </div>
-      <div>
-        <dt>Year</dt>
-        <dd>2025</dd>
+      <div class="cs-meta-item">
+        <span class="cs-meta-label">Role</span>
+        <span class="cs-meta-value">Senior Service Design Lead &amp; Project Lead</span>
       </div>
-    </dl>
+      <div class="cs-meta-item">
+        <span class="cs-meta-label">Team</span>
+        <span class="cs-meta-value">Cross-functional team across Mayor's Office of Innovation &times; SFPD &times; DHR</span>
+      </div>
+    </div>
 
-    <section class="overview-grid" aria-label="Project overview">
-      <div class="overview-item">
-        <h2 class="overview-label">Challenge</h2>
-        <p class="overview-body">How do you fix a hiring process that loses 70% of candidates and takes up to two years to produce a sworn officer? Meanwhile, the city has lost a quarter of its force, and overtime costs have increased by $70 million.</p>
-      </div>
-      <div class="overview-item">
-        <h2 class="overview-label">Solution</h2>
-        <p class="overview-body">I looked at three distinct breakdowns (recruitment, onboarding, and academy), each with its own diagnosis and set of interventions. I reframed the brief from 'increase applications' to 'design the pipeline to work for strong candidates.'</p>
-      </div>
-      <div class="overview-item">
-        <h2 class="overview-label">Outcome</h2>
-        <p class="overview-body">The average application-to-academy time fell from 2 years to 8 months, with under 3 months for the strongest candidates. Academy graduation rose from 30% to 54%. Lateral applications grew 364%. These shifts moved the police department from -40 officers in 2024 (attrition outpacing replacement) to +40 in 2025, <span class="text-accent">the first net positive growth since the 2020 pandemic.</span></p>
+    <!-- ============ CONTEXT ============ -->
+    <section class="cs-section">
+      <div class="cs-col cs-reveal">
+        <span class="cs-eyebrow">Context</span>
+        <h2 class="cs-heading">A shortage the department was paying for in $60M overtime pay annually</h2>
+        <p>Since 2020, the San Francisco Police Department has faced a 500-officer staffing shortage, losing more candidates annually than it hires. It used to take between 1&ndash;2 years for applicants to go from application to sworn officer. Meanwhile, the department covers the gap with overtime, increasing costs each year.</p>
       </div>
     </section>
 
-    <section class="my-role">
-      <h3>My role</h3>
-      <p>Project strategy lead on the San Francisco police hiring redesign. I directly engaged with senior leaders across HR, police command, and the Mayor's Public Safety Chief.</p>
+    <!-- ============ THE PROBLEM ============ -->
+    <section class="cs-section">
+      <div class="cs-col cs-reveal">
+        <span class="cs-eyebrow">The Problem</span>
+        <h2 class="cs-heading">A hiring pipeline losing strong candidates at many points</h2>
+        <p>I started by asking why hiring took over two years. I interviewed in-process candidates and recently hired candidates to trace the pipeline end-to-end and identify pain points for the end user. I found candidates getting stuck or stalled at many points&mdash;with some dropping out during recruitment, scheduling, and the academy. The process lasted long enough that qualified candidates accepted other offers before it finished. To make these losses visible and enable team action, I designed a dashboard visible to each team involved in the hiring process.</p>
+      </div>
     </section>
 
-    <article class="project-content">
+    <!-- ============ USER NEEDS ============ -->
+    <section class="cs-section">
+      <div class="cs-col cs-reveal">
+        <span class="cs-eyebrow">User Needs</span>
+        <h2 class="cs-heading">Three distinct use cases</h2>
+        <p>The lack of visibility caused daily frustrations for three user groups, each with different needs.</p>
+      </div>
 
-      <figure class="figure-press">
-        <img src="police-hiring.png" alt="San Francisco Chronicle headline from March 2026: &lsquo;SFPD sees biggest hiring surge in years after recruitment slump. This is why,&rsquo; with a photo of an academy cohort below." />
-        <figcaption>San Francisco Chronicle, March 2026. The surge marked the first net positive year of sworn-officer growth since 2020.</figcaption>
-      </figure>
+      <div class="cs-needs cs-col-wide">
+        <article class="cs-need cs-reveal">
+          <span class="cs-need-group">Recruiters &amp; background investigators</span>
+          <p class="cs-need-primary">&ldquo;When a candidate I own stalls beyond the expected time at a stage, I want to know right away the reason and the next step, so I can act before they accept a faster offer.&rdquo;</p>
+          <ul class="cs-need-support">
+            <li>&ldquo;When I start my day, I want to see which of my candidates are most at risk, so I spend my limited time where a candidate can still be saved.&rdquo;</li>
+            <li>&ldquo;When a candidate falls out, I want to log the reason in one tap, so it's captured while it's fresh.&rdquo;</li>
+          </ul>
+        </article>
 
-      <figure class="figure-press">
-        <img src="projects-09.png" alt="News clipping titled &lsquo;San Francisco Police Department Graduates Largest Recruit Class Since 2017 #26-037,&rsquo; dated April 2, 2026, with a photo of the police department's 287th Academy Class in formal dress." />
-        <figcaption>Police department press release, April 2026. The 287th academy class graduated as the largest cohort since 2017.</figcaption>
-      </figure>
+        <article class="cs-need cs-reveal">
+          <span class="cs-need-group">The command lead</span>
+          <p class="cs-need-primary">&ldquo;When I decide where to allocate people and budget, I want the pipeline's losses ranked by impact, so I fund the biggest leak.&rdquo;</p>
+          <ul class="cs-need-support">
+            <li>&ldquo;When I change the process, I want to see whether the metric moved and by how much, so I know if it worked rather than guessing.&rdquo;</li>
+            <li>&ldquo;When a stage is contested, I want one number everyone trusts, so the room argues about the fix.&rdquo;</li>
+          </ul>
+        </article>
 
-      <h2>The problem</h2>
-      <p>When I was brought on the project, I looked into why the hiring process was taking over 2 years. Looking more closely, the hiring funnel was leaking into three distinct breakdowns across recruitment, onboarding, and the academy. I shifted the brief to 'why is the pipeline losing the strong candidates we already have?'</p>
+        <article class="cs-need cs-reveal">
+          <span class="cs-need-group">The mayor's team (executive / comms)</span>
+          <p class="cs-need-primary">&ldquo;When I have to speak publicly about the shortage, I want a few true, defensible numbers and a human story, so I can show progress.&rdquo;</p>
+          <ul class="cs-need-support">
+            <li>&ldquo;When we ask for funding, I want to point to where the money actually made a difference, so the request is credible.&rdquo;</li>
+            <li>&ldquo;When I report a speed gain, I want the quality numbers beside it, so &lsquo;faster&rsquo; can't be read as &lsquo;lower standards.&rsquo;&rdquo;</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
-      <figure>
-        <img src="ph-process.png" alt="Police hiring process from application to academy graduation, with three breakdown points flagged: post-test silence, list limbo, and cohort wait, across the handoff between HR and the police department." />
-        <figcaption>The police hiring process. Three breakdown points (post-test silence, list limbo, cohort wait) sit across the handoff between HR and the police department.</figcaption>
-      </figure>
+    <!-- ============ DESIGN TENETS ============ -->
+    <section class="cs-section">
+      <div class="cs-col cs-reveal">
+        <span class="cs-eyebrow">Design Tenets</span>
+        <h2 class="cs-heading">Principles for a tool people would trust and use</h2>
+        <p>The tenets point to statements that will ultimately allow users to trust what they see and adopt it to make operational improvements that result in faster hiring.</p>
+      </div>
 
-      <h2>Methods used</h2>
+      <div class="cs-col-wide">
+        <ol class="cs-numbered cs-tenets">
+          <li class="cs-reveal">
+            <span class="cs-num">01</span>
+            <div>
+              <h3>Make the candidate experience impossible for a leader to ignore.</h3>
+            </div>
+          </li>
+          <li class="cs-reveal">
+            <span class="cs-num">02</span>
+            <div>
+              <h3>Name the bottleneck, not the person, so the truth can be acted on rather than defended.</h3>
+            </div>
+          </li>
+          <li class="cs-reveal">
+            <span class="cs-num">03</span>
+            <div>
+              <h3>Every number traceable to its source.</h3>
+            </div>
+          </li>
+          <li class="cs-reveal">
+            <span class="cs-num">04</span>
+            <div>
+              <h3>Integrate into people's existing workflows.</h3>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
 
-      <div class="methods-split">
-        <div class="methods-split-text">
-          <h3>Funnel analysis, segmentation, and dropout interviews</h3>
-          <p>Eighteen months of applicant data showed the 70% drop-off broke into three distinct stages: recruitment, onboarding and academy. Strong candidates often get stuck mid-pipeline. The background-investigation stretch was a paper-based, appointment-bound bottleneck. We responded with a 'green-flag' method: identify strong candidates early, especially senior lateral applicants, and route them to white-glove service through the most delay-prone stages.</p>
+    <!-- ============ DESIGN DECISIONS ============ -->
+    <section class="cs-section">
+      <div class="cs-col cs-reveal">
+        <span class="cs-eyebrow">Design Decisions</span>
+        <h2 class="cs-heading">Where it lives and how many views</h2>
+      </div>
+
+      <!-- Decision 1 -->
+      <div class="cs-decision cs-col-wide">
+        <h3 class="cs-decision-title">Decision 1 &mdash; Where it lives</h3>
+        <div class="cs-options">
+          <article class="cs-option cs-option-chosen cs-reveal">
+            <div class="cs-option-head">
+              <span class="cs-option-name">SharePoint (embedded)</span>
+              <span class="cs-chosen-pill">Chosen</span>
+            </div>
+            <ul class="cs-pros">
+              <li><strong>In the daily path:</strong> Lives inside the workspace staff already use.</li>
+              <li><strong>Inherits governance:</strong> Uses existing auth, permissions, and security review.</li>
+              <li><strong>Easy handoff:</strong> No separate app to keep alive after handoff.</li>
+            </ul>
+            <p class="cs-con"><span class="cs-con-mark">?</span> A template-constrained UI limits control over hierarchy, interaction, and data freshness.</p>
+          </article>
+          <article class="cs-option cs-reveal">
+            <div class="cs-option-head">
+              <span class="cs-option-name">Standalone web page</span>
+            </div>
+            <ul class="cs-pros">
+              <li><strong>Full craft control:</strong> Complete command of layout, hierarchy, and interaction.</li>
+              <li><strong>No platform ceiling:</strong> Freedom on data freshness and chart types.</li>
+            </ul>
+            <p class="cs-con"><span class="cs-con-mark">?</span> Adds a friction step at every use and needs its own auth; sharing data to an external tool needs additional permissions, adding time and upkeep.</p>
+          </article>
         </div>
-        <figure class="methods-split-figure">
-          <img src="ph-funnel.png" alt="Funnel diagram of the police hiring pipeline showing candidate counts from application (1,000) to academy graduation (280), with three dropout problems flagged: post-test silence losing 220 candidates, list limbo losing 240, and cohort wait losing 60." />
-          <figcaption>Funnel diagram. The 70% dropout broke down into three distinct breakdowns across the pipeline.</figcaption>
+      </div>
+
+      <!-- Decision 2 -->
+      <div class="cs-decision cs-col-wide">
+        <h3 class="cs-decision-title">Decision 2 &mdash; One consolidated view vs. views by user</h3>
+        <div class="cs-options">
+          <article class="cs-option cs-reveal">
+            <div class="cs-option-head">
+              <span class="cs-option-name">One consolidated dashboard</span>
+            </div>
+            <ul class="cs-pros">
+              <li><strong>Nothing to reconcile:</strong> One screen, fewer clicks, cheapest to build.</li>
+              <li><strong>Simple to maintain:</strong> A single page to keep current for the single data analyst working on this task.</li>
+            </ul>
+            <p class="cs-con"><span class="cs-con-mark">?</span> Too much data in one place to serve all three user needs well.</p>
+          </article>
+          <article class="cs-option cs-option-chosen cs-reveal">
+            <div class="cs-option-head">
+              <span class="cs-option-name">A view per user &mdash; Queue, Map, Scoreboard</span>
+              <span class="cs-chosen-pill">Chosen</span>
+            </div>
+            <ul class="cs-pros">
+              <li><strong>Right level of data for each user:</strong> Each view addresses the top three data points each user needs to take action.</li>
+              <li><strong>Matches cadence and authority:</strong> Daily for the recruiter, weekly for the leader, monthly for the executive.</li>
+              <li><strong>Controls who sees what:</strong> Fits a political room where naming a unit as the bottleneck is sensitive.</li>
+            </ul>
+            <p class="cs-con"><span class="cs-con-mark">?</span> Three surfaces cost more to maintain, and numbers can drift across views without disciplined definitions; more work for the staff building and maintaining this tool.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL DESIGN ============ -->
+    <section class="cs-section">
+      <div class="cs-col cs-reveal">
+        <span class="cs-eyebrow">Final design</span>
+        <h2 class="cs-heading">An actionable dashboard tailored for each user's need: hiring staff working with candidates, a captain or department lead in operational hiring decisions, and a mayor's staff making funding and comms decisions.</h2>
+        <p>The chosen structure &mdash; a view per user &mdash; became three surfaces, each matched to a user's cadence and authority: the recruiter's daily Queue, the leader's weekly Map, and the executive's monthly Scoreboard. All three read from the same numbers, so a figure defended in the executive room traces straight back to a single candidate in the recruiter's queue.</p>
+      </div>
+
+      <!-- Prototype GIF full-width on top -->
+      <figure class="cs-embed-figure cs-embed-figure-wide cs-col-wide cs-reveal">
+        <img src="police-hiring-dashboard.gif" loading="lazy" alt="Animated walkthrough of the Police Hiring Dashboard — the recruiter's Queue view updating in real time as candidates and their next actions come into view." />
+        <figcaption>Interactive prototype &mdash; the dashboard in motion.</figcaption>
+      </figure>
+
+      <!-- Three view walkthroughs as User-needs-style cards (3-up grid) -->
+      <div class="cs-needs cs-final-views cs-col-wide">
+        <article class="cs-need cs-reveal">
+          <h3 class="cs-subhead">The Queue: recruiter view, daily</h3>
+          <ul class="cs-view-list">
+            <li>This page supplements the SmartRecruiters app recruiters use. The dashboard integrates with internal SFPD data and shows where candidates are stuck and for how long.</li>
+            <li>Every candidate is ranked by how long they have been in a stage past the target time. Days-in-stage turns red once it exceeds the stage's target (191 compared to 120 in a background check) and amber as it nears the target. An at-risk count appears at the top. Each row has one action: Escalate, Follow up, or Reschedule. This lets spotting and acting on a stuck candidate happen in one step.</li>
+            <li>A quality check appears at the bottom of every view: applicant quality compared to the minimum standard.</li>
+          </ul>
+        </article>
+        <article class="cs-need cs-reveal">
+          <h3 class="cs-subhead">The Map: leader view, weekly</h3>
+          <ul class="cs-view-list">
+            <li>This view helps the captain and commander make decisions on recruiter tooling, staffing, and resourcing across the hiring pipeline and identify where gaps persist.</li>
+            <li>The command lead's weekly view ranks stages by loss, such as candidates lost times median time lost. It reveals the biggest problem: the background check as the &lsquo;long pole,&rsquo; with 142 stuck at a median of 168 days.</li>
+            <li>The funnel table shows pass rates are good everywhere; losses are due to time, not failure.</li>
+            <li>This shifts the fix from &lsquo;screen harder&rsquo; to &lsquo;clear the backlog.&rsquo; Capacity versus demand shows the resource gap: 142 cases handled by 6 investigators. The time-to-hire trend shows re-ordered evaluations reduced time from about 22 to 14 months.</li>
+          </ul>
+        </article>
+        <article class="cs-need cs-reveal">
+          <h3 class="cs-subhead">The Scoreboard: executive &amp; funder view, monthly</h3>
+          <ul class="cs-view-list">
+            <li>The executive and funder view, updated monthly, allows the mayor's office to understand high-level improvements.</li>
+            <li>A headline strip shows the few clear numbers a leader can share &mdash; time to hire down to about 14 months, applications up 64%, net hires changing from &minus;40 to +40. &lsquo;Closing the shortage&rsquo; predicts the 500-officer gap closing before 2029 with the fix, compared to about 2035 at the current pace; &lsquo;Cost of the shortage&rsquo; explains it in budget terms ($60.1M per year in overtime, about $4.8M per year saved).</li>
+            <li>&lsquo;In motion this quarter&rsquo; links the spending back to the bottleneck, and a human story is shown next to the numbers to give the leaders a view of &lsquo;faster&rsquo; as a person going through the process.</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- Annotated Queue breakdown -->
+      <div class="cs-annotated-split cs-col-wide">
+        <ol class="cs-numbered cs-queue-features">
+          <li class="cs-reveal">
+            <span class="cs-num">1</span>
+            <div>
+              <h3>Candidates at risk</h3>
+              <p>A banner surfaces how many of the recruiter's candidates are at risk (7), split by why &mdash; stuck in background checks over 5 months &middot; stalled in scheduling &mdash; so the day opens on the urgent work.</p>
+            </div>
+          </li>
+          <li class="cs-reveal">
+            <span class="cs-num">2</span>
+            <div>
+              <h3>Stage</h3>
+              <p>Each candidate's current pipeline stage (background check, psych, medical, physical fitness, written test, application review), so it's clear exactly where they sit.</p>
+            </div>
+          </li>
+          <li class="cs-reveal">
+            <span class="cs-num">3</span>
+            <div>
+              <h3>Days in stage</h3>
+              <p>How long they've waited, shown against the stage's target (191 vs. target 120); the number turns red past target, amber as it approaches.</p>
+            </div>
+          </li>
+          <li class="cs-reveal">
+            <span class="cs-num">4</span>
+            <div>
+              <h3>Status</h3>
+              <p>What they're waiting on (no next step, awaiting references, awaiting scheduling) &mdash; the reason for the delay, spelled out.</p>
+            </div>
+          </li>
+          <li class="cs-reveal">
+            <span class="cs-num">5</span>
+            <div>
+              <h3>Action</h3>
+              <p>The single next step for that row (Escalate, Follow up, Reschedule, View, Review) &mdash; one click, not a task to remember.</p>
+            </div>
+          </li>
+          <li class="cs-reveal">
+            <span class="cs-num">6</span>
+            <div>
+              <h3>Names, ranked by risk</h3>
+              <p>Every candidate the recruiter owns, most at-risk on top, so limited time goes where a candidate can still be saved.</p>
+            </div>
+          </li>
+          <li class="cs-reveal">
+            <span class="cs-num">7</span>
+            <div>
+              <h3>Applicant quality</h3>
+              <p>A guardrail at the foot of the view (68% meet the minimum bar), so &lsquo;just move faster&rsquo; can't quietly lower standards.</p>
+            </div>
+          </li>
+        </ol>
+        <figure class="cs-annotated-figure cs-reveal">
+          <img src="queue-annotated.png" loading="lazy" alt="The Queue view annotated with seven numbered callouts highlighting its key features" />
+          <figcaption>The Queue, annotated &mdash; the seven features that make a stalled candidate visible and actionable.</figcaption>
         </figure>
       </div>
+    </section>
 
-      <p>I interviewed strong candidates who quit between application and academy. They pointed to weeks of silence after background checks, confusing evaluation timelines, no communication during the longest waits, and the hardest delays: scheduling medical and psychological evaluations. Candidates left because they thought the city had forgotten them. We responded by expanding the panel of medical and psychological providers candidates could use within the city's public health system, cutting appointment-driven delays at the source.</p>
+    <!-- ============ THE CRUCIAL DECISION ============ -->
+    <section class="cs-section">
+      <div class="cs-col cs-reveal">
+        <span class="cs-eyebrow">The Crucial Decision</span>
+        <h2 class="cs-heading">Dashboard enabled continuous data-driven improvement to fix hiring issues</h2>
+        <p>The crucial decision this dashboard enabled was whether the department and the mayor's office should allocate $900,000 for advertising to address a 500-officer shortfall. As the project lead, I found time to test advertising while creating this dashboard, which shows delays in hiring and candidate experience, proving that additional funds for top-of-funnel fixes won't address the shortage.</p>
+        <p>The existing sequential hiring process&mdash;starting with a written test, then an oral interview, followed by a physical exam, background checks taking six months, and medical and psychological evaluations&mdash;was too slow. The decision was whether to invest $900,000 in expanding advertising or resequence the pipeline to help existing candidates reach the academy faster. Investing in advertising for a two-year pipeline costs more with similar losses.</p>
+        <p>The dashboard enabled all stakeholders to continue making operational fixes and evaluating them against hiring gains. Resequencing evaluations to run concurrently, speeding background checks, and rearranging steps targeted the core issue: time. Using the dashboard, I supported this approach with evidence, enabling us to prioritize solutions and monitor progress.</p>
+      </div>
+    </section>
 
-      <blockquote class="project-callout">Candidates were leaving because of poor communication and long wait times.</blockquote>
+    <!-- ============ WHY A DASHBOARD ============ -->
+    <section class="cs-section">
+      <div class="cs-col cs-reveal">
+        <span class="cs-eyebrow">Why a Dashboard, Not a Memo</span>
+        <h2 class="cs-heading">A memo gets read once; the cost had to stay on screen</h2>
+        <p>The two-year wait was culturally seen as an endurance test. The common view I heard was that a candidate who really wanted the job would be willing to wait, and that the wait itself showed commitment.</p>
+        <p>To effectively challenge this belief, I needed to clearly show the true cost of a slow process for the system, so department leaders could stop seeing the failing system as something they want.</p>
+      </div>
 
-      <h3>Targeted digital marketing tests</h3>
-      <p>I reviewed all ads running across platforms and tested recruitment tactics with police recruiters at career fairs. Only ~49 laterals applied in 2024, so we expanded targeted lateral campaigns to specific cities that have the same qualifiers as San Francisco.</p>
+      <blockquote class="cs-quote container cs-reveal">If we don't hire faster, we will take over 10 years to close the staffing gap.</blockquote>
 
-      <blockquote class="project-callout">Booths, keychains, and generic ads missed Gen Z. Recruitment needed a targeted sales approach to attract the right entry-level candidates.</blockquote>
+      <div class="cs-col cs-reveal">
+        <p>The dashboard showed that we were losing qualified candidates to faster offers elsewhere, costing us more than the candidates themselves. When the cost was continuously shown and shared, it became impossible to ignore, and because the situation kept changing, leaders needed to see it again and again, not just once. So the tool had to be a constantly updated, continuously used resource that enables the department to make data-driven decisions.</p>
+      </div>
+    </section>
 
-      <figure class="figure-penske">
-        <img src="PoliceHiring.jpeg" alt="Maanasa at a whiteboard mapping persona and use-case research notes for the police hiring redesign, with columns of stakeholder personas on the left paired with use cases on the right." />
-        <figcaption>Mapping personas and use cases for the police hiring pipeline redesign.</figcaption>
-      </figure>
+    <!-- ============ IMPACT ============ -->
+    <section class="cs-section">
+      <div class="cs-col cs-reveal">
+        <span class="cs-eyebrow">Impact</span>
+        <h2 class="cs-heading">Measuring adoption, decisions, and speed</h2>
+        <p>I tested the dashboard's impact by measuring adoption, decisions, and metrics. The strongest signals were usage frequency, shifts in decision timing, and changes in hire review timing after exposure. The causal link was narrower than just &ldquo;hires rose&rdquo;: background was key, so I measured background time before and after. The team made background-related changes, such as updating tools, upstaffing, and tracking speeds for stronger candidates, all via the dashboard.</p>
+      </div>
 
-      <h3>Candidate journey mapping</h3>
-      <p>To fully understand the pain points, I signed up to be a police officer after seeing a targeted ad. I mapped the candidate journey by playing a candidate myself and going through the process across the police department and HR. I received the drip campaign ads, sat through tests (which I didn't complete), and looked into communications at each stage. I also spoke to recently hired candidates and mapped about 4-5 other journeys.</p>
-
-      <blockquote class="project-callout">More than half the handoffs lacked a named owner, a shared service expectation, and a common view of candidate progress.</blockquote>
-
-      <p>Leaders saw the system gap for the first time from the candidate's perspective.</p>
-
-      <p>The sharpest gap was between the initial tests (owned by HR) and the in-person interview (at the police department). Strong candidates had no human touchpoint in between. We paired each strong candidate one-to-one with a dedicated recruiter through that window, giving them white-glove service where the funnel was bleeding most.</p>
-
-      <figure>
-        <img src="interventions.png" alt="Timeline of the seven-stage police hiring process from pre-funnel through academy, with six interventions mapped as horizontal bars beneath, each spanning the stages it targets across marketing, UX, hiring days, fast-tracking, eligibility updates, and HR coordination." />
-        <figcaption>Six interventions mapped against the seven-stage hiring process, each one targeting a specific stretch of the pipeline.</figcaption>
-      </figure>
-
-      <h2>Interventions</h2>
-
-      <h3>Shared hiring dashboard</h3>
-      <p>A live, shared dashboard combined police and HR data, with the candidate at the center: funnel KPIs alongside community-impact metrics on crime stats, jointly owned by both agencies. The gamified approach was well received by the team; they wanted to see the funnel move.</p>
-
-      <blockquote class="project-callout">We pinned the candidate board to a large screen running in the police department, where recruiters could glance at it throughout the day.</blockquote>
-
-      <figure class="figure-penske">
-        <img src="dashboard-1.png" alt="Shared hiring dashboard table with columns for Candidate ID, Stage, Days in Stage, Days Since Contact, Named Owner with an HR or police tag, and a Flag pill surfacing overdue, aging, and unowned cases." />
-        <figcaption>Shared dashboard: per-candidate view with named HR and police owners and flags for overdue or unowned cases.</figcaption>
-      </figure>
-
-      <figure class="figure-penske">
-        <img src="dashboard-2.png" alt="Pipeline KPI strip with seven hiring stages from Application to Academy Graduation, candidate counts, stage-to-stage conversion rates, and period-over-period change arrows." />
-        <figcaption>Pipeline KPIs: candidate counts, stage-to-stage conversion, and period-over-period change at every step of the funnel.</figcaption>
-      </figure>
-
-      <aside class="ai-callout">
-        <span class="ai-callout-label">AI tooling</span>
-        <p>Paperwork is the bulk of a background investigator's day, especially creating summaries for their reports. I introduced AI tools into the investigator workflow after rigorous training, creating the right prompts for their use-case and accuracy testing for the legal-document context, expanding the team's effective throughput without hiring. <strong class="text-accent">I ran &ldquo;how to use LLMs&rdquo; workshops with senior retired civilian officers which I really enjoyed!</strong></p>
-      </aside>
-
-      <h3>Pipeline-stage interventions</h3>
-
-      <figure>
-        <img src="projects-02.png" alt="Three-stage diagram titled 'Hiring Pipeline Interventions' visualized as funnels of dots: increase the applicant pool to 10,000 per year from 3K, speed-track onboarding to 4 months from one to two years, and reengineer the academy to raise graduation from 30% to 54%." />
-        <figcaption>Three interventions across the pipeline (volume, speed, and graduation rate), each tied to a specific failure mode in the funnel.</figcaption>
-      </figure>
-
-      <div class="interventions-table" role="table" aria-label="Pipeline interventions by stage">
-        <div class="interventions-row interventions-header" role="row">
-          <div role="columnheader">Pipeline stage</div>
-          <div role="columnheader">Targets</div>
-          <div role="columnheader">Interventions</div>
+      <div class="cs-metrics cs-col-wide">
+        <div class="cs-metric cs-reveal">
+          <span class="cs-metric-figure">+40</span>
+          <span class="cs-metric-label">net-positive sworn officers by the end of 2025 &mdash; the first net-positive police hiring since before the pandemic</span>
         </div>
-        <div class="interventions-row" role="row">
-          <div class="interventions-stage" role="cell">Applicant pool</div>
-          <div class="interventions-shift" role="cell">3K &rarr; 10K applicants / year</div>
-          <div role="cell">Targeted digital campaigns &middot; civilian recruiters &middot; referral incentives</div>
+        <div class="cs-metric cs-reveal">
+          <span class="cs-metric-figure">6 mo &rarr; 2 mo</span>
+          <span class="cs-metric-label">average background-check time</span>
         </div>
-        <div class="interventions-row" role="row">
-          <div class="interventions-stage" role="cell">Onboarding</div>
-          <div class="interventions-shift" role="cell">1&ndash;2 years &rarr; 4 months</div>
-          <div role="cell">One-stop testing day &middot; staffing capacity additions &middot; fast-track for top candidates</div>
-        </div>
-        <div class="interventions-row" role="row">
-          <div class="interventions-stage" role="cell">Academy</div>
-          <div class="interventions-shift" role="cell">30% &rarr; 54% graduation</div>
-          <div role="cell">Pre-academy prep weeks &middot; modular equipment &middot; injury prevention</div>
+        <div class="cs-metric cs-reveal">
+          <span class="cs-metric-figure">1 yr &rarr; 4 mo</span>
+          <span class="cs-metric-label">lateral candidate hiring process</span>
         </div>
       </div>
 
-      <h2>Outcomes</h2>
+    </section>
 
-      <p>The pipeline now produces officers at a sustainable rate, and the system is owned by the agencies running it.</p>
-
-      <div class="stat-row">
-        <div class="stat">
-          <span class="stat-num">+364%</span>
-          <span class="stat-label">lateral applications</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num">5&rarr;2 mo</span>
-          <span class="stat-label">background checks</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num">2 yr&rarr;8 mo</span>
-          <span class="stat-label">application to academy</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num">30&rarr;54%</span>
-          <span class="stat-label">academy graduation rate</span>
-        </div>
+    <!-- ============ SERVICE DESIGN IMPROVEMENTS ============ -->
+    <section class="cs-section">
+      <div class="cs-col cs-reveal">
+        <span class="cs-eyebrow">Service design improvements</span>
+        <h2 class="cs-heading">Operational fixes the dashboard surfaced</h2>
+        <p>The dashboard enabled many operational improvements, helping achieve net-positive hires for the first time in 6 years.</p>
+        <p>Some of the operational improvements and service design changes include creating:</p>
       </div>
 
-      <ul>
-        <li>First net positive growth in sworn officers since the 2020 pandemic.</li>
-        <li>Reframed the question from "hire faster" to "what should the pipeline produce," now an active conversation in city leadership.</li>
-        <li>Dashboard and service blueprint owned by the police department and HR, so the capability survives the Mayor's Office of Innovation's departure.</li>
-      </ul>
+      <div class="cs-col-wide">
+        <ul class="cs-service-list">
+          <li class="cs-reveal">A &ldquo;One-Stop-Shop&rdquo; for the first three hiring steps, including the written test, oral interview, and physical test. The department combined steps to help candidates save time and get results asap.</li>
+          <li class="cs-reveal">I created a method to green-light strong candidates early, using additional questions in oral interviews to identify crucial traits and determine if the candidate is a strong fit for SFPD. Once identified, they were put on a fast-track path to get preference for appointments, next steps, and 1-1 white-glove recruiter support to keep moving forward.</li>
+          <li class="cs-reveal">The dashboard revealed delays in medical appointments for candidates and enabled the SFPD, HR, and Public Health Departments to add more medical check appointments.</li>
+          <li class="cs-reveal">We added more recruiters to provide white-glove support for strong candidates and brought in more civilian police officers to expedite background checks.</li>
+          <li class="cs-reveal">We tested methods to use AI to generate candidate summaries after successful background checks, a process that officers previously took several days to complete. We created prompts and guardrails to help officers use the right tools.</li>
+        </ul>
+      </div>
+    </section>
 
-      <section class="project-context">
-        <h3>Context</h3>
-        <p><strong>Stakeholders.</strong> Core sponsors: Mayor's Public Safety Chief, Police Chief, HR Department leadership, Mayor's Office of Innovation Director. Core partners: police recruiting team, HR background-check team, police data team, academy training staff.</p>
-        <p><strong>Timeline.</strong> Feb 2025 &ndash; Oct 2025.</p>
-      </section>
-    </article>
+    <!-- ============ LEARNINGS ============ -->
+    <section class="cs-section">
+      <div class="cs-col cs-reveal">
+        <span class="cs-eyebrow">Learnings</span>
+        <h2 class="cs-heading">Culture change and data-driven decision making</h2>
+        <ul class="cs-learnings">
+          <li class="cs-reveal"><span class="cs-num">01</span><p>Visibility, rather than effort, was the real challenge here. The most impactful thing I did was demonstrate that a problem existed before anyone invested money in decisions.</p></li>
+          <li class="cs-reveal"><span class="cs-num">02</span><p>Bringing data together from different departments can seem bureaucratic and takes a lot of effort and energy. It's important to frame numbers carefully, as how you present a figure influences whether people act on it.</p></li>
+          <li class="cs-reveal"><span class="cs-num">03</span><p>Presenting the same finding as a neutral system fact, rather than an accusation, helped move forward with a fix that might have stalled if blame were involved.</p></li>
+          <li class="cs-reveal"><span class="cs-num">04</span><p>For those unfamiliar with using metrics, having clear, concise, and actionable data is essential for integrating it smoothly into their workflow. For instance, I turned the Mayor's communications office dashboard into an automated monthly email update. Similarly, I helped the Mayor's communications team update the SFPD leadership's email with clear guardrails for easy access.</p></li>
+          <li class="cs-reveal"><span class="cs-num">05</span><p>The Mayor's team always had questions&mdash;more than just data&mdash;and decision-makers needed a monthly check-in to better understand the changes.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ NEXT PROJECT ============ -->
+    <a href="project-2.html" class="cs-next">
+      <div class="container cs-next-inner">
+        <span class="cs-next-label">Next project</span>
+        <span class="cs-next-title">San Francisco's Homeless Response &mdash; ASTRID <span class="cs-next-arrow">&rarr;</span></span>
+      </div>
+    </a>
   </main>
 
   <footer class="site-footer">

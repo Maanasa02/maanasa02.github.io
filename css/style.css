@@ -1,17 +1,19 @@
 :root {
-  /* Palette — white, black, orange only.
+  /* Palette — white, black, blue only.
      Hairline rules stay neutral gray (decided in brief: borders are structure, not content color). */
   --bg: #ffffff;
   --fg: #111111;
   --muted: #5a5a5a;        /* near-black at lower contrast, not a true gray */
-  --accent: #d94f30;
-  --border: #e7e7e4;       /* very light neutral hairline */
+  --accent: #0000FF;
+  --border: #e7e7e4;       /* very light neutral hairline — cards, tiles, pills, image-placeholder backgrounds */
+  --rule: #000000;         /* editorial separator lines — page-level rules, section borders, header/footer */
   --card: #ffffff;
   --max-width: 1180px;
   --prose-width: 720px;    /* ~65–72ch comfortable reading column */
   --radius: 4px;
   --font-sans: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
   --font-serif: "Noto Serif", "Georgia", "Times New Roman", serif;
+  --font-display: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
 * {
@@ -61,7 +63,7 @@ img {
 
 /* ---------- Header / Nav ---------- */
 .site-header {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--rule);
   background: var(--bg);
   position: sticky;
   top: 0;
@@ -115,9 +117,9 @@ img {
 }
 
 .page-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: clamp(2.125rem, 5.4vw, 4rem);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.015em;
   margin-bottom: 28px;
@@ -168,9 +170,9 @@ img {
 }
 
 .about-hero h1 {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: clamp(2.125rem, 6vw, 4.5rem);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.02;
   letter-spacing: -0.02em;
   margin-bottom: 28px;
@@ -189,9 +191,9 @@ img {
 }
 
 .about-name {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: clamp(2.125rem, 6vw, 4.5rem);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.02;
   letter-spacing: -0.02em;
   margin-bottom: 20px;
@@ -286,7 +288,7 @@ img {
   color: var(--muted);
 }
 
-/* ---------- Work carousel (About page) ---------- */
+/* ---------- Work grid (About page) ---------- */
 .work-section {
   margin-top: 112px;
   padding-top: 8px;
@@ -301,9 +303,9 @@ img {
 }
 
 .work-section-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: clamp(2rem, 3.6vw, 2.75rem);
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: -0.015em;
   line-height: 1.05;
   margin-bottom: 12px;
@@ -317,134 +319,131 @@ img {
   margin: 0;
 }
 
-.work-carousel-arrows {
-  display: flex;
-  gap: 10px;
-  flex-shrink: 0;
+.work-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  max-width: 1000px;
+  margin-inline: auto;
 }
 
-.work-carousel-arrow {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 1px solid var(--border);
-  background: var(--card);
-  color: var(--fg);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-  padding: 0;
-}
-
-.work-carousel-arrow:hover {
-  background: var(--fg);
-  color: var(--bg);
-  border-color: var(--fg);
-}
-
-.work-carousel-arrow:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-.work-carousel {
-  display: flex;
-  gap: 28px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  padding-bottom: 8px;
-  /* allow cards to extend visually beyond container edge */
-  margin-right: -32px;
-  padding-right: 32px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.work-carousel::-webkit-scrollbar {
-  display: none;
-}
-
+/* Horizontal SPLIT card: text left, colored image panel right. */
 .work-card {
-  flex: 0 0 360px;
-  scroll-snap-align: start;
-  display: flex;
-  flex-direction: column;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  overflow: visible;
+  display: grid;
+  grid-template-columns: 56% 44%;
+  align-items: stretch;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
   color: var(--fg);
-  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .work-card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(17, 17, 17, 0.08);
   color: var(--fg);
 }
 
+.work-card-content {
+  padding: 32px 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.work-card-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+
+.work-card-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+}
+
+.work-card-outcome {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--fg);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.work-card-tags {
+  list-style: none;
+  padding: 0;
+  margin: 2px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.work-card-tags li {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--muted);
+  background: #f3f3f0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+}
+
+.work-card-cta {
+  margin-top: auto;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  background: var(--accent);
+  padding: 11px 20px;
+  border-radius: 999px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.work-card-cta span {
+  transition: transform 0.2s ease;
+}
+
+.work-card:hover .work-card-cta {
+  background: #0000cc;
+}
+
+.work-card:hover .work-card-cta span {
+  transform: translateX(3px);
+}
+
+/* Right periwinkle panel framing the project image. */
 .work-card-media {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  background: var(--border);
-  border-radius: var(--radius);
+  background: #A7A7EF;
+  padding: 20px;
+  display: flex;
 }
 
 .work-card-media img {
   width: 100%;
   height: 100%;
+  min-height: 220px;
   object-fit: cover;
   display: block;
-  transition: transform 0.5s ease;
-}
-
-.work-card:hover .work-card-media img {
-  transform: scale(1.03);
-}
-
-.work-card-body {
-  padding: 20px 4px 4px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  flex: 1;
-}
-
-.work-card-title {
-  font-family: var(--font-serif);
-  font-size: 1.35rem;
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: -0.005em;
-}
-
-.work-card-desc {
-  font-size: 1rem;
-  color: var(--muted);
-  line-height: 1.55;
-  margin: 0;
-  flex: 1;
-}
-
-.work-card-cta {
-  margin-top: 8px;
-  color: var(--accent);
-  font-size: 0.92rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-}
-
-.work-card-cta span {
-  display: inline-block;
-  transition: transform 0.2s ease;
-}
-
-.work-card:hover .work-card-cta span {
-  transform: translateX(4px);
+  border-radius: 10px;
 }
 
 @media (max-width: 860px) {
@@ -460,16 +459,24 @@ img {
     gap: 16px;
     margin-bottom: 24px;
   }
-  .work-carousel-arrows {
-    display: none;
+  .work-grid {
+    gap: 28px;
   }
+  /* Stack: text on top, image panel below. */
   .work-card {
-    flex: 0 0 280px;
+    grid-template-columns: 1fr;
   }
-  .work-carousel {
-    gap: 16px;
-    margin-right: -20px;
-    padding-right: 20px;
+  .work-card-content {
+    padding: 26px 24px;
+    order: 1;
+  }
+  .work-card-media {
+    order: 2;
+    padding: 16px;
+  }
+  .work-card-media img {
+    min-height: 180px;
+    max-height: 260px;
   }
 }
 
@@ -496,8 +503,8 @@ img {
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   padding: 28px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
   margin-bottom: 56px;
 }
 
@@ -525,7 +532,7 @@ img {
   margin-top: 0;
   margin-bottom: 0;
   padding: 40px 0 56px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--rule);
 }
 
 .overview-item {
@@ -569,9 +576,9 @@ img {
 }
 
 .project-content h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 1.75rem;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: -0.005em;
   line-height: 1.2;
   margin: 80px 0 24px;
@@ -583,7 +590,7 @@ img {
 }
 
 .project-content h3 {
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
   font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: 0.005em;
@@ -696,6 +703,25 @@ img {
   line-height: 1.5;
 }
 
+/* ---------- Evaluation methods closing note (end of Methods section) ---------- */
+.evaluation-note {
+  font-style: italic;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  border-top: 1px solid var(--rule);
+  padding-top: 1.5rem;
+  margin-top: 2.5rem;
+  color: var(--fg);
+}
+.evaluation-note p {
+  margin: 0;
+}
+.evaluation-note strong {
+  font-weight: 600;
+  font-style: italic;
+}
+
 /* ---------- Project-1: Methods two-column (text + funnel image) ---------- */
 .methods-split {
   display: grid;
@@ -747,7 +773,7 @@ img {
   padding: 0 !important;
   display: grid;
   gap: 0;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--rule);
 }
 
 .why-list > li {
@@ -757,14 +783,14 @@ img {
   padding: 24px 0;
   background: transparent;
   border: none;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--rule);
   border-radius: 0;
   align-items: start;
   margin-bottom: 0 !important;
 }
 
 .why-list > li.why-root {
-  border-color: var(--border);
+  border-color: var(--rule);
 }
 
 .why-num {
@@ -781,7 +807,7 @@ img {
 }
 
 .why-body h3 {
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
   font-size: 1.05rem;
   font-weight: 700;
   margin: 0 0 10px !important;
@@ -811,7 +837,7 @@ img {
   padding: 0 !important;
   display: grid;
   gap: 0;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--rule);
 }
 
 .layer-list li {
@@ -819,7 +845,7 @@ img {
   background: transparent;
   border: none;
   border-left: 3px solid var(--accent);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--rule);
   border-radius: 0;
   font-size: 1rem;
   line-height: 1.55;
@@ -900,7 +926,7 @@ img {
 .method-card {
   background: transparent;
   border: none;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--rule);
   border-radius: 0;
   padding: 28px 0 0;
 }
@@ -916,7 +942,7 @@ img {
 }
 
 .method-card h3 {
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 12px;
@@ -931,7 +957,7 @@ img {
 
 /* ---------- Footer ---------- */
 .site-footer {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--rule);
   padding: 40px 0;
   margin-top: 96px;
   color: var(--muted);
@@ -970,6 +996,18 @@ img {
     margin-left: 0;
     margin-top: 8px;
     font-size: 1rem;
+  }
+
+  .page-title {
+    font-size: clamp(1.75rem, 6.5vw, 2.75rem);
+    letter-spacing: -0.02em;
+  }
+
+  .about-hero h1,
+  .page-title.about-name,
+  .about-name {
+    font-size: clamp(1.5rem, 6.2vw, 2.5rem);
+    letter-spacing: -0.025em;
   }
 
   .projects-grid {
@@ -1036,7 +1074,7 @@ img {
 
   .stat {
     border-right: none;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--rule);
     padding: 20px 16px;
     min-width: 0;
   }
@@ -1046,7 +1084,7 @@ img {
   }
 
   .stat:nth-child(odd) {
-    border-right: 1px solid var(--border);
+    border-right: 1px solid var(--rule);
   }
 
   .page {
@@ -1081,7 +1119,7 @@ img {
     background: var(--bg);
     padding: 16px 24px;
     gap: 16px;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--rule);
   }
 
   .nav-links.open {
@@ -1549,14 +1587,14 @@ img {
   grid-template-columns: repeat(4, 1fr);
   gap: 0;
   margin: 40px 0 48px;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
 }
 
 .stat {
   background: transparent;
   border: none;
-  border-right: 1px solid var(--border);
+  border-right: 1px solid var(--rule);
   border-radius: 0;
   padding: 24px 20px;
   text-align: left;
@@ -1993,9 +2031,9 @@ img {
 }
 
 .extras-section-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: clamp(1.75rem, 3vw, 2.25rem);
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: -0.015em;
   line-height: 1.1;
   margin-bottom: 32px;
@@ -2013,11 +2051,11 @@ img {
   align-items: baseline;
   gap: 24px;
   padding: 22px 0;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--rule);
 }
 
 .extras-list .extras-item:last-child {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--rule);
 }
 
 .extras-item-title {
@@ -2072,7 +2110,7 @@ img {
 .project-context {
   margin-top: 48px;
   padding-top: 20px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--rule);
 }
 .project-context h3 {
   font-family: var(--font-sans);
@@ -2114,3 +2152,782 @@ img {
   color: var(--fg);
   margin: 0;
 }
+
+/* =========================================================================
+   PROJECT-1 REDESIGN — Framer-style case study
+   Scoped ENTIRELY to body.cs-redesign so no other page is affected.
+   Sans-serif (Inter), airy, minimal.
+   ========================================================================= */
+
+body.cs-redesign {
+  --cs-ink: #16130f;
+  --cs-muted: #6b665f;
+  --cs-faint: #97918a;
+  --cs-line: #eae7e1;
+  --cs-line-soft: #f2efe9;
+  --cs-accent: var(--accent);
+  --cs-read: 1040px;     /* unified content width (prose aligns with everything else) */
+  --cs-wide: 1040px;     /* unified content width — same as --cs-read */
+  font-family: var(--font-sans);
+  color: var(--cs-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Restyle shared header/footer softly, scoped only */
+body.cs-redesign .site-header {
+  border-bottom: 1px solid var(--cs-line);
+}
+body.cs-redesign .nav-links a {
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+body.cs-redesign .site-footer {
+  border-top: 1px solid var(--cs-line);
+  margin-top: 0;
+}
+
+body.cs-redesign .cs-main {
+  padding-bottom: 0;
+}
+
+/* Shared column helpers — center a reading column inside the page container */
+body.cs-redesign .container {
+  max-width: 1180px;
+}
+body.cs-redesign .cs-col,
+body.cs-redesign .cs-col-wide {
+  max-width: var(--cs-read);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+body.cs-redesign .cs-col-wide {
+  max-width: var(--cs-wide);
+}
+
+/* ---------- HERO ---------- */
+body.cs-redesign .cs-hero {
+  padding-top: 72px;
+  padding-bottom: 8px;
+  max-width: var(--cs-wide);
+}
+body.cs-redesign .cs-title {
+  font-family: var(--font-sans);
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.03;
+  letter-spacing: -0.03em;
+  color: var(--cs-ink);
+  margin: 0 0 28px;
+  max-width: 16ch;
+}
+body.cs-redesign .cs-lede {
+  font-family: var(--font-sans);
+  font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--cs-muted);
+  max-width: 760px;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- META STRIP ---------- */
+body.cs-redesign .cs-meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px 40px;
+  max-width: var(--cs-wide);
+  margin-top: 56px;
+  padding-top: 36px;
+  padding-bottom: 36px;
+  border-top: 1px solid var(--cs-line);
+  border-bottom: 1px solid var(--cs-line);
+}
+body.cs-redesign .cs-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+body.cs-redesign .cs-meta-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  color: var(--cs-faint);
+}
+body.cs-redesign .cs-meta-value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--cs-ink);
+  letter-spacing: -0.01em;
+}
+
+/* ---------- SECTION RHYTHM ---------- */
+body.cs-redesign .cs-section {
+  padding-top: 6.5rem;
+}
+body.cs-redesign .cs-section > * + * {
+  margin-top: 2rem;
+}
+body.cs-redesign .cs-eyebrow {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--cs-accent);
+  margin-bottom: 18px;
+}
+body.cs-redesign .cs-heading {
+  font-family: var(--font-sans);
+  font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--cs-ink);
+  margin: 0 0 1.4rem;
+  max-width: 34ch;
+}
+body.cs-redesign .cs-subhead {
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--cs-ink);
+  margin: 2.4rem 0 0.9rem;
+}
+body.cs-redesign .cs-col p,
+body.cs-redesign .cs-col-wide > p {
+  font-size: 1.0625rem;
+  line-height: 1.72;
+  color: #2c2925;
+  margin: 0 0 1.15rem;
+  letter-spacing: -0.006em;
+}
+body.cs-redesign .cs-col p:last-child { margin-bottom: 0; }
+body.cs-redesign .cs-col strong { font-weight: 600; color: var(--cs-ink); }
+body.cs-redesign .cs-accent { color: var(--cs-accent); font-weight: 500; }
+
+/* ---------- NUMBERED LISTS (problem breakdowns) ---------- */
+body.cs-redesign .cs-numbered,
+body.cs-redesign .cs-learnings {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+}
+body.cs-redesign .cs-numbered li,
+body.cs-redesign .cs-learnings li {
+  display: grid;
+  grid-template-columns: 3.2rem 1fr;
+  gap: 20px;
+  padding: 1.6rem 0;
+  border-top: 1px solid var(--cs-line);
+  align-items: start;
+}
+body.cs-redesign .cs-numbered li:last-child,
+body.cs-redesign .cs-learnings li:last-child {
+  border-bottom: 1px solid var(--cs-line);
+}
+body.cs-redesign .cs-num {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--cs-accent);
+  letter-spacing: 0.02em;
+  padding-top: 2px;
+}
+body.cs-redesign .cs-numbered h3,
+body.cs-redesign .cs-learnings h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--cs-ink);
+  margin: 0 0 6px;
+}
+body.cs-redesign .cs-numbered p,
+body.cs-redesign .cs-learnings p {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--cs-muted);
+  margin: 0;
+}
+
+/* ---------- FIGURES / IMAGES ---------- */
+body.cs-redesign figure.cs-figure {
+  margin: 0 auto;
+  max-width: var(--cs-read);
+  padding-left: 32px;
+  padding-right: 32px;
+}
+body.cs-redesign figure.cs-figure-wide {
+  max-width: var(--cs-wide);
+}
+body.cs-redesign .cs-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid var(--cs-line);
+  background: #fbfaf8;
+}
+body.cs-redesign .cs-figure figcaption {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--cs-faint);
+  margin-top: 14px;
+  max-width: 60ch;
+}
+
+/* two-up figure grid */
+body.cs-redesign .cs-figure-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  max-width: var(--cs-wide);
+  margin: 0 auto;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+body.cs-redesign .cs-figure-grid .cs-figure {
+  max-width: none;
+  padding: 0;
+}
+
+/* ---------- QUOTES / CALLOUTS ---------- */
+body.cs-redesign .cs-quote {
+  max-width: var(--cs-read);
+  margin: 0.5rem auto;
+  padding: 0.4rem 0 0.4rem 28px;
+  border-left: 3px solid var(--cs-accent);
+  font-family: var(--font-sans);
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: var(--cs-ink);
+  font-style: normal;
+}
+
+/* evaluation / AI note */
+body.cs-redesign .cs-note {
+  max-width: var(--cs-read);
+  margin: 1rem auto 0;
+  padding: 26px 30px;
+  background: #faf8f4;
+  border: 1px solid var(--cs-line);
+  border-radius: 8px;
+}
+body.cs-redesign .cs-note p {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #33302b;
+  margin: 0;
+}
+body.cs-redesign .cs-note strong { font-weight: 600; color: var(--cs-ink); }
+body.cs-redesign .cs-note-ai { background: #fdf4f1; border-color: #f3d9d0; }
+body.cs-redesign .cs-note-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--cs-accent);
+  margin-bottom: 10px;
+}
+
+/* ---------- USER NEEDS (three job-story groups) ---------- */
+body.cs-redesign .cs-needs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+body.cs-redesign .cs-need {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 26px;
+  background: #faf8f4;
+  border: 1px solid var(--cs-line);
+  border-radius: 10px;
+}
+body.cs-redesign .cs-need-group {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--cs-accent);
+  margin-bottom: 16px;
+}
+body.cs-redesign .cs-need-primary {
+  font-size: 1.075rem;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -0.015em;
+  color: var(--cs-ink);
+  margin: 0 0 18px;
+}
+body.cs-redesign .cs-need-support {
+  list-style: none;
+  margin: auto 0 0;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--cs-line);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+body.cs-redesign .cs-need-support li {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--cs-muted);
+}
+
+/* ---------- DESIGN DECISIONS (option comparison cards) ---------- */
+body.cs-redesign .cs-decision + .cs-decision { margin-top: 3rem; }
+body.cs-redesign .cs-decision-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--cs-ink);
+  margin: 0 0 1.25rem;
+}
+body.cs-redesign .cs-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+body.cs-redesign .cs-option {
+  display: flex;
+  flex-direction: column;
+  padding: 26px 26px 24px;
+  background: #fff;
+  border: 1px solid var(--cs-line);
+  border-radius: 12px;
+}
+body.cs-redesign .cs-option-chosen {
+  border-color: var(--cs-accent);
+  box-shadow: 0 0 0 1px var(--cs-accent);
+  background: #fffdfb;
+}
+body.cs-redesign .cs-option-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+body.cs-redesign .cs-option-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--cs-ink);
+}
+body.cs-redesign .cs-chosen-pill {
+  flex: none;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #fff;
+  background: var(--cs-accent);
+  padding: 5px 11px;
+  border-radius: 999px;
+}
+body.cs-redesign .cs-pros {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+body.cs-redesign .cs-pros li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 0.94rem;
+  line-height: 1.5;
+  color: #33302b;
+}
+body.cs-redesign .cs-pros li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #2f8f5b;
+}
+body.cs-redesign .cs-pros strong { font-weight: 600; color: var(--cs-ink); }
+body.cs-redesign .cs-con {
+  margin: auto 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--cs-line);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--cs-muted);
+  display: flex;
+  gap: 10px;
+}
+body.cs-redesign .cs-con-mark {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid var(--cs-faint);
+  color: var(--cs-faint);
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- IMPACT PLACEHOLDERS ---------- */
+body.cs-redesign .cs-placeholder .cs-placeholder-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 260px;
+  padding: 40px;
+  text-align: center;
+  border: 2px dashed #d9d3ca;
+  border-radius: 10px;
+  background: repeating-linear-gradient(45deg, #faf8f4, #faf8f4 12px, #f4f0e9 12px, #f4f0e9 24px);
+}
+body.cs-redesign .cs-placeholder-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--cs-accent);
+  background: #fff;
+  border: 1px solid #f0d8cf;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+body.cs-redesign .cs-placeholder-text {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--cs-muted);
+  max-width: 42ch;
+  margin: 0;
+}
+body.cs-redesign .cs-quote-placeholder {
+  margin: 0;
+  padding: 26px 28px;
+  border: 2px dashed #d9d3ca;
+  border-radius: 10px;
+  background: #faf8f4;
+  font-size: 1.05rem;
+  font-weight: 500;
+  font-style: normal;
+  color: var(--cs-muted);
+  text-align: center;
+}
+
+/* ---------- NEXT PROJECT ---------- */
+body.cs-redesign .cs-next {
+  display: block;
+  border-top: 1px solid var(--cs-line);
+  padding: 4.5rem 0;
+  transition: background 0.18s ease;
+}
+body.cs-redesign .cs-next:hover { background: #faf8f4; }
+body.cs-redesign .cs-next-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+body.cs-redesign .cs-next-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--cs-faint);
+}
+body.cs-redesign .cs-next-title {
+  font-size: clamp(1.6rem, 3.6vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--cs-ink);
+}
+body.cs-redesign .cs-next-arrow {
+  display: inline-block;
+  color: var(--cs-accent);
+  transition: transform 0.18s ease;
+}
+body.cs-redesign .cs-next:hover .cs-next-arrow { transform: translateX(6px); }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 980px) {
+  body.cs-redesign .cs-needs { grid-template-columns: 1fr; }
+  body.cs-redesign .cs-need-support { margin-top: 4px; }
+}
+
+@media (max-width: 860px) {
+  body.cs-redesign .cs-meta { grid-template-columns: repeat(2, 1fr); gap: 28px 32px; }
+  body.cs-redesign .cs-figure-grid { grid-template-columns: 1fr; gap: 32px; }
+  body.cs-redesign .cs-options { grid-template-columns: 1fr; gap: 20px; }
+  body.cs-redesign .cs-section { padding-top: 4.5rem; }
+}
+
+@media (max-width: 560px) {
+  body.cs-redesign .cs-meta { grid-template-columns: 1fr; }
+  body.cs-redesign .cs-numbered li,
+  body.cs-redesign .cs-learnings li { grid-template-columns: 1fr; gap: 6px; }
+  body.cs-redesign .cs-num { padding-top: 0; }
+}
+
+/* ---------- SCROLL-REVEAL (project-1 only) ---------- */
+/* Hidden state gated on html.js so content is never permanently hidden if JS fails to load. */
+html.js body.cs-redesign .cs-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition-delay: var(--reveal-delay, 0s);
+}
+body.cs-redesign .cs-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Subtle stagger for grouped items (cascade ~90ms apart, total < 0.5s per group). */
+body.cs-redesign .cs-needs .cs-need:nth-child(2) { --reveal-delay: 0.09s; }
+body.cs-redesign .cs-needs .cs-need:nth-child(3) { --reveal-delay: 0.18s; }
+
+body.cs-redesign .cs-tenets li:nth-child(2) { --reveal-delay: 0.09s; }
+body.cs-redesign .cs-tenets li:nth-child(3) { --reveal-delay: 0.18s; }
+body.cs-redesign .cs-tenets li:nth-child(4) { --reveal-delay: 0.27s; }
+
+body.cs-redesign .cs-options .cs-option:nth-child(2) { --reveal-delay: 0.1s; }
+
+body.cs-redesign .cs-learnings li:nth-child(2) { --reveal-delay: 0.08s; }
+body.cs-redesign .cs-learnings li:nth-child(3) { --reveal-delay: 0.16s; }
+body.cs-redesign .cs-learnings li:nth-child(4) { --reveal-delay: 0.24s; }
+body.cs-redesign .cs-learnings li:nth-child(5) { --reveal-delay: 0.32s; }
+
+body.cs-redesign .cs-final-views .cs-need:nth-child(2) { --reveal-delay: 0.09s; }
+body.cs-redesign .cs-final-views .cs-need:nth-child(3) { --reveal-delay: 0.18s; }
+
+body.cs-redesign .cs-metrics .cs-metric:nth-child(2) { --reveal-delay: 0.09s; }
+body.cs-redesign .cs-metrics .cs-metric:nth-child(3) { --reveal-delay: 0.18s; }
+
+body.cs-redesign .cs-service-list li:nth-child(2) { --reveal-delay: 0.07s; }
+body.cs-redesign .cs-service-list li:nth-child(3) { --reveal-delay: 0.14s; }
+body.cs-redesign .cs-service-list li:nth-child(4) { --reveal-delay: 0.21s; }
+body.cs-redesign .cs-service-list li:nth-child(5) { --reveal-delay: 0.28s; }
+
+body.cs-redesign .cs-queue-features li:nth-child(2) { --reveal-delay: 0.06s; }
+body.cs-redesign .cs-queue-features li:nth-child(3) { --reveal-delay: 0.12s; }
+body.cs-redesign .cs-queue-features li:nth-child(4) { --reveal-delay: 0.18s; }
+body.cs-redesign .cs-queue-features li:nth-child(5) { --reveal-delay: 0.24s; }
+body.cs-redesign .cs-queue-features li:nth-child(6) { --reveal-delay: 0.30s; }
+body.cs-redesign .cs-queue-features li:nth-child(7) { --reveal-delay: 0.36s; }
+
+@media (prefers-reduced-motion: reduce) {
+  body.cs-redesign .cs-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------- HERO IMAGE (project-1 only) ---------- */
+/* Full-bleed periwinkle band (edge to edge) framing a CROPPED top slice of the */
+/* mockup, like the reference header. The band breaks out of the content column; */
+/* the image is centered + capped INSIDE it. Height is capped (~40vh) so the H1 */
+/* title below stays visible on load. */
+body.cs-redesign .cs-hero-media {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-top: 20px;
+  margin-bottom: 28px;
+  padding: 28px 32px;
+  background-color: #A7A7EF;
+  overflow: hidden;
+}
+body.cs-redesign .cs-hero-media img {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  height: clamp(200px, 40vh, 400px);
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 8px;
+  border: 1px solid var(--cs-line);
+}
+
+@media (max-width: 560px) {
+  body.cs-redesign .cs-hero-media {
+    padding: 18px 16px;
+  }
+  body.cs-redesign .cs-hero-media img {
+    height: clamp(200px, 34vh, 260px);
+  }
+}
+
+/* ---------- FINAL DESIGN: prototype + walkthroughs (project-1 only) ---------- */
+/* GIF full-width on top; three view walkthroughs below as User-needs-style cards. */
+body.cs-redesign .cs-embed-figure {
+  margin: 0 0 40px;
+}
+/* Prototype GIF: ~80% of the content column, centered, breathing room on the sides. */
+body.cs-redesign .cs-embed-figure-wide {
+  max-width: 80%;
+  margin-inline: auto;
+}
+@media (max-width: 700px) {
+  body.cs-redesign .cs-embed-figure-wide {
+    max-width: 100%;
+  }
+}
+body.cs-redesign .cs-embed-figure img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 6px;
+  border: 1px solid var(--cs-line);
+  background: #fbfaf8;
+}
+body.cs-redesign .cs-embed-figure figcaption {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--cs-faint);
+  margin-top: 14px;
+  text-align: center;
+}
+/* View cards reuse the User-needs card treatment (.cs-needs / .cs-need).
+   The .cs-subhead heading sits at the top of the card, so drop its large top margin. */
+body.cs-redesign .cs-final-views .cs-subhead {
+  margin-top: 0;
+  margin-bottom: 0.9rem;
+}
+body.cs-redesign .cs-view-list {
+  list-style: disc;
+  margin: 0;
+  padding-left: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+body.cs-redesign .cs-view-list li {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--cs-muted);
+  padding-left: 0.15rem;
+}
+
+/* ---------- IMPACT METRIC BOXES (project-1 only) ---------- */
+body.cs-redesign .cs-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: stretch;
+  margin-top: 8px;
+}
+body.cs-redesign .cs-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px 26px;
+  background: #faf8f4;
+  border: 1px solid var(--cs-line);
+  border-radius: 10px;
+}
+body.cs-redesign .cs-metric-figure {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--cs-ink);
+}
+body.cs-redesign .cs-metric-label {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--cs-muted);
+}
+@media (max-width: 980px) {
+  body.cs-redesign .cs-metrics { grid-template-columns: 1fr; }
+}
+
+/* ---------- SERVICE DESIGN IMPROVEMENTS (project-1 only) ---------- */
+body.cs-redesign .cs-service-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+body.cs-redesign .cs-service-list li {
+  position: relative;
+  padding: 20px 22px 20px 22px;
+  background: #faf8f4;
+  border: 1px solid var(--cs-line);
+  border-radius: 10px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #2c2925;
+}
+body.cs-redesign .cs-service-list strong { font-weight: 600; color: var(--cs-ink); }
+
+/* ---------- ANNOTATED QUEUE: features list + annotated image (project-1 only) ---------- */
+/* Desktop: numbered 1–7 list (left) + annotated image (right, sticky). */
+/* Mobile: annotated image first, then the list below it. */
+body.cs-redesign .cs-annotated-split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.8fr);
+  gap: 48px;
+  align-items: start;
+  margin-top: 8px;
+}
+body.cs-redesign .cs-annotated-split .cs-queue-features {
+  margin: 0;
+}
+body.cs-redesign .cs-annotated-figure {
+  margin: 0;
+  position: sticky;
+  top: 32px;
+}
+body.cs-redesign .cs-annotated-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid var(--cs-line);
+  background: #fbfaf8;
+}
+body.cs-redesign .cs-annotated-figure figcaption {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--cs-faint);
+  margin-top: 14px;
+}
+
+@media (max-width: 900px) {
+  body.cs-redesign .cs-annotated-split {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  /* Image first on mobile, list after. */
+  body.cs-redesign .cs-annotated-split .cs-annotated-figure {
+    order: -1;
+    position: static;
+    top: auto;
+  }
+}
+
+
+
