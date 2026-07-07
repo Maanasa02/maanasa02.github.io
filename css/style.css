@@ -2929,5 +2929,202 @@ body.cs-redesign .cs-annotated-figure figcaption {
   }
 }
 
+/* =========================================================================
+   PROJECT-2 REDESIGN ADDITIONS (scoped to body.cs-redesign)
+   Three-tools centerpiece cards + marquee-proof band + scale strip.
+   No global rules; every selector is prefixed body.cs-redesign.
+   ========================================================================= */
 
+/* ---------- THREE TOOLS (centerpiece cards) ---------- */
+body.cs-redesign .cs-tools {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: stretch;
+  margin-top: 8px;
+}
+body.cs-redesign .cs-tool {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 28px;
+  background: #faf8f4;
+  border: 1px solid var(--cs-line);
+  border-radius: 12px;
+}
+body.cs-redesign .cs-tool-type {
+  align-self: flex-start;
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cs-accent);
+  background: #fff;
+  border: 1px solid #f0d8cf;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+body.cs-redesign .cs-tool-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--cs-ink);
+  margin: 0 0 16px;
+}
+body.cs-redesign .cs-tool-facts {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0 0 16px;
+  border-bottom: 1px solid var(--cs-line);
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+body.cs-redesign .cs-tool-facts li {
+  display: grid;
+  grid-template-columns: 5.4rem 1fr;
+  gap: 12px;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: #33302b;
+}
+body.cs-redesign .cs-tool-facts .cs-tool-k {
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--cs-faint);
+  padding-top: 3px;
+}
+body.cs-redesign .cs-tool-facts .cs-tool-v { font-weight: 500; }
+body.cs-redesign .cs-tool-body p {
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--cs-muted);
+  margin: 0 0 0.8rem;
+}
+body.cs-redesign .cs-tool-body p:last-child { margin-bottom: 0; }
+body.cs-redesign .cs-tool-body strong { font-weight: 600; color: var(--cs-ink); }
+body.cs-redesign .cs-tools .cs-tool:nth-child(2) { --reveal-delay: 0.09s; }
+body.cs-redesign .cs-tools .cs-tool:nth-child(3) { --reveal-delay: 0.18s; }
+@media (max-width: 980px) {
+  body.cs-redesign .cs-tools { grid-template-columns: 1fr; }
+}
 
+/* ---------- MARQUEE PROOF band ---------- */
+body.cs-redesign .cs-proof {
+  max-width: var(--cs-read);
+  margin: 0 auto;
+  padding: 34px 34px;
+  background: #16130f;
+  border-radius: 12px;
+  color: #f6f3ee;
+}
+body.cs-redesign .cs-proof-lead {
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+  color: #fff;
+  margin: 0;
+}
+body.cs-redesign .cs-proof-lead strong { color: #fff; font-weight: 700; }
+body.cs-redesign .cs-proof-points {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 22px 0 0;
+  border-top: 1px solid rgba(255,255,255,0.14);
+  display: grid;
+  gap: 14px;
+}
+body.cs-redesign .cs-proof-points li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: #d9d4cc;
+}
+body.cs-redesign .cs-proof-points li::before {
+  content: "\2192";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--cs-accent);
+  font-weight: 700;
+}
+body.cs-redesign .cs-proof-points strong { color: #fff; font-weight: 600; }
+
+/* ---------- SCALE STRIP (small stat row under proof) ---------- */
+body.cs-redesign .cs-scale {
+  max-width: var(--cs-read);
+  margin: 28px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+body.cs-redesign .cs-scale div {
+  padding: 22px 22px;
+  border: 1px solid var(--cs-line);
+  border-radius: 10px;
+  background: #fff;
+}
+body.cs-redesign .cs-scale .cs-scale-num {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--cs-ink);
+  margin-bottom: 6px;
+}
+body.cs-redesign .cs-scale .cs-scale-label {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--cs-muted);
+}
+@media (max-width: 720px) {
+  body.cs-redesign .cs-scale { grid-template-columns: 1fr; }
+}
+
+/* ---- Scaffold helpers: TODO note + dashed image placeholder (outreach-tool.html) ---- */
+body.cs-redesign .cs-todo {
+  border: 1px dashed var(--cs-accent);
+  border-radius: 10px;
+  background: var(--cs-line-soft);
+  padding: 1.15rem 1.35rem;
+}
+body.cs-redesign .cs-todo .cs-todo-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cs-accent);
+  margin-bottom: 0.5rem;
+}
+body.cs-redesign .cs-todo p {
+  margin: 0;
+  color: var(--cs-muted);
+  font-style: italic;
+}
+body.cs-redesign .cs-img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 260px;
+  padding: 2rem;
+  border: 2px dashed var(--cs-line);
+  border-radius: 12px;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--cs-line-soft),
+    var(--cs-line-soft) 12px,
+    #fff 12px,
+    #fff 24px
+  );
+  color: var(--cs-faint);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+}

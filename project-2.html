@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>San Francisco's Homeless Response · Maanasa Sivashankar</title>
+  <title>San Francisco's Homeless Response &mdash; ASTRID &middot; Maanasa Sivashankar</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
+<body class="cs-redesign">
   <header class="site-header">
     <div class="container nav">
       <ul class="nav-links">
@@ -20,219 +20,314 @@
     </div>
   </header>
 
-  <main class="page container project-detail">
-    <header>
-      <a href="index.html#work" class="back-link">&larr; Back to work</a>
-      <h1 class="page-title">San Francisco's Homeless Response</h1>
-      <p class="page-lede">A cross-departmental design effort to reshape how San Francisco's homeless response system serves its most vulnerable residents.</p>
+  <main class="cs-main">
+    <!-- ============ 1 · HERO ============ -->
+    <header class="cs-hero container">
+      <figure class="cs-hero-media">
+        <img src="ASTRID.jpg" alt="ASTRID field workshop in session &mdash; Maanasa at a wall of sticky notes labeled SHELTER LENGTH OF STAY PROJECT, leading a participatory session with shelter users seated around the table." />
+      </figure>
+      <h1 class="cs-title">Coordinating care across a fragmented homeless-response system</h1>
+      <p class="cs-lede">How I designed ASTRID &mdash; a shared, cross-departmental data foundation and three tools &mdash; to help San Francisco's most vulnerable residents move from the streets into care.</p>
     </header>
 
-    <dl class="project-meta">
-      <div>
-        <dt>Client</dt>
-        <dd>Mayor's Office of Innovation, San Francisco</dd>
+    <!-- ============ 2 · META STRIP ============ -->
+    <div class="cs-meta container">
+      <div class="cs-meta-item">
+        <span class="cs-meta-label">Domain</span>
+        <span class="cs-meta-value">Public-sector service &amp; systems design</span>
       </div>
-      <div>
-        <dt>Role</dt>
-        <dd>Design Lead</dd>
+      <div class="cs-meta-item">
+        <span class="cs-meta-label">Timeline</span>
+        <span class="cs-meta-value">2023 &ndash; present</span>
       </div>
-      <div>
-        <dt>Year</dt>
-        <dd>2024&ndash;2025</dd>
+      <div class="cs-meta-item">
+        <span class="cs-meta-label">Role</span>
+        <span class="cs-meta-value">Design Lead</span>
       </div>
-    </dl>
+      <div class="cs-meta-item">
+        <span class="cs-meta-label">Team</span>
+        <span class="cs-meta-value">4-person team (data scientist, PM, project lead) across 4 city departments</span>
+      </div>
+    </div>
 
-    <section class="overview-grid" aria-label="Project overview">
-      <div class="overview-item">
-        <h2 class="overview-label">Challenge</h2>
-        <p class="overview-body">How do you coordinate care for people experiencing homelessness when seven city departments work with the same person, none of them can see what the others are doing, and the most vulnerable clients (10% of the unhoused population using 50% of all services) keep cycling through emergency services without ever moving toward stable care?</p>
-      </div>
-      <div class="overview-item">
-        <h2 class="overview-label">Solution</h2>
-        <p class="overview-body">I shifted the brief from a data integration problem to redesigning accountability. The work had four parts: a shared theory of change across departments, a reusable legal framework for cross-departmental data sharing, an integrated dataset (ASTRID) used through the Shared Priority List, and other field tools.</p>
-      </div>
-      <div class="overview-item">
-        <h2 class="overview-label">Outcome</h2>
-        <p class="overview-body">Two-thirds of the 15-client pilot cohort selected as the highest-acuity individuals on the Shared Priority List moved into housing, shelter, treatment, or case management within four months, with zero deaths and zero overdoses. <em class="text-accent">ASTRID is now the operational backbone of Mayor Lurie's Neighborhood Street Teams model</em>, integrating data across all seven city departments and running multiple iterations of the Shared Priority List beyond the initial pilot cohort.</p>
+    <!-- ============ 3 · CONTEXT ============ -->
+    <section class="cs-section">
+      <div class="cs-col cs-reveal">
+        <span class="cs-eyebrow">Context</span>
+        <h2 class="cs-heading">Eight street teams, four departments, no shared view of the client</h2>
+        <p>How do you coordinate care for people experiencing homelessness when multiple city departments work with the same person, none of them can see what the others are doing, and the most vulnerable clients keep cycling through emergency services without ever moving toward stable care?</p>
+        <p>Eight street-response teams operated across four city departments under overlapping mandates. And the highest-need clients &mdash; roughly <strong>10% of the unhoused population, using 50% of all services</strong> &mdash; kept churning through emergency response without moving toward stable care or housing.</p>
       </div>
     </section>
 
-    <figure class="figure-penske figure-project-hero">
-      <img src="ASTRID.jpg" alt="ASTRID field workshop in session &mdash; Maanasa at a wall of sticky notes labeled SHELTER LENGTH OF STAY PROJECT, leading a participatory session with shelter users seated around the table." />
-      <figcaption>Field workshop with shelter users on what keeps people experiencing homelessness in shelters versus on the streets.</figcaption>
-    </figure>
+    <!-- ============ 4 · THE PROBLEM ============ -->
+    <section class="cs-section">
+      <div class="cs-col cs-reveal">
+        <span class="cs-eyebrow">The Problem</span>
+        <h2 class="cs-heading">Everyone owned a slice of the client; no one owned the outcome</h2>
+        <p><strong>User problem:</strong> People living on the streets with complex health, housing, and resource needs had to navigate eligibility rules and team handoffs they could not manage themselves. The highest-need clients were repeatedly left on the streets because no single team could resolve their case end-to-end.</p>
+        <p><strong>Business problem:</strong> Eight street-response teams across four departments operated under overlapping mandates without a shared client view. Each team owned a slice of the same client's journey, and no one owned the outcome across the system, so resources kept getting spent without changing who actually got off the streets.</p>
+        <p>When I joined the innovation team in 2023, they were solving a <strong>data-integration problem</strong>. As a service designer, I pushed the team to reframe it: after six weeks of ride-alongs and care-coordination meetings, it was clear the real work wasn't plumbing data together &mdash; it was <strong>redesigning accountability</strong>. Each department was doing its best, but clients needed cross-departmental resources, and no one owned the outcome across teams.</p>
+      </div>
 
-    <section class="my-role">
-      <h3>My role</h3>
-      <p>Senior designer lead on a four-person team with a data scientist, a product manager, and a project lead. I led service design and strategic direction across four workstreams.</p>
+      <figure class="cs-figure cs-reveal">
+        <img src="projects-04.png" loading="lazy" alt="Street team fragmentation across four departments &mdash; Department of Emergency Management (HSOC, HEART), Department of Homelessness and Supportive Housing (HOT), Department of Public Health (POET, OCC/BN, OCC-SCRT Triage), and Fire Department (SCRT, SORT) &mdash; each running its own outreach and response teams with overlapping mandates and no shared view of the client." />
+        <figcaption>Eight street-response teams across four departments, each owning a slice of the same client's journey. No single team owned the path through.</figcaption>
+      </figure>
     </section>
 
-    <article class="project-content">
+    <!-- ============ 5 · RESEARCH — WHAT I FOUND ============ -->
+    <section class="cs-section">
+      <div class="cs-col cs-reveal">
+        <span class="cs-eyebrow">Research &mdash; what I found</span>
+        <h2 class="cs-heading">30+ ride-alongs, 45+ interviews, one pattern over and over</h2>
+        <p>I ran 30+ ride-alongs across DPH (Public Health), Fire, DEM (Emergency Management), and HSH (Homelessness &amp; Supportive Housing), plus 45+ interviews with field staff and leadership. Wherever possible I used existing open data to examine the cost of services to the city and the systems these teams operated within. The same pattern surfaced again and again.</p>
+      </div>
 
-      <h2>The problem</h2>
-      <p><strong>User problem:</strong> People living on the streets with complex health, housing, and resource needs had to navigate eligibility rules and team handoffs they could not manage themselves. The highest-need clients were repeatedly left on the streets because no single team could resolve their case end-to-end.</p>
-      <p><strong>Business problem:</strong> Eight street-response teams across four city departments operated under overlapping mandates without a shared client view. Each team owned a slice of the same client's journey, and no one owned the outcome across the system, so resources kept getting spent without changing who actually got off the streets.</p>
-      <p>When I joined the innovation team in 2023, they were solving a data integration problem. As a service designer, I pushed my team to really think deeply about the problems we are solving, what data, when integrated, will meet the needs of the clients we serve. As we worked with the departments that deliver services to people experiencing homelessness, it became apparent that a shared view of client data would be helpful. But after 6 weeks of rigorous research through street team ride-alongs and care-coordination meetings, it was clear the city was grappling with a complex issue. Each department was trying its best to support client needs, but clients need cross-departmental resources, and no one owned the client outcomes across teams.</p>
+      <blockquote class="cs-quote cs-reveal">Ride-alongs mostly ended with clients left on the street for one of four reasons: staff couldn't diagnose the need; the need was diagnosed but the client wasn't eligible; the client was eligible but the resource wasn't available; or the resource was available but the client wouldn't take it.</blockquote>
 
-      <blockquote class="project-callout">Data integration mattered, but we needed to first address where in the system the data would create the most leverage: which frontline workers, holding what information, would change client outcomes most directly.</blockquote>
+      <div class="cs-col cs-reveal">
+        <h3 class="cs-subhead">Theory-of-change workshops</h3>
+        <p>I was working with tough stakeholders who had to buy into taking on more work than regulation required. So I designed and facilitated six workshops, each grounded in real client stories, with leaders from all four departments. The sessions produced the first unified street-response goal jointly held by DPH, Fire, DEM, and HSH &mdash; with warm-handoff protocols and named ownership for the transitions nobody had been accountable for before. I also built a logic model mapping each department's inputs, activities, outputs, and outcomes up to that shared top-line goal.</p>
+      </div>
 
-      <p>Clients have complex health, housing, and resource needs and must navigate many eligibility criteria and resource-matching efforts to access services easily. Most high-need clients on the streets have very little ability to help themselves access these resources.</p>
+      <div class="cs-figure-grid cs-reveal">
+        <figure class="cs-figure">
+          <img src="projects-06.png" loading="lazy" alt="Four-panel mapping titled 'Matching specific outcomes by department' &mdash; each panel traces how inputs, activities, and outputs from DPH, HSH, Fire, and DEM connect through referrals (to SCRT, HEART) into department-specific outcome notes." />
+          <figcaption>Department-by-department view: how the same outputs map to different referral paths.</figcaption>
+        </figure>
+        <figure class="cs-figure">
+          <img src="projects-07.png" loading="lazy" alt="Workshop diagram titled 'Creating cross-departmental goals to align stakeholders' &mdash; colored DPH, HSH, Fire, and DEM blocks connected by referrals and warm handoffs to outcome boxes (stable health, off the streets, stable housing) and a final shared goal." />
+          <figcaption>The working diagram from the theory-of-change workshop.</figcaption>
+        </figure>
+      </div>
 
-      <blockquote class="project-callout">Departments struggled to find ways to prioritize clients, reserve resources for those who need extra support, and successfully help them get off the streets and into stable care or housing. This often left the most high-need clients on the streets.</blockquote>
+      <div class="cs-col cs-reveal">
+        <h3 class="cs-subhead">Service blueprint, built with frontline staff</h3>
+        <p>A service blueprint, built with frontline staff, traced the client journey across four departments and named every owner-less handoff. I built these maps on walls with city leaders so they felt ownership over the artifact, and brought frontline staff into the Mayor's office to share the struggles they face on the streets. The map turned an abstract coordination problem into something city leaders could see in front of them.</p>
+      </div>
 
-      <figure>
-        <img src="projects-04.png" alt="Street team fragmentation across four departments — Department of Emergency Management (HSOC, HEART), Department of Homelessness and Supportive Housing (HOT), Department of Public Health (POET, OCC/BN, OCC-SCRT Triage), and Fire Department (SCRT, SORT) — each running its own outreach and response teams with overlapping mandates and no shared view of the client." />
-        <figcaption>Eight street response teams across four departments, each owning a slice of the same client&apos;s journey. No single team owned the path through.</figcaption>
-      </figure>
-
-      <h2>Methods used</h2>
-
-      <h3>Mixed-method research</h3>
-      <p>30+ ride-alongs across DPH (Department of Public Health), Fire, DEM (Department of Emergency Management), and HSH (Homelessness and Supportive Housing), plus 45+ interviews with field staff and leadership, surfaced the same pattern over and over. Wherever possible, I used existing open data to examine the service costs to the city and the systems within which these teams operated.</p>
-
-      <blockquote class="project-callout">Ride-alongs mostly ended with homeless clients being left on the street for one of four reasons: staff weren't able to diagnose client need; need was diagnosed but the client wasn't eligible for available resources; the client was eligible but the resource wasn't available; or the resource was available but the client wouldn't take it.</blockquote>
-
-      <p>Interviews with staff and department leaders revealed resource gaps across the city and the skewed way resource allocation operated in 2024.</p>
-
-      <h3>Theory of change workshops</h3>
-      <p>I was working with tough stakeholders who had to buy into taking on more work than regulation required of them. Departments aren't mandated to have oversight of handoffs or to take ownership of this process; it took a lot of convincing.</p>
-
-      <p>I designed and facilitated six workshops, each grounded in real client stories, with leaders from all four departments. The sessions produced the first unified street-response goal jointly held by DPH, Fire, DEM, and HSH. The sessions also helped us meet other department leaders and see their client struggles more clearly. The departments appreciated being able to share with one another and work with peers who sometimes face the same struggles with homeless individuals.</p>
-
-      <p>Prior coordination efforts had focused on housing placement (Coordinated Entry) or specific population segments; this was the first time a shared operational goal was defined across the street-response services themselves, with warm-handoff protocols and named ownership for the transitions nobody had been accountable for before.</p>
-
-      <blockquote class="project-callout">Beyond establishing the top-line goal, I also created a logic model for our operations to map the inputs, activities, outputs, and outcomes by department to ensure they roll up to our top-line goal.</blockquote>
-
-      <figure class="figure-process">
-        <img src="projects-06.png" alt="Four-panel mapping titled 'Matching specific outcomes by department' — each panel traces how inputs, activities, and outputs from DPH, HSH, Fire, and DEM connect through referrals (to SCRT, HEART) into department-specific outcome notes." />
-        <figcaption>Department-by-department view: how the same outputs map to different referral paths.</figcaption>
-      </figure>
-
-      <figure class="figure-process">
-        <img src="projects-07.png" alt="Workshop diagram titled 'Creating cross-departmental goals to align stakeholders' — colored DPH, HSH, Fire, and DEM blocks connected by referrals and warm handoffs to outcome boxes (stable health, off the streets, stable housing) and a final shared goal." />
-        <figcaption>The working diagram from the theory-of-change workshop.</figcaption>
-      </figure>
-
-      <h3>Service blueprint</h3>
-      <p>A service blueprint, built with frontline staff, traced the client journey across four departments and named every owner-less handoff. The map turned an abstract coordination problem into something city leaders could see in front of them. I created these maps on walls with the city leaders so they felt ownership over the artifact and bought into using it. I also brought frontline staff into the Mayor's office to share rich stories about the struggles they face on the streets. The service blueprint helped us see the client drop-offs more clearly and worked as a starting point for us to really iterate on a future state together.</p>
-
-      <figure class="figure-penske">
-        <img src="astrid-workshop-blueprint.jpg" alt="Physical wall blueprint built up with colored sticky notes mapping disruptive behavior and drug-overdose entry points through SORT, MEDICAL, BEHAVIORAL, and ASSESSMENT lanes into next-step actions (urgent care, 5150 hold, EMS6, transport to hospital) and follow-up outcomes by team (OCC, HOT, EMS6, POET)." />
+      <figure class="cs-figure cs-reveal">
+        <img src="astrid-workshop-blueprint.jpg" loading="lazy" alt="Physical wall blueprint built up with colored sticky notes mapping disruptive-behavior and drug-overdose entry points through SORT, MEDICAL, BEHAVIORAL, and ASSESSMENT lanes into next-step actions (urgent care, 5150 hold, EMS6, transport to hospital) and follow-up outcomes by team (OCC, HOT, EMS6, POET)." />
         <figcaption>Working service blueprint with department leads: mapping entry points, assessment, next steps, and follow-up across teams.</figcaption>
       </figure>
+    </section>
 
-      <blockquote class="project-callout">The map turned an abstract coordination problem into something city leaders could see in front of them with real client impact.</blockquote>
+    <!-- ============ 6 · THREE USERS, THREE NEEDS ============ -->
+    <section class="cs-section">
+      <div class="cs-col cs-reveal">
+        <span class="cs-eyebrow">Three users, three needs</span>
+        <h2 class="cs-heading">The same broken coordination hit three groups differently</h2>
+        <p>A shared view of client data would help &mdash; but only if it reached the right person at the right decision. Three groups each needed a different slice of it.</p>
+      </div>
 
-      <h3>Working through legal barriers (not a method but a skill!)</h3>
-      <p>Sharing client information between city departments runs into privacy laws: HIPAA, plus a federal rule that protects substance-use records. I drafted the first version of the legal agreement that would let departments share lawfully; the data lead and the City Attorney's office finalized it. The result is the Homeless Multidisciplinary Data Trust (HMDT), a one-time legal setup that future city projects can reuse instead of starting from scratch.</p>
+      <div class="cs-needs cs-col-wide">
+        <article class="cs-need cs-reveal">
+          <span class="cs-need-group">Outreach / field worker</span>
+          <p class="cs-need-primary">&ldquo;When I meet a client on the street, I want their history and resource eligibility right there at the point of contact, so I can act instead of starting from zero.&rdquo;</p>
+          <ul class="cs-need-support">
+            <li>Needs to know who has worked with this client before, and what they're eligible for.</li>
+            <li>Has little in-the-moment decision power &mdash; the real call happens a level up.</li>
+          </ul>
+        </article>
 
-      <h3>Working sessions to get staff using the data</h3>
-      <p>Once we integrated the data, we made a real effort to ensure the teams doing this work had access and could use it effectively. A two-week working session in September 2024 brought together data stewards from across city departments to iterate on the integrated dataset in real time. The idea was to help the data analyst really start owning this dataset and using it to drive client impact.</p>
+        <article class="cs-need cs-reveal">
+          <span class="cs-need-group">Manager / command lead</span>
+          <p class="cs-need-primary">&ldquo;When a frontline worker calls me about a client, I want to make the coordination and resourcing decision across departments, so the right resource actually gets reserved.&rdquo;</p>
+          <ul class="cs-need-support">
+            <li>This is where field decisions actually get made.</li>
+            <li>Needs to see the client across departments to prioritize and assign owners.</li>
+          </ul>
+        </article>
 
-      <blockquote class="project-callout">It produced more than a dataset: it built working relationships between data leads across departments that subsequent MOI engagements continue to draw on.</blockquote>
+        <article class="cs-need cs-reveal">
+          <span class="cs-need-group">Mayor's office / policy</span>
+          <p class="cs-need-primary">&ldquo;When I set policy and answer for outcomes, I want the operational picture across departments and defensible numbers, so I can direct resources and show progress.&rdquo;</p>
+          <ul class="cs-need-support">
+            <li>Needs what activities teams run, what outcomes follow, and how to measure impact.</li>
+            <li>Needs numbers that hold up under public and funder scrutiny.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
-      <aside class="evaluation-note">
-        <p>Four evaluation methods sit behind this work. <strong>Process evaluation</strong> through ride-alongs and frontline interviews surfaced where the system was breaking. <strong>A theory of change</strong> built jointly with department leaders aligned ownership across four departments around a shared outcome. <strong>Realist evaluation</strong> asked what works for whom in what context, since the eight street-response teams operated under different conditions. <strong>Contribution analysis</strong> credits ASTRID for the outcomes while accounting for parallel city efforts.</p>
-      </aside>
+    <!-- ============ 7 · THE FOUNDATION: ASTRID + HMDT ============ -->
+    <section class="cs-section">
+      <div class="cs-col cs-reveal">
+        <span class="cs-eyebrow">The Foundation</span>
+        <h2 class="cs-heading">ASTRID &mdash; and the legal trust that made it lawful</h2>
+        <p><strong>ASTRID is the integrated, cross-departmental dataset</strong> &mdash; the plumbing. It brings each department's slice of a client into one shared view, so the same person is finally legible across teams that had never been able to see one another's records.</p>
+        <p>But before a single field could be joined, the sharing had to be lawful. Client information between city departments runs into privacy law: HIPAA, plus a federal rule protecting substance-use records. I drafted the first version of the legal agreement that would let departments share lawfully; the data lead and the City Attorney's office finalized it.</p>
+        <p>The result is the <strong>Homeless Multidisciplinary Data Trust (HMDT)</strong> &mdash; a reusable legal framework and one-time setup that future city projects reuse instead of starting from scratch. It's the invisible infrastructure that makes everything downstream possible: legal groundwork that keeps paying off long after this project.</p>
+      </div>
 
-      <h2>Interventions</h2>
+      <div class="cs-note cs-col cs-reveal">
+        <span class="cs-note-label">Reusable infrastructure</span>
+        <p>Once we integrated the data, a two-week working session in September 2024 brought data stewards from across departments together to iterate on the dataset in real time. It produced more than a dataset &mdash; it built working relationships between department data leads that later Mayor's Office of Innovation engagements still draw on.</p>
+      </div>
+    </section>
 
-      <p>We built three distinct artifacts: an outreach worker app, the policy maker dashboard, and the Shared Priority List.</p>
+    <!-- ============ 8 · ★ THREE TOOLS OF DIFFERENT FIDELITIES (CENTERPIECE) ============ -->
+    <section class="cs-section">
+      <div class="cs-col cs-reveal">
+        <span class="cs-eyebrow">The Interventions</span>
+        <h2 class="cs-heading">Three tools, three deliberately different fidelities</h2>
+        <p>On top of the ASTRID foundation I built three tools &mdash; each at a deliberately different fidelity, matched to its user and the decision it had to support. The point wasn't to polish everything equally; it was to invest craft where the decision actually happens.</p>
+      </div>
 
-      <h3>The outreach worker app</h3>
-      <p>The outreach worker app allowed city staff to see integrated data, client history, client resource eligibility, and who had worked with the client in the past, all in the field. The assumption was that this would save them a ton of time and help them act quickly.</p>
+      <div class="cs-tools cs-col-wide">
+        <article class="cs-tool cs-reveal">
+          <span class="cs-tool-type">Product</span>
+          <h3 class="cs-tool-name">Policy-maker dashboard</h3>
+          <ul class="cs-tool-facts">
+            <li><span class="cs-tool-k">User</span><span class="cs-tool-v">Mayor's office &amp; execs</span></li>
+            <li><span class="cs-tool-k">Fidelity</span><span class="cs-tool-v">Higher-fidelity, ongoing</span></li>
+          </ul>
+          <div class="cs-tool-body">
+            <p><strong>What it does:</strong> Gives the Mayor's office a high-level picture of the activities teams run, the outcomes those activities produce, and the impact across departments.</p>
+            <p><strong>Why:</strong> Policy and resourcing decisions are made here, in public, under scrutiny &mdash; so the surface is ongoing and built to last.</p>
+          </div>
+        </article>
 
-      <figure class="figure-penske">
-        <img src="rapid-access-draft.jpg" alt="Earlier draft wireframe for the Rapid Access to Cross-Departmental Client Data prototype, with Jane Doe client card on the left and point-of-contact and encounter summary tables in the middle. Three callouts (clear points of contact, high mental health acuity, EMS frequency signaling high system utilization) and a color legend mapping data to DEM, HSH, Public Health, and Fire." />
-        <figcaption>Earlier draft of the Rapid Access prototype.</figcaption>
-      </figure>
+        <article class="cs-tool cs-reveal">
+          <span class="cs-tool-type">Product</span>
+          <h3 class="cs-tool-name">Outreach-worker tool</h3>
+          <ul class="cs-tool-facts">
+            <li><span class="cs-tool-k">User</span><span class="cs-tool-v">Field outreach workers</span></li>
+            <li><span class="cs-tool-k">Fidelity</span><span class="cs-tool-v">Rapid prototype (days)</span></li>
+          </ul>
+          <div class="cs-tool-body">
+            <p><strong>What it does:</strong> Surfaced cross-departmental client data &mdash; history, eligibility, prior contacts &mdash; at the point of contact in the field.</p>
+            <p><strong>Why:</strong> Built in days with Lovable, its job was to <strong>test a hypothesis</strong>, not to ship a polished product. The use patterns did the arguing.</p>
+          </div>
+        </article>
 
-      <blockquote class="project-callout">While we iterated and tested the solution, it became clear that frontline workers, although benefiting from having this information, have very little decision-making capacity in the field.</blockquote>
+        <article class="cs-tool cs-reveal">
+          <span class="cs-tool-type">Service design</span>
+          <h3 class="cs-tool-name">Shared Priority List</h3>
+          <ul class="cs-tool-facts">
+            <li><span class="cs-tool-k">User</span><span class="cs-tool-v">Weekly cross-dept meeting</span></li>
+            <li><span class="cs-tool-k">Fidelity</span><span class="cs-tool-v">Process / artifact, not UI</span></li>
+          </ul>
+          <div class="cs-tool-body">
+            <p><strong>What it does:</strong> The working list of the highest-acuity clients, worked through weekly against 5 structured prompts: next steps, coordination, required resources, measuring success, and case review.</p>
+            <p><strong>Why:</strong> The value is the coordination ritual, not a polished app &mdash; so it stayed a service.</p>
+          </div>
+        </article>
+      </div>
 
-      <p>Decisions were made at the managerial level, and changing that culture required us to think beyond an app. So we shifted the app's main users to the team managers and created a client data dashboard instead, allowing senior leaders to see clients and make decisions when frontline workers called them.</p>
-
-      <aside class="ai-callout">
-        <span class="ai-callout-label">AI tooling</span>
-        <p>Building a field tool from scratch traditionally takes weeks. To ship fast, working prototypes without traditional product-design or dev experience, I used AI tools. I used Lovable to build the first iteration of the field tool within days, fast enough to put a real prototype in outreach workers' hands and let the use patterns disprove the original hypothesis.</p>
-      </aside>
-
-      <figure>
-        <img src="projects-05.png" alt="Three mobile wireframe mockups for the Response Team tool: a Client Look Up form, a Client Details screen showing housing info and client behavioral history, and a second Client Details screen showing point of contact, encounter summary, and encounter history." />
-        <figcaption>The Response Team's tool surfaced cross-departmental client data at the point of contact.</figcaption>
-      </figure>
-
-      <figure>
-        <img src="projects-08.png" alt="Two artifacts side by side from early prototype testing: an annotated wireframe printout marked up with red and yellow sticky notes (left), and a paper prototype on a cork board built up with hand-written sticky notes from an outreach-worker review session (right)." />
-        <figcaption>Prototyping and testing ideas early: annotated wireframes alongside a paper prototype, after a review session with outreach workers across three departments.</figcaption>
-      </figure>
-
-      <h3>Policy maker tool</h3>
-      <p>This high-level dashboard gave the Mayor's office a more detailed picture of operations across departments: what activities the teams were running, what outcomes those activities produced, and how to effectively measure impact. The tool is a work in progress and received a lot of pushback.</p>
-
-      <figure>
-        <img src="civic-4-data-view.png" alt="ASTRID Client Data View for Jane Doe showing three insight banners (strength of clear points of contact, high mental health acuity, EMS frequency above threshold) above six data cards: overview, housing data, client history, shelter and ER history, points of contact, and encounter history. Color legend maps data sources to DEM, HSH, DPH, and Fire." />
+      <!-- Policy-maker dashboard evidence -->
+      <div class="cs-col cs-reveal">
+        <h3 class="cs-subhead">Policy-maker dashboard</h3>
+        <p>The high-level dashboard gave the Mayor's office a more detailed picture of operations across departments &mdash; what activities teams were running, what outcomes those produced, and how to measure impact.</p>
+      </div>
+      <figure class="cs-figure cs-reveal">
+        <img src="civic-4-data-view.png" loading="lazy" alt="ASTRID Client Data View for Jane Doe showing three insight banners (strength of clear points of contact, high mental health acuity, EMS frequency above threshold) above six data cards: overview, housing data, client history, shelter and ER history, points of contact, and encounter history. Color legend maps data sources to DEM, HSH, DPH, and Fire." />
         <figcaption>Rapid Access to Cross-Departmental Client Data: the manager-facing dashboard now central to the Lurie Administration's Neighborhood Street Teams.</figcaption>
       </figure>
 
-      <h3>The Shared Priority List</h3>
-      <p>The Shared Priority List is the working list of clients with the highest cross-departmental encounters and the most complex resource and health needs: people street teams have seen repeatedly for six months or longer with no visible change in their situation. The list let four departments agree on who needed coordinated care most, ending the recurring debate over whose clients mattered most.</p>
+      <!-- Outreach-worker tool evidence -->
+      <div class="cs-col cs-reveal">
+        <h3 class="cs-subhead">Outreach-worker tool</h3>
+        <p>The outreach-worker tool put integrated client data &mdash; history, resource eligibility, and prior contacts &mdash; in field workers' hands, on the assumption it would help them act faster. Testing disproved that: field workers have little in-the-moment decision power, so the primary user shifted to their managers.</p>
+      </div>
+      <figure class="cs-figure cs-reveal">
+        <img src="projects-05.png" loading="lazy" alt="Three mobile wireframe mockups for the Response Team tool: a Client Look Up form, a Client Details screen showing housing info and client behavioral history, and a second Client Details screen showing point of contact, encounter summary, and encounter history." />
+        <figcaption>The Response Team's tool surfaced cross-departmental client data at the point of contact.</figcaption>
+      </figure>
 
-      <figure class="figure-process">
-        <img src="projects-03.png" alt="Working session board titled 'Shared Priority List working session' with Jane Doe's acuity score card on the left and five columns of sticky-note responses for Next steps for Jane Doe, Coordination, Required resources, Measuring success, and Case review process." />
+      <!-- Shared Priority List evidence -->
+      <div class="cs-col cs-reveal">
+        <h3 class="cs-subhead">Shared Priority List</h3>
+        <p>The Shared Priority List is the working list of clients with the highest cross-departmental encounters and the most complex resource and health needs &mdash; people street teams have seen repeatedly for six months or longer with no visible change. It let four departments agree on who needed coordinated care most, ending the recurring debate over whose clients mattered. Before it, coordination meetings ran long and open-ended; I added a structured template of five prompts, so every weekly review covered the same ground for every client.</p>
+      </div>
+      <figure class="cs-figure cs-reveal">
+        <img src="projects-03.png" loading="lazy" alt="Working session board titled 'Shared Priority List working session' with Jane Doe's acuity score card on the left and five columns of sticky-note responses for Next steps for Jane Doe, Coordination, Required resources, Measuring success, and Case review process." />
         <figcaption>The Shared Priority List working session that produced the structured prompts. Sticky-note responses from department leads working through one client together.</figcaption>
       </figure>
-
-      <p>I designed and ran a future-state operations workshop with frontline workers in the room, asking questions like "what would allow you to get clients successfully off the streets and into care or housing."</p>
-
-      <blockquote class="project-callout">I ran care-coordination design workshops and helped the teams align on an operational flow. We also ran a test pilot for four months with 15 clients to iterate on the operations until we started seeing progress with these high-priority clients.</blockquote>
-
-      <p>Before the Shared Priority List, coordination meetings ran long and open-ended. I added a structured template, five prompts (next steps, coordination, required resources, measuring success, case review process), so every weekly review covered the same ground for every client. The list also unlocked something that hadn't been possible before: custom-designed resource delivery for clients whose needs didn't fit standard pathways. It is now central to the Lurie Administration's Neighborhood Street Teams.</p>
-
-      <figure>
-        <img src="civic-3-dashboard.png" alt="ASTRID Client View dashboard for sample client Jane Doe showing SPL Acuity Score of 16, an encounter counts strip (287 unsheltered days, 12 SCRT contacts, 23 EMS contacts, 4 5150 holds, 3 non-fatal overdoses, 18 ER visits, 5 hospital stays), and five coordination prompts: next steps, coordination, required resources, measuring success, and case review process." />
-        <figcaption>Shared Priority List client view: structured prompts the weekly coordination meeting works through.</figcaption>
+      <figure class="cs-figure cs-reveal">
+        <img src="civic-3-dashboard.png" loading="lazy" alt="ASTRID Client View dashboard for sample client Jane Doe showing SPL Acuity Score of 16, an encounter counts strip (287 unsheltered days, 12 SCRT contacts, 23 EMS contacts, 4 5150 holds, 3 non-fatal overdoses, 18 ER visits, 5 hospital stays), and five coordination prompts: next steps, coordination, required resources, measuring success, and case review process." />
+        <figcaption>Shared Priority List client view: the structured prompts the weekly coordination meeting works through.</figcaption>
       </figure>
+    </section>
 
-      <blockquote class="project-callout">ASTRID is now the operational backbone of Mayor Lurie's Neighborhood Street Teams model, and was selected for the largest grant Bloomberg Philanthropies has ever awarded a city innovation office.</blockquote>
+    <!-- ============ 9 · THE FIDELITY DECISION ============ -->
+    <section class="cs-section">
+      <div class="cs-col cs-reveal">
+        <span class="cs-eyebrow">The Fidelity Decision</span>
+        <h2 class="cs-heading">Fidelity followed the decision, not the user closest to the street</h2>
+        <p>The field tool was built fast and low-fidelity on purpose &mdash; to test, and ultimately disprove, the assumption that putting data in field workers' hands would let them act faster. It turned out they had little decision power in the field; the decisions lived with managers. So I invested higher fidelity in the manager and policy surfaces, and kept the Shared Priority List a <strong>service, not an app</strong>.</p>
+      </div>
+    </section>
 
-      <h2>Outcomes</h2>
+    <!-- ============ 10 · IMPACT ============ -->
+    <section class="cs-section">
+      <div class="cs-col cs-reveal">
+        <span class="cs-eyebrow">Impact</span>
+        <h2 class="cs-heading">What the integrated system did that seven disconnected ones couldn't</h2>
+        <p>Across 15 of the highest-acuity clients in a four-month pilot cohort &mdash; deliberately small: focused enough for frontline staff to give each client real attention, large enough for breakdowns to surface.</p>
+      </div>
 
-      <p>Across 15 of the highest-acuity clients in the pilot cohort, the integrated system did what seven disconnected ones could not.</p>
-
-      <div class="stat-row">
-        <div class="stat">
-          <span class="stat-num">2/3</span>
-          <span class="stat-label">into housing, shelter, treatment, or case management</span>
+      <div class="cs-metrics cs-col-wide">
+        <div class="cs-metric cs-reveal">
+          <span class="cs-metric-figure">2/3</span>
+          <span class="cs-metric-label">of the 15 highest-acuity pilot clients moved into housing, shelter, treatment, or case management within four months</span>
         </div>
-        <div class="stat">
-          <span class="stat-num">0</span>
-          <span class="stat-label">deaths and overdoses in the pilot cohort</span>
+        <div class="cs-metric cs-reveal">
+          <span class="cs-metric-figure">0</span>
+          <span class="cs-metric-label">deaths and overdoses in the pilot cohort</span>
         </div>
-        <div class="stat">
-          <span class="stat-num">&minus;50%</span>
-          <span class="stat-label">hospital transports</span>
+        <div class="cs-metric cs-reveal">
+          <span class="cs-metric-figure">&minus;50%</span>
+          <span class="cs-metric-label">hospital transports</span>
         </div>
       </div>
 
-      <p>The cohort was deliberately small: focused enough for frontline staff to give each client real attention, large enough for breakdowns to surface. Subsequent iterations of the Shared Priority List have extended this work beyond the pilot, and the data portal now integrates information across all seven city departments.</p>
+      <div class="cs-proof cs-col cs-reveal">
+        <p class="cs-proof-lead">ASTRID is now the <strong>operational backbone of Mayor Lurie's Neighborhood Street Teams model</strong>.</p>
+        <ul class="cs-proof-points">
+          <li>Cited as foundational in the <strong>March 2025 Executive Directive on homelessness</strong>.</li>
+          <li>Selected for a <strong>3-year, $7M Bloomberg Philanthropies partnership</strong> &mdash; the largest grant ever awarded to a city innovation office.</li>
+        </ul>
+      </div>
 
-      <p>What ASTRID contributed: the cross-departmental coordination structures (warm-handoff protocols, named-owner assignments), the HMDT legal framework for data sharing, the integrated dataset and Shared Priority List methodology, and the operational dashboards now used across participating departments.</p>
+      <div class="cs-scale cs-col cs-reveal">
+        <div>
+          <span class="cs-scale-num">16,000</span>
+          <span class="cs-scale-label">unhoused San Franciscans served</span>
+        </div>
+        <div>
+          <span class="cs-scale-num">125,000</span>
+          <span class="cs-scale-label">street encounters integrated across departments</span>
+        </div>
+        <div>
+          <span class="cs-scale-num">7 depts &middot; 120+ users</span>
+          <span class="cs-scale-label">ASTRID 2.0 now spans all seven city departments</span>
+        </div>
+      </div>
+    </section>
 
-      <ul>
-        <li>ASTRID became the operational backbone of the Lurie Administration's Neighborhood Street Teams.</li>
-        <li>Cited as foundational in Mayor Lurie's March 2025 Executive Directive on homelessness.</li>
-        <li>Selected for a 3-year, $7M Bloomberg Philanthropies partnership.</li>
-      </ul>
+    <!-- ============ 11 · LEARNINGS ============ -->
+    <section class="cs-section">
+      <div class="cs-col cs-reveal">
+        <span class="cs-eyebrow">Learnings</span>
+        <h2 class="cs-heading">What I'd carry forward</h2>
+        <ul class="cs-learnings">
+          <li class="cs-reveal"><span class="cs-num">01</span><p>Reframing from data integration to accountability was the real unlock. The plumbing mattered, but the leverage came from asking who owned the outcome &mdash; not which datasets to merge.</p></li>
+          <li class="cs-reveal"><span class="cs-num">02</span><p>Getting leaders to co-build the artifact on the wall created ownership. When department chiefs drew the blueprint themselves, they bought into using it.</p></li>
+          <li class="cs-reveal"><span class="cs-num">03</span><p>Match tool fidelity to where the decision actually happens. A fast, disposable prototype in the field was worth more than a polished app aimed at people who couldn't act on it.</p></li>
+          <li class="cs-reveal"><span class="cs-num">04</span><p>Legal groundwork is reusable infrastructure, not overhead. The HMDT was a one-time cost that every future cross-department project can now build on.</p></li>
+        </ul>
+      </div>
+    </section>
 
-
-      <section class="project-context">
-        <h3>Context</h3>
-        <p><strong>Stakeholders.</strong> Mayor's Office of Innovation, department chiefs, outreach workers and paramedics. Core partners: Public Health, Fire, Emergency Management, Homelessness and Supportive Housing &mdash; later joined by HSA (Human Services Agency), Police, and Public Works in ASTRID 2.0.</p>
-        <p><strong>Funding.</strong> Bloomberg Philanthropies and Johns Hopkins University.</p>
-        <p><strong>Scale.</strong> 16,000 unhoused San Franciscans served; 191 highest-acuity individuals identified. The pilot integrated 125,000 street encounters across four departments; ASTRID 2.0 now integrates data across all seven departments and 120+ users.</p>
-        <p><strong>Timeline.</strong> 2023 &ndash; Present.</p>
-      </section>
-    </article>
+    <!-- ============ 12 · NEXT PROJECT ============ -->
+    <a href="project-3.html" class="cs-next">
+      <div class="container cs-next-inner">
+        <span class="cs-next-label">Next project</span>
+        <span class="cs-next-title">Penske Truck Leasing <span class="cs-next-arrow">&rarr;</span></span>
+      </div>
+    </a>
   </main>
 
   <footer class="site-footer">
