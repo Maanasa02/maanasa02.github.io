@@ -40,3 +40,11 @@ challenge.png
 # Node manifests (only existed for screenshots/ tooling, which is itself ignored)
 package.json
 package-lock.json
+
+# Adventures — a private gift page. Real footage stays local and is NEVER
+# committed to this public Pages repo. Only the demo clips are tracked.
+adventures/videos/*
+!adventures/videos/example-*.webm
+adventures/posters/*
+!adventures/posters/.gitkeep
+adventures/adventures.generated.js
