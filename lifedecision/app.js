@@ -413,9 +413,16 @@
   panelToggle('rank-toggle', 'rank-body');
 
   var tb = document.getElementById('theme');
+  var THEME = 'lifedecision.theme';
+  var saved_theme = null;
+  try { saved_theme = localStorage.getItem(THEME); } catch (e) {}
+  document.documentElement.setAttribute('data-theme', saved_theme === 'dark' ? 'dark' : 'light');
   tb.addEventListener('click', function () {
     var dark = document.documentElement.getAttribute('data-theme') === 'dark';
-    document.documentElement.setAttribute('data-theme', dark ? 'light' : 'dark');
+    var next = dark ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem(THEME, next); } catch (e) {}
+    if (window.MapView.retheme) window.MapView.retheme(next);
   });
   render();
 })();

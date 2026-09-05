@@ -16,7 +16,15 @@
 
   /* ---------------- Leaflet backend ---------------- */
   function Leafy() {
-    var map, layer = {}, self = {};
+    var map, layer = {}, base = null, self = {};
+    function tiles(mode) {
+      if (base) map.removeLayer(base);
+      base = L.tileLayer('https://{s}.basemaps.cartocdn.com/' +
+        (mode === 'dark' ? 'dark_all' : 'voyager') + '/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd', maxZoom: 20
+      }).addTo(map);
+    }
     self.name = 'carto';
     self.init = function () {
       host.innerHTML = '<div id="lmap"></div>';
@@ -24,14 +32,7 @@
         worldCopyJump: true, zoomControl: false, minZoom: 2, maxZoom: 14,
         scrollWheelZoom: true
       }).setView([25, 10], 2);
-      var dark = matchMedia('(prefers-color-scheme: dark)').matches &&
-                 document.documentElement.getAttribute('data-theme') !== 'light' ||
-                 document.documentElement.getAttribute('data-theme') === 'dark';
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/' + (dark ? 'dark_all' : 'light_all') +
-                  '/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        subdomains: 'abcd', maxZoom: 20
-      }).addTo(map);
+      tiles(document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
     };
     self.setDots = function (list) {
       Object.keys(layer).forEach(function (k) { map.removeLayer(layer[k]); });
@@ -59,6 +60,7 @@
     };
     self.reset = function () { map.closePopup(); map.flyTo([25, 10], 2, { duration: reduced() ? 0.2 : 1.6 }); current = null; };
     self.zoomBy = function (f) { if (f < 1) map.zoomIn(1); else map.zoomOut(1); };
+    self.retheme = function (mode) { tiles(mode); };
     self.invalidate = function () { setTimeout(function () { map.invalidateSize(); }, 60); };
     return self;
   }
@@ -275,6 +277,7 @@
   api.reset = function () { backend.reset(); };
   api.zoomBy = function (f) { if (backend.zoomBy) backend.zoomBy(f); };
   api.invalidate = function () { if (backend.invalidate) backend.invalidate(); };
+  api.retheme = function (mode) { if (backend.retheme) backend.retheme(mode); };
   api.backend = function () { return backend && backend.name; };
   api.current = function () { return current; };
 })();
