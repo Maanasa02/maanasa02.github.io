@@ -3,40 +3,39 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Where next — ranking the places</title>
+<title>Where next</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%AD%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<button class="themebtn" id="theme" type="button">Dark</button>
 <div class="wrap">
 
 <header class="top">
   <h1>Where next</h1>
-  <p class="lede">Seventy-five places that let an Indian citizen immigrate, ranked against what
-  we actually care about. Every row shows the reasons behind its position. Move the sliders to
-  argue with the ranking.</p>
-  <p class="meta">Researched 5 September 2026 · 26 cities studied in depth, 49 screened only ·
-  Profile: H-1B service designer, partner on H-4, one dog (Monet)</p>
+  <span class="meta">75 places · researched Sept 2026</span>
+  <button class="themebtn" id="theme" type="button" title="Switch theme" aria-label="Switch theme">
+    <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false">
+      <circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/>
+      <path d="M8 1.5 A6.5 6.5 0 0 1 8 14.5 Z" fill="currentColor"/>
+    </svg>
+  </button>
 </header>
 
-<section class="panel" aria-labelledby="wh">
-  <h2 id="wh">What matters to us</h2>
-  <p class="sub">Each slider is a weight from 0 to 5. The ranking and the score bars update as you move them.</p>
-  <div class="weights" id="weights"></div>
-  <div class="filters">
-    <label for="search" class="visually-hidden" style="position:absolute;left:-9999px">Search places</label>
-    <input id="search" type="search" placeholder="Search city or country…" autocomplete="off">
-    <button class="chipbtn" id="f-yours" type="button" aria-pressed="false">Only my original list</button>
-    <button class="chipbtn" id="f-deep" type="button" aria-pressed="false">Only deeply researched</button>
-    <button class="chipbtn" id="f-dog" type="button" aria-pressed="false">Hide where Monet is banned</button>
-    <span class="count" id="count" aria-live="polite"></span>
-  </div>
-</section>
+<h2 class="vh">How important is each thing to us</h2>
+<div class="bar-controls" id="controls"></div>
+
+<div class="filters">
+  <label for="search" class="vh">Search places</label>
+  <input id="search" type="search" placeholder="Search…" autocomplete="off">
+  <button class="chipbtn" id="f-yours" type="button" aria-pressed="false">My list</button>
+  <button class="chipbtn" id="f-deep" type="button" aria-pressed="false">Researched</button>
+  <button class="chipbtn" id="f-dog" type="button" aria-pressed="false">Monet can come</button>
+  <span class="count" id="count" aria-live="polite"></span>
+</div>
 
 <div class="tablewrap">
   <table id="tbl">
-    <caption style="position:absolute;left:-9999px">Places ranked by weighted score, with the reasons for each rank</caption>
+    <caption class="vh">Places ranked by weighted score. Select a row for the reasons behind its rank.</caption>
     <thead><tr id="head"></tr></thead>
     <tbody id="body"></tbody>
   </table>
@@ -45,20 +44,12 @@
 <footer>
   <div class="legend">
     <span><i style="background:var(--good)"></i>Allowed</span>
-    <span><i style="background:var(--serious)"></i>Restricted — licence, muzzle or insurance</span>
-    <span><i style="background:var(--warning)"></i>Murky — law unsettled or judged case by case</span>
+    <span><i style="background:var(--serious)"></i>Restricted</span>
+    <span><i style="background:var(--warning)"></i>Murky</span>
     <span><i style="background:var(--critical)"></i>Banned</span>
   </div>
-  <p><b>How the score works.</b> Each place scores 0 to 1 on five criteria, then those are combined
-  using your slider weights. Monet: allowed 1.0, restricted 0.55, murky 0.4, banned 0. Visa comfort,
-  diversity and English are the research scores of 1 to 5 rescaled to 0 to 1. Cost is the band inverted,
-  so cheaper scores higher. The coloured bar in each row shows what each criterion contributed.</p>
-  <p><b>What is missing.</b> Detailed monthly budgets, climate figures and design job markets were still
-  being researched when this page was generated, so cost and weather here are coarse bands rather than
-  numbers. Rows marked "screened" have no in-depth research behind them yet.</p>
-  <p><b>Trust these numbers only as a starting point.</b> Immigration and breed rules changed repeatedly
-  during 2025 and 2026. Verify anything you would act on, especially Monet's status, against the primary
-  source linked in each row before making a decision.</p>
+  <p>Cost and weather are coarse bands; detailed budgets and climate figures are still being researched.
+  Verify anything you would act on against the sources in each row.</p>
 </footer>
 
 </div>

@@ -14,14 +14,15 @@ No build step. Plain HTML, CSS and vanilla JS.
 
 ## Files
 
-- `index.html` — page shell, weight sliders, filters, table, footnotes
+- `index.html` — page shell, importance controls, filters, table
 - `style.css` — all styling; light and dark via CSS variables
 - `app.js` — scoring, sorting, filtering, expandable detail rows
 - `data.js` — **the only file to edit to change facts.** `window.PLACES` is an array of 75 places.
 
 ## How the score works
 
-Five criteria, each normalised to 0–1, combined with the slider weights:
+Five criteria, each normalised to 0–1, combined with the Low/Med/High importance
+you set (weights 1, 2, 3):
 
 | Criterion | How it is scored |
 |---|---|
@@ -31,7 +32,7 @@ Five criteria, each normalised to 0–1, combined with the slider weights:
 | Diversity | research score 1–5, rescaled |
 | English | research score 1–5, rescaled |
 
-Weights persist in `localStorage`.
+Importance settings persist in `localStorage`.
 
 ## Data provenance
 
