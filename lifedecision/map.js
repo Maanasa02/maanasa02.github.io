@@ -18,7 +18,7 @@
     self.init = function () {
       host.innerHTML = '<div id="lmap"></div>';
       map = L.map(host.querySelector('#lmap'), {
-        worldCopyJump: true, zoomControl: true, minZoom: 2, maxZoom: 12,
+        worldCopyJump: true, zoomControl: false, minZoom: 2, maxZoom: 14,
         scrollWheelZoom: true
       }).setView([25, 10], 2);
       var dark = matchMedia('(prefers-color-scheme: dark)').matches &&
@@ -55,6 +55,8 @@
       if (m) setTimeout(function () { m.openPopup(); }, 950);
     };
     self.reset = function () { map.closePopup(); map.flyTo([25, 10], 2, { duration: 0.9 }); current = null; };
+    self.zoomBy = function (f) { if (f < 1) map.zoomIn(1); else map.zoomOut(1); };
+    self.invalidate = function () { setTimeout(function () { map.invalidateSize(); }, 60); };
     return self;
   }
 
@@ -185,6 +187,11 @@
       show(p);
     };
     self.reset = function () { animateTo({ x:0, y:0, w:W, h:H }); hide(); mark(null); current = null; };
+    self.zoomBy = function (f) {
+      var cx = view.x + view.w/2, cy = view.y + view.h/2, w = view.w * f;
+      animateTo(clamp({ x: cx - w/2, y: cy - (w*(H/W))/2, w: w, h: w*(H/W) }), 260);
+    };
+    self.invalidate = function () { place(); };
     return self;
   }
 
@@ -197,6 +204,8 @@
   api.setDots = function (list) { places = list; backend.setDots(list); };
   api.select = function (p) { backend.select(p); if (onPick) onPick(p); };
   api.reset = function () { backend.reset(); };
+  api.zoomBy = function (f) { if (backend.zoomBy) backend.zoomBy(f); };
+  api.invalidate = function () { if (backend.invalidate) backend.invalidate(); };
   api.backend = function () { return backend && backend.name; };
   api.current = function () { return current; };
 })();
