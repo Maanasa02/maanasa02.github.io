@@ -134,8 +134,48 @@
     }
   }
 
+  function firstSentence(t, max) {
+    t = String(t || '').trim();
+    if (!t) return '';
+    var m = t.match(/^(.{20,}?[.;])\s/);
+    if (m) t = m[1].replace(/[.;]$/, '');
+    max = max || 92;
+    if (t.length > max) t = t.slice(0, max - 1).replace(/[\s,;(]+\S*$/, '') + '…';
+    return t;
+  }
+  function shortRoute(t, max) {
+    t = String(t || '').split(/\s*(?:->|→|\/)\s*/)[0].trim();
+    t = t.replace(/\s*\([^)]*\)/g, '');
+    max = max || 44;
+    return t.length > max ? t.slice(0, max - 1).replace(/\s\S*$/, '') + '…' : t;
+  }
+  function fact(label, value) {
+    return value ? '<div class="fact"><span>' + esc(label) + '</span><span>' + value + '</span></div>' : '';
+  }
+
   function popupHTML(p) {
-    var s = p._s || scoreOf(p);
+    var sc = p._s || scoreOf(p), f = [];
+
+    var dogBits = [];
+    if (p.dog_quarantine != null) dogBits.push(p.dog_quarantine ? p.dog_quarantine + ' days quarantine' : 'no quarantine');
+    if (p.dog_cost_low != null) dogBits.push(money(p.dog_cost_low, p.dog_cost_high) + ' to fly him');
+    f.push(fact('Monet', esc(cap(p.dog_status)) + (dogBits.length ? ' · ' + esc(dogBits.join(' · ')) : '')));
+
+    var visaBits = [];
+    if (p.years_pr != null) visaBits.push('PR in ' + p.years_pr + ' yrs');
+    if (p.visa_fees_low != null) visaBits.push(money(p.visa_fees_low, p.visa_fees_high));
+    f.push(fact('Visa', esc(shortRoute(p.visa_route)) + (visaBits.length ? ' · ' + esc(visaBits.join(' · ')) : '')));
+
+    if (p.investor) {
+      var iv = p.investor, ivTxt;
+      if (iv.status !== 'open') ivTxt = esc(cap(iv.status || 'none'));
+      else if (iv.min_investment_usd) ivTxt = '$' + Number(iv.min_investment_usd).toLocaleString() +
+        (iv.investment_type ? ' · ' + esc(String(iv.investment_type).split(/[,/]/)[0].trim()) : '');
+      else if (iv.total_first_year_usd_low != null) ivTxt = esc(money(iv.total_first_year_usd_low, iv.total_first_year_usd_high));
+      else ivTxt = 'Open';
+      f.push(fact('Investor', ivTxt));
+    }
+
     return '<div class="pop">' +
       '<button class="popclose" data-close type="button" aria-label="Close">×</button>' +
       '<div class="pophead"><span class="popcity">' + esc(p.city) + '</span>' +
@@ -143,7 +183,7 @@
         (!p.deep ? '<span class="chip">screened</span>' : '') +
         '<span class="popcn">' + esc(p.country) + '</span></div>' +
       '<div class="popstat"><span class="status st-' + esc(p.dog_status) + '"><span class="dot"></span>' +
-        esc(cap(p.dog_status)) + '</span><span class="popfit">Fit ' + Math.round(s.score * 100) + '</span></div>' +
+        esc(cap(p.dog_status)) + '</span><span class="popfit">Fit ' + Math.round(sc.score * 100) + '</span></div>' +
       '<div class="popgrid">' +
         '<span>Visa</span><span>' + meter(p.visa_comfort, 5, 'var(--s-visa)', 'Visa comfort') + '</span>' +
         '<span>Cost</span><span>' + costMark(p.cost_band) + '</span>' +
@@ -151,7 +191,9 @@
         '<span>English</span><span>' + meter(p.english, 5, 'var(--s-eng)', 'English') + '</span>' +
         '<span>Weather</span><span class="popw">' + esc(cap(p.weather_band)) + '</span>' +
       '</div>' +
-      detailHTML(p) +
+      '<div class="facts">' + f.join('') + '</div>' +
+      '<p class="popnote">' + esc(firstSentence(p.note, 120)) + '</p>' +
+      '<details class="popmore"><summary>Full research</summary>' + detailHTML(p) + '</details>' +
     '</div>';
   }
 

@@ -312,3 +312,19 @@ tr.detail>td{background:var(--surface-2);padding:2px 16px 20px 46px;border-botto
   .hud-title p{display:none}
   .popup{width:min(300px,calc(100vw - 24px))}
 }
+
+/* compact popup facts */
+.facts{display:flex;flex-direction:column;gap:6px;margin-bottom:10px;
+  padding-top:10px;border-top:1px solid var(--rule)}
+.fact{display:flex;gap:10px;font-size:12px;line-height:1.4}
+.fact>span:first-child{color:var(--ink-3);flex:none;width:62px}
+.fact>span:last-child{color:var(--ink);flex:1}
+.popnote{margin:0 0 10px;font-size:12px;color:var(--ink-2);line-height:1.45}
+.popmore{border-top:1px solid var(--rule);padding-top:9px}
+.popmore summary{font-size:11px;color:var(--ink-3);cursor:pointer;list-style:none;
+  letter-spacing:.04em;text-transform:uppercase;font-weight:600}
+.popmore summary::-webkit-details-marker{display:none}
+.popmore summary::after{content:' ▸';font-size:9px}
+.popmore[open] summary::after{content:' ▾'}
+.popmore summary:hover{color:var(--ink)}
+.popmore .dgrid{padding-top:11px;border-top:0}

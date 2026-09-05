@@ -10,6 +10,9 @@
   function lonx(lon) { return (lon + 180) / 360 * W; }
   function laty(lat) { return (90 - lat) / 180 * H; }
   function key(p) { return p.city; }
+  function reduced() {
+    return window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
 
   /* ---------------- Leaflet backend ---------------- */
   function Leafy() {
@@ -50,11 +53,11 @@
     };
     self.select = function (p) {
       current = p;
-      map.flyTo([p.lat, p.lng], 7, { duration: 1.1 });
+      map.flyTo([p.lat, p.lng], 7, { duration: reduced() ? 0.2 : 2.4, easeLinearity: 0.22 });
       var m = layer[key(p)];
-      if (m) setTimeout(function () { m.openPopup(); }, 950);
+      if (m) setTimeout(function () { m.openPopup(); }, reduced() ? 220 : 2150);
     };
-    self.reset = function () { map.closePopup(); map.flyTo([25, 10], 2, { duration: 0.9 }); current = null; };
+    self.reset = function () { map.closePopup(); map.flyTo([25, 10], 2, { duration: reduced() ? 0.2 : 1.6 }); current = null; };
     self.zoomBy = function (f) { if (f < 1) map.zoomIn(1); else map.zoomOut(1); };
     self.invalidate = function () { setTimeout(function () { map.invalidateSize(); }, 60); };
     return self;
@@ -83,14 +86,29 @@
       v.y = Math.min(H - v.h, Math.max(0, v.y));
       return v;
     }
+    /* Flight between two views. The camera climbs to a width that frames both
+       endpoints, crosses, then descends — so distant hops read as travel rather
+       than a smear. Width is interpolated in log space; a bell term lifts the
+       midpoint to the peak. */
     function animateTo(t, ms) {
       if (anim) cancelAnimationFrame(anim);
-      var f = { x:view.x, y:view.y, w:view.w, h:view.h }, t0 = performance.now();
-      ms = ms || 620;
+      var f = { x:view.x, y:view.y, w:view.w, h:view.h };
+      var cx0 = f.x + f.w/2, cy0 = f.y + f.h/2;
+      var cx1 = t.x + t.w/2, cy1 = t.y + t.h/2;
+      var dist = Math.sqrt((cx1-cx0)*(cx1-cx0) + (cy1-cy0)*(cy1-cy0));
+      var peak = Math.min(W, Math.max(f.w, t.w, dist * 1.7));
+      var lift = Math.log(peak / Math.sqrt(f.w * t.w));
+      if (lift < 0) lift = 0;
+      if (ms == null) ms = Math.max(1100, Math.min(3000, 900 + dist * 3.4));
+      if (reduced()) ms = 160;
+      var t0 = performance.now();
       (function step(now) {
         var q = Math.min(1, (now - t0) / ms);
         var e = q < 0.5 ? 4*q*q*q : 1 - Math.pow(-2*q + 2, 3) / 2;
-        setView({ x:f.x+(t.x-f.x)*e, y:f.y+(t.y-f.y)*e, w:f.w+(t.w-f.w)*e, h:f.h+(t.h-f.h)*e });
+        var w = Math.exp((1-e) * Math.log(f.w) + e * Math.log(t.w) + 4*q*(1-q) * lift);
+        var h = w * (H / W);
+        var cx = cx0 + (cx1-cx0)*e, cy = cy0 + (cy1-cy0)*e;
+        setView(clamp({ x: cx - w/2, y: cy - h/2, w: w, h: h }));
         if (q < 1) anim = requestAnimationFrame(step); else { anim = null; place(); }
       })(performance.now());
     }
@@ -183,13 +201,19 @@
     self.select = function (p) {
       mark(String(p.city).replace(/"/g,''));
       var w = 90, h = w * (H/W);
-      animateTo(clamp({ x: lonx(p.lng) - w/2, y: laty(p.lat) - h/2, w: w, h: h }));
-      show(p);
+      popup.hidden = true;
+      var target = clamp({ x: lonx(p.lng) - w/2, y: laty(p.lat) - h/2, w: w, h: h });
+      var cx0 = view.x + view.w/2, cy0 = view.y + view.h/2;
+      var d = Math.sqrt(Math.pow(target.x+target.w/2-cx0, 2) + Math.pow(target.y+target.h/2-cy0, 2));
+      var ms = reduced() ? 160 : Math.max(1100, Math.min(3000, 900 + d * 3.4));
+      animateTo(target);
+      clearTimeout(self._t);
+      self._t = setTimeout(function () { show(p); }, ms * 0.72);
     };
     self.reset = function () { animateTo({ x:0, y:0, w:W, h:H }); hide(); mark(null); current = null; };
     self.zoomBy = function (f) {
       var cx = view.x + view.w/2, cy = view.y + view.h/2, w = view.w * f;
-      animateTo(clamp({ x: cx - w/2, y: cy - (w*(H/W))/2, w: w, h: w*(H/W) }), 260);
+      animateTo(clamp({ x: cx - w/2, y: cy - (w*(H/W))/2, w: w, h: w*(H/W) }), reduced() ? 120 : 300);
     };
     self.invalidate = function () { place(); };
     return self;
