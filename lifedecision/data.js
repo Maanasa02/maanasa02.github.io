@@ -54,7 +54,38 @@ window.PLACES = [
    "diversity": 0.75,
    "english": 1.0
   },
-  "rank": 1
+  "rank": 1,
+  "investor": {
+   "route_name": "Business Visa / Financially Independent Permit",
+   "status": "open",
+   "min_investment_usd": 290000,
+   "investment_type": "business — ZAR 5,000,000 of capital contribution plus 60% South African staff and a DTIC recommendation; the Financially Independent Permit gives direct PR for ZAR 12,000,000 net worth plus a ZAR 120,000 fee",
+   "extra_fees_usd_low": 10000,
+   "extra_fees_usd_high": 30000,
+   "total_first_year_usd_low": 300000,
+   "total_first_year_usd_high": 320000,
+   "recoverable": true,
+   "residency_requirement": "Must live in South Africa and run the business",
+   "years_to_pr": 5,
+   "years_to_citizenship": 10,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "stretch",
+   "note": "ZAR 5,000,000 (~USD 290,000) plus a binding obligation that 60% of employees be South African citizens or PRs, and a Department of Trade recommendation that is slow and discretionary. The Financially Independent Permit gives PR immediately but needs ZAR 12m (~USD 700k) of net worth.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://www.ibn.co.za/south-africa/business-visa/",
+     "title": "South Africa Business Visa & Permit",
+     "date": "2026"
+    },
+    {
+     "url": "https://www.goldenvisas.com/south-africa",
+     "title": "South Africa Golden Visa | Citizenship by Investment",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Nairobi",
@@ -109,7 +140,33 @@ window.PLACES = [
    "diversity": 0.5,
    "english": 1.0
   },
-  "rank": 2
+  "rank": 2,
+  "investor": {
+   "route_name": "Class G Investor Permit",
+   "status": "open",
+   "min_investment_usd": 100000,
+   "investment_type": "business — minimum USD 100,000 invested in a registered Kenyan company that benefits Kenya",
+   "extra_fees_usd_low": 3000,
+   "extra_fees_usd_high": 10000,
+   "total_first_year_usd_low": 103000,
+   "total_first_year_usd_high": 110000,
+   "recoverable": true,
+   "residency_requirement": "Must reside in Kenya and operate the business; permits are 1–2 years, renewable",
+   "years_to_pr": 7,
+   "years_to_citizenship": 7,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "USD 100,000 into a Kenyan company plus a KES 100,000-per-year permit fee is affordable and gives full work rights in your own business, but the permit must be renewed against continuing economic benefit and PR takes 7 years of continuous lawful residence.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://www.ibn.co.za/blog-and-news/ken-eligib-investment/",
+     "title": "Qualification and Eligibility Requirements for a Business Investment Visa (Permit) in Kenya",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Amsterdam",
@@ -184,7 +241,38 @@ window.PLACES = [
    "diversity": 0.75,
    "english": 1.0
   },
-  "rank": 3
+  "rank": 3,
+  "investor": {
+   "route_name": "Start-up visa / self-employed residence permit (Foreign Investor Scheme ABOLISHED)",
+   "status": "closed",
+   "min_investment_usd": 5300,
+   "investment_type": "business — start-up visa needs a recognised facilitator, not capital; self-employed permit is scored on a points system",
+   "extra_fees_usd_low": 3000,
+   "extra_fees_usd_high": 12000,
+   "total_first_year_usd_low": 8300,
+   "total_first_year_usd_high": 17300,
+   "recoverable": false,
+   "residency_requirement": "Must genuinely live in the Netherlands; no more than 6 consecutive months abroad",
+   "years_to_pr": 5,
+   "years_to_citizenship": 5,
+   "family_included": true,
+   "can_work": false,
+   "realistic_for_them": "no",
+   "note": "The EUR 1,250,000 Dutch golden visa was abolished on 17 April 2024 after issuing fewer than 10 permits in years. What is left is the start-up visa (needs a IND-recognised facilitator to vouch for you) and the points-scored self-employed permit — neither is buyable. Note the Dutch-American Friendship Treaty shortcut does not apply to Indian citizens.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://ind.nl/en/news/admission-scheme-for-foreign-investors-abolished",
+     "title": "Admission scheme for foreign investors abolished — IND",
+     "date": "2024"
+    },
+    {
+     "url": "https://www.fragomen.com/insights/netherlands-foreign-investor-scheme-abolished.html",
+     "title": "The Netherlands: Foreign Investor Scheme Abolished",
+     "date": "2024"
+    }
+   ]
+  }
  },
  {
   "city": "Calgary",
@@ -259,7 +347,33 @@ window.PLACES = [
    "diversity": 0.75,
    "english": 1.0
   },
-  "rank": 4
+  "rank": 4,
+  "investor": {
+   "route_name": "Alberta Advantage Immigration Program – Graduate Entrepreneur / Rural Entrepreneur (Calgary excluded from rural stream)",
+   "status": "suspended",
+   "min_investment_usd": 144000,
+   "investment_type": "business equity (CAD 100k graduate / CAD 200k rural)",
+   "extra_fees_usd_low": 15000,
+   "extra_fees_usd_high": 40000,
+   "total_first_year_usd_low": 159000,
+   "total_first_year_usd_high": 184000,
+   "recoverable": true,
+   "residency_requirement": "Must reside in Alberta and actively manage the business",
+   "years_to_pr": 2,
+   "years_to_citizenship": 5,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "no",
+   "note": "With the federal Start-Up Visa shut to new applicants in 2026, Alberta's only entrepreneur streams are the Rural Entrepreneur stream (which explicitly excludes Calgary and Edmonton) and a graduate stream requiring an Alberta degree. Effectively there is no investor route into Calgary for them.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://immigration.ca/canadas-start-up-visa-suspension-the-new-2026-entrepreneur-pilot-what-you-need-to-know/",
+     "title": "Canada's Start-Up Visa Suspension & the New 2026 Entrepreneur Pilot",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Bengaluru",
@@ -334,7 +448,33 @@ window.PLACES = [
    "diversity": 0.5,
    "english": 1.0
   },
-  "rank": 5
+  "rank": 5,
+  "investor": {
+   "route_name": "none needed — they are Indian citizens",
+   "status": "none",
+   "min_investment_usd": 0,
+   "investment_type": "n/a",
+   "extra_fees_usd_low": 0,
+   "extra_fees_usd_high": 0,
+   "total_first_year_usd_low": 0,
+   "total_first_year_usd_high": 0,
+   "recoverable": true,
+   "residency_requirement": "None",
+   "years_to_pr": 0,
+   "years_to_citizenship": 0,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "No investor route exists or is needed: as Indian citizens they already hold unrestricted rights to live, work, own property and start businesses in Bengaluru at zero immigration cost. India runs no residence-by-investment programme for foreigners either.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://immigrantinvest.com/residence/",
+     "title": "Residence by Investment Programs in 2026",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Mumbai",
@@ -409,7 +549,33 @@ window.PLACES = [
    "diversity": 0.5,
    "english": 1.0
   },
-  "rank": 6
+  "rank": 6,
+  "investor": {
+   "route_name": "none needed — they are Indian citizens",
+   "status": "none",
+   "min_investment_usd": 0,
+   "investment_type": "n/a",
+   "extra_fees_usd_low": 0,
+   "extra_fees_usd_high": 0,
+   "total_first_year_usd_low": 0,
+   "total_first_year_usd_high": 0,
+   "recoverable": true,
+   "residency_requirement": "None",
+   "years_to_pr": 0,
+   "years_to_citizenship": 0,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "Zero immigration cost — Indian citizenship already grants full rights. The only 'investment' question in Mumbai is the property market itself, not a visa.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://immigrantinvest.com/residence/",
+     "title": "Residence by Investment Programs in 2026",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Vancouver",
@@ -484,7 +650,38 @@ window.PLACES = [
    "diversity": 1.0,
    "english": 1.0
   },
-  "rank": 7
+  "rank": 7,
+  "investor": {
+   "route_name": "Federal Start-Up Visa (closed) / BC PNP Entrepreneur Immigration – Base",
+   "status": "suspended",
+   "min_investment_usd": 216000,
+   "investment_type": "business (CAD 300k equity + 1 job) or CAD 200k VC / CAD 75k angel for SUV",
+   "extra_fees_usd_low": 18000,
+   "extra_fees_usd_high": 45000,
+   "total_first_year_usd_low": 234000,
+   "total_first_year_usd_high": 261000,
+   "recoverable": true,
+   "residency_requirement": "Must live in BC and actively manage the business; SUV had no minimum but required residence in Canada outside Quebec",
+   "years_to_pr": 2,
+   "years_to_citizenship": 5,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "no",
+   "note": "IRCC stopped issuing Start-Up Visa commitment certificates on 1 Jan 2026 and stopped accepting applications 30 Jun 2026; a replacement entrepreneur pilot was promised for 2026 but is not live. BC PNP entrepreneur intake has been throttled by federal allocation cuts, so there is no reliable investor door into Vancouver right now.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://immigration.ca/canadas-start-up-visa-suspension-the-new-2026-entrepreneur-pilot-what-you-need-to-know/",
+     "title": "Canada's Start-Up Visa Suspension & the New 2026 Entrepreneur Pilot",
+     "date": "2026"
+    },
+    {
+     "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/start-visa/participate/suspension-loss-designation.html",
+     "title": "Start-up visa designated organizations: Suspension or loss of designation",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Montreal",
@@ -539,7 +736,38 @@ window.PLACES = [
    "diversity": 0.75,
    "english": 0.5
   },
-  "rank": 8
+  "rank": 8,
+  "investor": {
+   "route_name": "Quebec Immigrant Investor Program (QIIP)",
+   "status": "open",
+   "min_investment_usd": 864000,
+   "investment_type": "government-brokered loan (CAD 1,000,000 5-year risk-free investment with Investissement Quebec) + CAD 200,000 non-refundable contribution",
+   "extra_fees_usd_low": 20000,
+   "extra_fees_usd_high": 50000,
+   "total_first_year_usd_low": 884000,
+   "total_first_year_usd_high": 914000,
+   "recoverable": false,
+   "residency_requirement": "Must intend to settle in Quebec; 12 months of residence in Quebec before PR under the 2024 rules",
+   "years_to_pr": 2,
+   "years_to_citizenship": 5,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "no",
+   "note": "Reopened 1 Jan 2024 and confirmed open in 2026, but needs CAD 2,000,000 net worth, CAD 1.2m deployed (CAD 200k of it a pure donation) and oral French at level B2 — three separate disqualifiers for this couple.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://immigration.ca/quebec-immigrant-investor-program/",
+     "title": "Quebec Immigrant Investor Program (QIIP): Requirements",
+     "date": "2026"
+    },
+    {
+     "url": "https://www.fragomen.com/insights/canada-quebec-immigrant-investor-program-expected-to-reopen-with-stricter-criteria.html",
+     "title": "Quebec Immigrant Investor Program Expected to Reopen with Stricter Criteria",
+     "date": "2023"
+    }
+   ]
+  }
  },
  {
   "city": "Helsinki",
@@ -614,7 +842,33 @@ window.PLACES = [
    "diversity": 0.5,
    "english": 0.75
   },
-  "rank": 9
+  "rank": 9,
+  "investor": {
+   "route_name": "Entrepreneur residence permit / Start-up permit (Business Finland eligibility statement)",
+   "status": "open",
+   "min_investment_usd": 25000,
+   "investment_type": "business — no fixed capital minimum; must show the business is profitable enough to provide ~EUR 1,220/month of income",
+   "extra_fees_usd_low": 2000,
+   "extra_fees_usd_high": 8000,
+   "total_first_year_usd_low": 27000,
+   "total_first_year_usd_high": 33000,
+   "recoverable": true,
+   "residency_requirement": "Must live in Finland and run the business",
+   "years_to_pr": 4,
+   "years_to_citizenship": 5,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "stretch",
+   "note": "No golden visa and no purchase price — the start-up permit is gated on a Business Finland eligibility statement for an innovative, scalable venture, and the ordinary entrepreneur permit is gated on demonstrable profitability. Finland has, however, one of the shorter naturalisation clocks in the Nordics.",
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "https://visadb.io/blog/16-facts-about-the-startup-ecosystem-in-nordic-countries-629fae47e5b69a6d910103bb",
+     "title": "4 Entrepreneur Visas in Nordic Countries",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Stockholm",
@@ -689,7 +943,33 @@ window.PLACES = [
    "diversity": 0.75,
    "english": 1.0
   },
-  "rank": 10
+  "rank": 10,
+  "investor": {
+   "route_name": "Residence permit for self-employed persons",
+   "status": "open",
+   "min_investment_usd": 31500,
+   "investment_type": "business — must show funds to support yourself for 2 years (SEK ~200,000 main + SEK ~100,000 partner) plus a viable, self-financing business",
+   "extra_fees_usd_low": 1500,
+   "extra_fees_usd_high": 8000,
+   "total_first_year_usd_low": 33000,
+   "total_first_year_usd_high": 39500,
+   "recoverable": true,
+   "residency_requirement": "Must live in Sweden and actively run the business",
+   "years_to_pr": 4,
+   "years_to_citizenship": 8,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "stretch",
+   "note": "No golden visa; you must prove the business can support you for two years from its own revenue, which Migrationsverket refuses often. Sweden is also lengthening naturalisation from 5 to 8 years with a language and civics test, so the citizenship end of this route just got materially worse.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://visadb.io/visa/temporary-stay/Anywhere/Sweden/61c206561feb2eb87adf08a3",
+     "title": "Residence permit for Self Employed (Entrepreneur) for Sweden",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Mexico City",
@@ -764,7 +1044,38 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.5
   },
-  "rank": 11
+  "rank": 11,
+  "investor": {
+   "route_name": "Temporary Resident Visa via economic solvency (savings) / investment",
+   "status": "open",
+   "min_investment_usd": 73000,
+   "investment_type": "bank deposit / own savings balance held abroad (no transfer to Mexico required); alternatively ~USD 292k in a Mexican company or ~USD 585k real estate",
+   "extra_fees_usd_low": 900,
+   "extra_fees_usd_high": 4000,
+   "total_first_year_usd_low": 73900,
+   "total_first_year_usd_high": 77000,
+   "recoverable": true,
+   "residency_requirement": "No minimum days for temporary residency; must be in Mexico to exchange the visa within 30 days and to renew",
+   "years_to_pr": 4,
+   "years_to_citizenship": 5,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "By far the cheapest capital-based route on the whole list: you never transfer the money — you only show a 12-month average balance of about USD 73,000 (11,400 UMA at the 2026 UMA of MXN 117.31). Work permission is added after arrival for a small fee.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://www.mexperience.com/financial-criteria-for-residency-in-mexico/",
+     "title": "Financial Criteria for Legal Residency in Mexico 2026",
+     "date": "2026"
+    },
+    {
+     "url": "https://citylaws.com.mx/en/abogado-migratorio/income-requirements-mexican-residency/",
+     "title": "Income and Savings Requirements for Mexican Residency (Economic Solvency Thresholds)",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Accra",
@@ -819,7 +1130,33 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 1.0
   },
-  "rank": 12
+  "rank": 12,
+  "investor": {
+   "route_name": "GIPC minimum foreign capital / Automatic expatriate quota",
+   "status": "open",
+   "min_investment_usd": 200000,
+   "investment_type": "business — USD 200,000 for a joint venture with at least 10% Ghanaian equity; USD 500,000 for a wholly foreign-owned company; USD 1,000,000 plus 20 Ghanaian employees for trading",
+   "extra_fees_usd_low": 6000,
+   "extra_fees_usd_high": 18000,
+   "total_first_year_usd_low": 206000,
+   "total_first_year_usd_high": 218000,
+   "recoverable": true,
+   "residency_requirement": "Must reside in Ghana and operate the business",
+   "years_to_pr": 5,
+   "years_to_citizenship": 7,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "stretch",
+   "note": "Ghana has no golden visa; residence follows from GIPC registration, and the automatic expatriate work-permit quota scales with how much you invest. The USD 200,000 tier requires a Ghanaian partner holding at least 10% — going it alone costs USD 500,000.",
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "https://immigrantinvest.com/residence/",
+     "title": "Residence by Investment Programs in 2026",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Sao Paulo",
@@ -874,7 +1211,38 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.25
   },
-  "rank": 13
+  "rank": 13,
+  "investor": {
+   "route_name": "Investor residence permit (VITEM IX)",
+   "status": "open",
+   "min_investment_usd": 92500,
+   "investment_type": "business (R$500,000 company capital; R$150,000 if innovation/startup) or real estate (R$1,000,000 in the South/Southeast, R$700,000 in the North/Northeast)",
+   "extra_fees_usd_low": 5000,
+   "extra_fees_usd_high": 15000,
+   "total_first_year_usd_low": 97500,
+   "total_first_year_usd_high": 107500,
+   "recoverable": true,
+   "residency_requirement": "Cannot be absent from Brazil for more than 2 consecutive years",
+   "years_to_pr": 4,
+   "years_to_citizenship": 4,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "R$500,000 (~USD 92,500) into a Brazilian company is one of the best value-for-money investor routes anywhere, and the R$150,000 innovation tier is cheaper still — but CNIg requires ongoing economic activity (jobs, revenue, tax receipts), not a one-off deposit, and funds must be registered with the Central Bank within 30 days.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://www.navvipal.com/en/insights/brazil-investor-visa-vitem-ix-requirements-and-costs-2026",
+     "title": "Brazil Investor Visa (VITEM IX): Requirements and Costs 2026",
+     "date": "2026"
+    },
+    {
+     "url": "https://relovida.com/br/brazil-vitem-ix-investor-visa",
+     "title": "Brazil Investor Visa VITEM IX 2026: From R$150K (Tech) to R$1M",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Milan",
@@ -929,7 +1297,38 @@ window.PLACES = [
    "diversity": 0.5,
    "english": 0.25
   },
-  "rank": 14
+  "rank": 14,
+  "investor": {
+   "route_name": "Italy Investor Visa (Visto per investitori)",
+   "status": "open",
+   "min_investment_usd": 292500,
+   "investment_type": "business — EUR 250,000 in a registered Innovative Startup, EUR 500,000 in an Italian limited company, EUR 2m in government bonds, or EUR 1m philanthropic donation",
+   "extra_fees_usd_low": 12000,
+   "extra_fees_usd_high": 30000,
+   "total_first_year_usd_low": 304500,
+   "total_first_year_usd_high": 322500,
+   "recoverable": true,
+   "residency_requirement": "None stated for the 2-year permit; renewals require the investment be maintained",
+   "years_to_pr": 5,
+   "years_to_citizenship": 10,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "stretch",
+   "note": "You do not transfer the money to apply — you prove availability and then wire it within 3 months of entry, which is unusually founder-friendly. But EUR 250,000 into a single Italian innovative startup is venture risk, not a store of value, and the company must already be on the Chamber of Commerce innovative register with a filed balance sheet.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://getgoldenvisa.com/italy-investor-visa-startup-investment",
+     "title": "Italy Investor Visa: EUR 250K Innovative Startup Investment Explained 2026",
+     "date": "2026"
+    },
+    {
+     "url": "https://arlettipartners.com/italy-golden-visa/",
+     "title": "Italy Golden Visa 2026: investment options, requirements and how to apply",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Tallinn",
@@ -984,7 +1383,38 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.75
   },
-  "rank": 15
+  "rank": 15,
+  "investor": {
+   "route_name": "Temporary residence permit for enterprise (investor) / Start-up visa",
+   "status": "open",
+   "min_investment_usd": 76050,
+   "investment_type": "business — EUR 65,000 of share capital in an Estonian company (EUR 16,000 for a sole proprietor); EUR 1,000,000 'major investor' tier is quota-exempt",
+   "extra_fees_usd_low": 3000,
+   "extra_fees_usd_high": 10000,
+   "total_first_year_usd_low": 79050,
+   "total_first_year_usd_high": 86050,
+   "recoverable": true,
+   "residency_requirement": "Must actually live in Estonia — you may not be absent more than 183 days per year",
+   "years_to_pr": 5,
+   "years_to_citizenship": 8,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "EUR 65,000 into an Estonian company is one of the cheapest genuine EU investor permits, and it is real equity you can recover. The catch is the annual immigration quota (0.1% of population) which the enterprise permit sits inside, plus a hard residence requirement — and note e-Residency is a digital ID, not residence.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://lottalingo.com/research/visas/estonia-investor-trp",
+     "title": "Temporary Residence Permit for Enterprise (Investment) — Estonia",
+     "date": "2026"
+    },
+    {
+     "url": "https://armenian-lawyer.com/global/eastern-europe-residency-by-investment-comparison/",
+     "title": "Comparing Eastern Europe's Residency by Investment Programs",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Kigali",
@@ -1039,7 +1469,33 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.75
   },
-  "rank": 16
+  "rank": 16,
+  "investor": {
+   "route_name": "Investor residence permit (RDB-registered investment)",
+   "status": "open",
+   "min_investment_usd": 250000,
+   "investment_type": "business — approximately USD 250,000 registered with the Rwanda Development Board for a residence permit; roughly USD 500,000 held 3 years for permanent residence",
+   "extra_fees_usd_low": 3000,
+   "extra_fees_usd_high": 10000,
+   "total_first_year_usd_low": 253000,
+   "total_first_year_usd_high": 260000,
+   "recoverable": true,
+   "residency_requirement": "Must maintain the investment; presence expectations are light",
+   "years_to_pr": 3,
+   "years_to_citizenship": 10,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "stretch",
+   "note": "Rwanda actively courts investors and processing is fast by African standards, but the ~USD 250,000 threshold is over half their savings for a small market with limited exit liquidity. Verify current RDB thresholds directly — published figures vary widely between advisory sites.",
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "https://businessprocedures.rdb.rw/objective/57?l=en",
+     "title": "Visas & permits — Business Procedures in Rwanda (RDB)",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Athens",
@@ -1094,7 +1550,38 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.5
   },
-  "rank": 17
+  "rank": 17,
+  "investor": {
+   "route_name": "Greece Golden Visa",
+   "status": "open",
+   "min_investment_usd": 292500,
+   "investment_type": "real estate — EUR 800,000 in Attica/Athens, Thessaloniki, Mykonos, Santorini and large islands; EUR 400,000 elsewhere; EUR 250,000 for commercial-to-residential conversions or listed-building restorations anywhere; also EUR 350,000 AIF/fund and EUR 500,000 shares or bonds",
+   "extra_fees_usd_low": 28000,
+   "extra_fees_usd_high": 50000,
+   "total_first_year_usd_low": 320500,
+   "total_first_year_usd_high": 342500,
+   "recoverable": true,
+   "residency_requirement": "None — zero minimum stay to hold or renew",
+   "years_to_pr": 5,
+   "years_to_citizenship": 7,
+   "family_included": true,
+   "can_work": false,
+   "realistic_for_them": "stretch",
+   "note": "Ordinary Athens property now costs EUR 800,000 after the 2024 tiering, so the only in-budget door is the EUR 250,000 conversion/restoration route — a single whole property, converted commercial-to-residential, with real construction risk. And the Greek golden visa does not permit employment; you can hold shares and draw dividends but not take a design job.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://www.investmentvisa.com/articles/greece-golden-visa-property-investment-thresholds",
+     "title": "Greece Golden Visa: Property Investment Thresholds in 2026",
+     "date": "2026"
+    },
+    {
+     "url": "https://www.globalinvestments.net/articles/greece-golden-visa-2026-changes",
+     "title": "Greece Golden Visa 2026 — New Thresholds, EUR 800k Athens, Citizenship Path",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Prague",
@@ -1149,7 +1636,38 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.5
   },
-  "rank": 18
+  "rank": 18,
+  "investor": {
+   "route_name": "Trade licence long-term visa (zivnostenske opravneni) — the statutory Investor permit needs CZK 75m",
+   "status": "open",
+   "min_investment_usd": 6000,
+   "investment_type": "business — trade licence route needs only proof of funds (~CZK 124,500); the formal investor residence permit demands CZK 75,000,000 (~USD 3.6m) plus 20 new jobs",
+   "extra_fees_usd_low": 2500,
+   "extra_fees_usd_high": 9000,
+   "total_first_year_usd_low": 8500,
+   "total_first_year_usd_high": 15000,
+   "recoverable": true,
+   "residency_requirement": "Must live in Czechia; absences over 6 months break the PR clock",
+   "years_to_pr": 5,
+   "years_to_citizenship": 10,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "Czechia's actual investor residence permit is priced for corporations (CZK 75m and 20 jobs), so it is irrelevant to them; the practical door is the self-employment trade licence, which costs almost nothing but grants no privileged status and takes 10 years to citizenship with a Czech B1 exam.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://www.globalinvestments.net/citizenship/czech-republic-residency-investment",
+     "title": "Czech Republic Residency by Investment Guide 2026",
+     "date": "2026"
+    },
+    {
+     "url": "https://relocationcompass.com/residence-permit-in-czech-republic/",
+     "title": "Czech Republic Residence Permit 2026: Full Guide & Requirements",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Brussels",
@@ -1224,7 +1742,33 @@ window.PLACES = [
    "diversity": 0.75,
    "english": 0.75
   },
-  "rank": 19
+  "rank": 19,
+  "investor": {
+   "route_name": "Professional Card (self-employed) — no investor scheme exists",
+   "status": "none",
+   "min_investment_usd": 0,
+   "investment_type": "business — no capital threshold; regional authorities assess economic interest",
+   "extra_fees_usd_low": 3000,
+   "extra_fees_usd_high": 12000,
+   "total_first_year_usd_low": 3000,
+   "total_first_year_usd_high": 12000,
+   "recoverable": false,
+   "residency_requirement": "Must reside and actually operate the business in the relevant region",
+   "years_to_pr": 5,
+   "years_to_citizenship": 5,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "no",
+   "note": "Belgium has never run a golden visa and has no investment threshold to buy against; the Brussels-Capital professional card is a discretionary economic-interest assessment of your business plan, so capital is helpful but never sufficient.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://immigrantinvest.com/blog/top-7-countries-for-european-residence-by-investment/",
+     "title": "Top 7 EU Residence Permits by Investment in 2026",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Dublin",
@@ -1299,7 +1843,38 @@ window.PLACES = [
    "diversity": 0.75,
    "english": 1.0
   },
-  "rank": 20
+  "rank": 20,
+  "investor": {
+   "route_name": "Start-up Entrepreneur Programme (STEP) — Immigrant Investor Programme CLOSED",
+   "status": "closed",
+   "min_investment_usd": 58500,
+   "investment_type": "business (EUR 50,000 funding for a High Potential Start-Up)",
+   "extra_fees_usd_low": 8000,
+   "extra_fees_usd_high": 20000,
+   "total_first_year_usd_low": 66500,
+   "total_first_year_usd_high": 78500,
+   "recoverable": true,
+   "residency_requirement": "Must reside in Ireland and register annually",
+   "years_to_pr": 5,
+   "years_to_citizenship": 5,
+   "family_included": true,
+   "can_work": false,
+   "realistic_for_them": "stretch",
+   "note": "The EUR 400,000–1,000,000 Immigrant Investor Programme shut to new applicants on 15 February 2023 and nothing has replaced it; a tighter successor has been trailed but not launched. STEP survives at EUR 50,000 but requires an innovative, internationally-scalable HPSU — not a consultancy or a shop.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://www.irishimmigration.ie/faqs-closure-of-the-immigrant-investor-programme-iip/",
+     "title": "FAQs – Closure of the Immigrant Investor Programme (IIP)",
+     "date": "2023"
+    },
+    {
+     "url": "https://kodlyons.ie/immigrant-investor-programme-alternatives/",
+     "title": "What Replaced the Immigrant Investor Programme? Routes to Ireland After the IIP",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Tokyo",
@@ -1374,7 +1949,38 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.25
   },
-  "rank": 21
+  "rank": 21,
+  "investor": {
+   "route_name": "Business Manager visa (Keiei-Kanri)",
+   "status": "open",
+   "min_investment_usd": 198000,
+   "investment_type": "business — JPY 30,000,000 of paid-in capital (raised from JPY 5,000,000 on 16 October 2025), plus at least one full-time employee",
+   "extra_fees_usd_low": 8000,
+   "extra_fees_usd_high": 25000,
+   "total_first_year_usd_low": 206000,
+   "total_first_year_usd_high": 223000,
+   "recoverable": true,
+   "residency_requirement": "Must live in Japan and run the business; PR normally requires 10 years of residence",
+   "years_to_pr": 10,
+   "years_to_citizenship": 5,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "stretch",
+   "note": "Japan sextupled the capital requirement to JPY 30,000,000 effective 16 October 2025 and added a management-experience-or-relevant-master's test plus a Japanese-language condition and a mandatory employee — this route just became six times harder. For a senior service designer the Highly Skilled Professional points route is dramatically cheaper and reaches PR in 1–3 years.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://kpmg.com/xx/en/our-insights/gms-flash-alert/flash-alert-2025-195.html",
+     "title": "Japan – Business Manager Visa Reforms Take Effect",
+     "date": "2025"
+    },
+    {
+     "url": "https://english.visajapan.jp/qa/qa_keiei2025.html",
+     "title": "Japan Business Manager Visa (2025 Revision): What Changed",
+     "date": "2025"
+    }
+   ]
+  }
  },
  {
   "city": "Goa",
@@ -1449,7 +2055,33 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 1.0
   },
-  "rank": 22
+  "rank": 22,
+  "investor": {
+   "route_name": "none needed — they are Indian citizens",
+   "status": "none",
+   "min_investment_usd": 0,
+   "investment_type": "n/a",
+   "extra_fees_usd_low": 0,
+   "extra_fees_usd_high": 0,
+   "total_first_year_usd_low": 0,
+   "total_first_year_usd_high": 0,
+   "recoverable": true,
+   "residency_requirement": "None",
+   "years_to_pr": 0,
+   "years_to_citizenship": 0,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "Zero immigration cost. Note only that Goa applies its own local restrictions on some categories of land, and agricultural land purchase is restricted across India for non-agriculturists — but these are property rules, not immigration rules.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://immigrantinvest.com/residence/",
+     "title": "Residence by Investment Programs in 2026",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Kuala Lumpur",
@@ -1504,7 +2136,38 @@ window.PLACES = [
    "diversity": 1.0,
    "english": 1.0
   },
-  "rank": 23
+  "rank": 23,
+  "investor": {
+   "route_name": "Premium Visa Programme (PVIP) / Malaysia My Second Home (MM2H) Silver",
+   "status": "open",
+   "min_investment_usd": 240000,
+   "investment_type": "bank deposit — PVIP requires a RM 1,000,000 fixed deposit (~USD 240,000) plus RM 40,000/month offshore income; MM2H Silver requires USD 150,000 fixed deposit PLUS a mandatory RM 600,000 property purchase",
+   "extra_fees_usd_low": 12000,
+   "extra_fees_usd_high": 30000,
+   "total_first_year_usd_low": 252000,
+   "total_first_year_usd_high": 270000,
+   "recoverable": true,
+   "residency_requirement": "MM2H Silver requires 60 days per year in Malaysia; PVIP has no minimum stay",
+   "years_to_pr": 99,
+   "years_to_citizenship": 99,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "stretch",
+   "note": "MM2H was restructured into Silver/Gold/Platinum tiers with a compulsory property purchase, and crucially only the Platinum tier (USD 1,000,000 deposit + RM 2m property) allows you to work or run a business. PVIP at RM 1m is the better fit because it permits employment — but neither is permanent residency and neither leads to citizenship.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://emerhub.com/malaysia/visas/long-term/malaysia-my-second-home-mm2h/",
+     "title": "Malaysia My Second Home (MM2H) 2026: Tiers, Requirements and How to Apply",
+     "date": "2026"
+    },
+    {
+     "url": "https://zagdim.com/en/buying-immigration-guide/expat-lifestyle-guide/malaysia-mm2h-2026-three-tier-silver-gold-platinum/",
+     "title": "Malaysia MM2H 2026: Three-Tier Structure Brings Higher Deposits and Mandatory Property Purchase",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Lima",
@@ -1559,7 +2222,33 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.25
   },
-  "rank": 24
+  "rank": 24,
+  "investor": {
+   "route_name": "Investor resident visa (Calidad migratoria Inversionista)",
+   "status": "open",
+   "min_investment_usd": 140000,
+   "investment_type": "business (minimum PEN 500,000 of paid-in capital in a Peruvian company, with a job-creation commitment)",
+   "extra_fees_usd_low": 3000,
+   "extra_fees_usd_high": 10000,
+   "total_first_year_usd_low": 143000,
+   "total_first_year_usd_high": 150000,
+   "recoverable": true,
+   "residency_requirement": "Must not be absent more than 183 days per year to keep residency and progress to PR",
+   "years_to_pr": 3,
+   "years_to_citizenship": 2,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "PEN 500,000 (~USD 140,000) into an operating Peruvian company plus a commitment to create local jobs; Peru's naturalisation window is short (2 years of residency) but the business must genuinely trade.",
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "https://uglobal.com/immigration/",
+     "title": "Uglobal — Residency & Citizenship by Investment programs",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Bali (Denpasar) / Jakarta",
@@ -1614,7 +2303,38 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.75
   },
-  "rank": 25
+  "rank": 25,
+  "investor": {
+   "route_name": "Second Home Visa / Golden Visa (E28C)",
+   "status": "open",
+   "min_investment_usd": 130000,
+   "investment_type": "bank deposit or property — USD 130,000 (IDR 2bn) deposit or property for the Second Home Visa; USD 350,000 in bonds/shares/funds/state-bank deposit for the 5-year Golden Visa; USD 1,000,000 in residential property for 10 years",
+   "extra_fees_usd_low": 3000,
+   "extra_fees_usd_high": 10000,
+   "total_first_year_usd_low": 133000,
+   "total_first_year_usd_high": 140000,
+   "recoverable": true,
+   "residency_requirement": "None — Indonesia explicitly imposes no physical presence requirement",
+   "years_to_pr": 99,
+   "years_to_citizenship": 99,
+   "family_included": true,
+   "can_work": false,
+   "realistic_for_them": "yes",
+   "note": "The Second Home Visa at USD 130,000 (a recoverable deposit in a state bank, or property) is the cheapest Asian golden-visa-style route and includes the spouse. But it carries no work rights — a passive investor visa only — and spending 183+ days a year in Indonesia makes you tax resident on worldwide income.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://emerhub.com/indonesia/visas/golden-visa/",
+     "title": "Indonesia Golden Visa 2026: Types, Investment Thresholds",
+     "date": "2026"
+    },
+    {
+     "url": "https://baliexception.com/news/golden-visa-program-in-indonesia/",
+     "title": "Indonesia Golden Visa 2026: The Complete Investor's Guide",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Lisbon",
@@ -1689,7 +2409,38 @@ window.PLACES = [
    "diversity": 0.5,
    "english": 0.75
   },
-  "rank": 26
+  "rank": 26,
+  "investor": {
+   "route_name": "Portugal Golden Visa (ARI) — real estate removed",
+   "status": "open",
+   "min_investment_usd": 292500,
+   "investment_type": "donation (EUR 250,000 cultural/heritage support, EUR 200,000 in low-density areas — non-recoverable) or fund (EUR 500,000 in a CMVM-regulated non-real-estate fund) or EUR 500,000 research or 10 jobs",
+   "extra_fees_usd_low": 28000,
+   "extra_fees_usd_high": 55000,
+   "total_first_year_usd_low": 320500,
+   "total_first_year_usd_high": 347500,
+   "recoverable": false,
+   "residency_requirement": "Just 7 days per year (14 days per 2-year renewal period) — the lowest in the EU",
+   "years_to_pr": 5,
+   "years_to_citizenship": 10,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "stretch",
+   "note": "Law 56/2023 removed every real-estate route on 7 October 2023, so the recoverable option is now a EUR 500,000 fund (out of budget) and the affordable option is a EUR 250,000 DONATION you never get back. Portugal has also lengthened naturalisation from 5 to 10 years for non-CPLP nationals, gutting the programme's original selling point, and AIMA's backlog runs into years.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://www.bitizenship.com/blog/portugal-golden-visa-real-estate-rules-in-2026",
+     "title": "Portugal Golden Visa Real Estate Rules in 2026",
+     "date": "2026"
+    },
+    {
+     "url": "https://getwherenext.com/blog/portugal-golden-visa-2026",
+     "title": "Portugal Golden Visa 2026: Routes, Backlog Reality, and the April 2026 Citizenship Change",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Bucharest",
@@ -1744,7 +2495,33 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.5
   },
-  "rank": 27
+  "rank": 27,
+  "investor": {
+   "route_name": "Long-stay visa for commercial activities / investor residence permit",
+   "status": "open",
+   "min_investment_usd": 58500,
+   "investment_type": "business — commonly cited EUR 50,000 into an SRL; the statutory 'investor' thresholds are EUR 100,000 + 10 jobs (LLC) or EUR 150,000 + 15 jobs (JSC)",
+   "extra_fees_usd_low": 3000,
+   "extra_fees_usd_high": 12000,
+   "total_first_year_usd_low": 61500,
+   "total_first_year_usd_high": 70500,
+   "recoverable": true,
+   "residency_requirement": "Must live in Romania; long stays abroad break the PR clock",
+   "years_to_pr": 5,
+   "years_to_citizenship": 8,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "No golden visa, but a funded Romanian SRL is a cheap and legitimate EU door, and Romania joined Schengen fully in January 2025 so the permit now carries free movement. Verify whether your case is assessed at the EUR 50,000 practice level or the statutory EUR 100,000-plus-10-jobs investor tier — they are very different projects.",
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "https://armenian-lawyer.com/global/eastern-europe-residency-by-investment-comparison/",
+     "title": "Comparing Eastern Europe's Residency by Investment Programs",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Warsaw",
@@ -1799,7 +2576,33 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.5
   },
-  "rank": 28
+  "rank": 28,
+  "investor": {
+   "route_name": "Temporary residence permit for business activity (sp. z o.o.)",
+   "status": "open",
+   "min_investment_usd": 15000,
+   "investment_type": "business — company share capital is only PLN 5,000, but the permit requires either income of 12x the average monthly salary in the prior year or employing 2 full-time Poles/EU residents",
+   "extra_fees_usd_low": 2000,
+   "extra_fees_usd_high": 8000,
+   "total_first_year_usd_low": 17000,
+   "total_first_year_usd_high": 23000,
+   "recoverable": true,
+   "residency_requirement": "Must live in Poland; no more than 6 consecutive months abroad",
+   "years_to_pr": 5,
+   "years_to_citizenship": 8,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "Poland has no investor scheme and no capital threshold to buy against — the real test is the income-or-employment condition at the first renewal, which catches most people. Cheap to enter, hard to keep.",
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "https://armenian-lawyer.com/global/eastern-europe-residency-by-investment-comparison/",
+     "title": "Comparing Eastern Europe's Residency by Investment Programs",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "San Jose",
@@ -1874,7 +2677,38 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.5
   },
-  "rank": 29
+  "rank": 29,
+  "investor": {
+   "route_name": "Inversionista (Investor) residency",
+   "status": "open",
+   "min_investment_usd": 200000,
+   "investment_type": "real estate, registered business, shares or approved project (USD 100,000 for approved forestry)",
+   "extra_fees_usd_low": 4000,
+   "extra_fees_usd_high": 12000,
+   "total_first_year_usd_low": 204000,
+   "total_first_year_usd_high": 212000,
+   "recoverable": true,
+   "residency_requirement": "At least one entry per year; no day-count minimum for temporary status",
+   "years_to_pr": 3,
+   "years_to_citizenship": 7,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "The Law 9996 discount to USD 150,000 sunset on 14 July 2026, so budget USD 200,000 unless the Assembly renewed it — check current status before committing. Real estate must be held personally, not through a company, and CCSS social-security contributions are compulsory from day one.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://www.globalinvestments.net/citizenship/costa-rica-residency",
+     "title": "Costa Rica Investor Residency 2026: $150,000 Inversionista Requirements",
+     "date": "2026"
+    },
+    {
+     "url": "https://crie.cr/residency-for-investors-in-costa-rica/",
+     "title": "Investor Residency Costa Rica: Requirements, $150,000 Investment and Process",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Luxembourg",
@@ -1929,7 +2763,38 @@ window.PLACES = [
    "diversity": 0.75,
    "english": 0.75
   },
-  "rank": 30
+  "rank": 30,
+  "investor": {
+   "route_name": "Investor Residence Permit",
+   "status": "open",
+   "min_investment_usd": 585000,
+   "investment_type": "business (EUR 500,000 into an existing or new Luxembourg company); EUR 3m management structure; EUR 20m bank deposit — real estate explicitly excluded",
+   "extra_fees_usd_low": 15000,
+   "extra_fees_usd_high": 40000,
+   "total_first_year_usd_low": 600000,
+   "total_first_year_usd_high": 625000,
+   "recoverable": true,
+   "residency_requirement": "Must genuinely reside in Luxembourg to renew and to naturalise",
+   "years_to_pr": 5,
+   "years_to_citizenship": 5,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "no",
+   "note": "EUR 500,000 minimum with a hard job condition (maintain jobs for 5 years in an existing company, or create 5 within 3 years in a new one), and property is expressly barred. The 5-year citizenship path is genuinely fast for the EU but gated on a Luxembourgish language test.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers/investisseur/investisseur-pays-tiers.html",
+     "title": "Conditions of residence for investors from third countries — Guichet.lu",
+     "date": "2026"
+    },
+    {
+     "url": "https://getwherenext.com/blog/luxembourg-investor-residence-2026",
+     "title": "Luxembourg Investor Residence Permit 2026",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Valletta",
@@ -1984,7 +2849,38 @@ window.PLACES = [
    "diversity": 0.5,
    "english": 1.0
   },
-  "rank": 31
+  "rank": 31,
+  "investor": {
+   "route_name": "Malta Permanent Residence Programme (MPRP)",
+   "status": "open",
+   "min_investment_usd": 16400,
+   "investment_type": "government fees plus a qualifying lease (EUR 14,000/year) or property purchase (EUR 375,000) — the fees are a contribution, not an investment",
+   "extra_fees_usd_low": 116000,
+   "extra_fees_usd_high": 152000,
+   "total_first_year_usd_low": 132400,
+   "total_first_year_usd_high": 168400,
+   "recoverable": false,
+   "residency_requirement": "None — no minimum stay to hold PR",
+   "years_to_pr": 0,
+   "years_to_citizenship": 99,
+   "family_included": true,
+   "can_work": false,
+   "realistic_for_them": "stretch",
+   "note": "MPRP gives immediate, lifetime EU permanent residence for a couple for roughly USD 132k–168k on the rental variant — but essentially none of it is recoverable: EUR 60,000 admin fee, EUR 37,000+ government contribution, EUR 2,000 charity donation and rent. It also grants no right to work in Malta and no path to citizenship — and the CJEU ruled Malta's separate citizenship-by-investment scheme illegal on 29 April 2025.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://www.globalcitizensolutions.com/malta-residency-by-investment/",
+     "title": "Malta Permanent Residence Programme (MPRP): 2026 Guide",
+     "date": "2026"
+    },
+    {
+     "url": "https://getwherenext.com/blog/malta-mprp-2026",
+     "title": "Malta Permanent Residence Programme (MPRP) 2026: Post-2025 Reform Guide",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Bangkok",
@@ -2039,7 +2935,38 @@ window.PLACES = [
    "diversity": 0.5,
    "english": 0.75
   },
-  "rank": 32
+  "rank": 32,
+  "investor": {
+   "route_name": "Thailand Privilege (Elite) membership / LTR Wealthy Global Citizen",
+   "status": "open",
+   "min_investment_usd": 28000,
+   "investment_type": "membership fee (THB 900,000 for 5 years, non-recoverable, no work rights) or LTR: USD 1,000,000 of assets with USD 500,000 invested in Thailand",
+   "extra_fees_usd_low": 2000,
+   "extra_fees_usd_high": 8000,
+   "total_first_year_usd_low": 30000,
+   "total_first_year_usd_high": 36000,
+   "recoverable": false,
+   "residency_requirement": "None for either route",
+   "years_to_pr": 99,
+   "years_to_citizenship": 99,
+   "family_included": true,
+   "can_work": false,
+   "realistic_for_them": "yes",
+   "note": "The Elite card is cheap (THB 900,000 for 5 years) but is a non-refundable membership with no work rights and no path to PR. The LTR Wealthy Global Citizen route does grant a work permit and a foreign-income tax exemption, and Thailand removed the USD 80,000 income test in February 2025 — but it still needs USD 500,000 actually invested in Thailand, which is out of range.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://emerhub.com/thailand/stay/long-term-resident/wealthy-global-citizen/",
+     "title": "Thailand LTR Visa for Wealthy Global Citizens: 2026 Requirements",
+     "date": "2026"
+    },
+    {
+     "url": "https://asterofasia.com/blog/thailand-elite-visa-vs-ltr-visa-comparison-2026-seo-1779531544642",
+     "title": "Thailand Elite vs LTR Visa for Investors 2026",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Barcelona",
@@ -2114,7 +3041,33 @@ window.PLACES = [
    "diversity": 0.5,
    "english": 0.5
   },
-  "rank": 33
+  "rank": 33,
+  "investor": {
+   "route_name": "Entrepreneur visa (Ley 14/2013) — Golden Visa ABOLISHED",
+   "status": "closed",
+   "min_investment_usd": 58500,
+   "investment_type": "business — no capital threshold; requires a favourable ENISA report",
+   "extra_fees_usd_low": 3000,
+   "extra_fees_usd_high": 12000,
+   "total_first_year_usd_low": 61500,
+   "total_first_year_usd_high": 70500,
+   "recoverable": true,
+   "residency_requirement": "Must live in Spain; no more than 6 months abroad per year for renewals",
+   "years_to_pr": 5,
+   "years_to_citizenship": 10,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "stretch",
+   "note": "Same national closure as Madrid: golden visa dead since 3 April 2025, and Barcelona was one of the cities the reform explicitly targeted (94 of every 100 investor visas were property-linked in stressed housing markets). Catalonia adds its own housing pressures but no separate route.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://kpmg.com/xx/en/our-insights/gms-flash-alert/flash-alert-2025-008.html",
+     "title": "Spain: Golden Visa Programme Abolished",
+     "date": "2025"
+    }
+   ]
+  }
  },
  {
   "city": "Montevideo",
@@ -2169,7 +3122,38 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.25
   },
-  "rank": 34
+  "rank": 34,
+  "investor": {
+   "route_name": "Residencia legal permanente (income-based; no investment minimum)",
+   "status": "open",
+   "min_investment_usd": 0,
+   "investment_type": "none required for legal residency — proof of stable income (~USD 1,500/month) suffices; the investor TAX-residency route now needs ~USD 2.2m in property",
+   "extra_fees_usd_low": 4000,
+   "extra_fees_usd_high": 12000,
+   "total_first_year_usd_low": 4000,
+   "total_first_year_usd_high": 12000,
+   "recoverable": true,
+   "residency_requirement": "Must establish real presence and centre of life in Uruguay; roughly 6 months in the first year for the residency file",
+   "years_to_pr": 0,
+   "years_to_citizenship": 5,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "Uruguay is unusual: legal permanent residency has no investment threshold at all, so the cheapest way in is income, not capital. The famous property route was only ever a TAX-residency shortcut, and Law 20.446 raised it from ~USD 590k to ~USD 2.2m effective 1 January 2026 while abolishing the 60-day presence option.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://goldenharbors.com/articles/uruguay-residency-citizenship-by-investment",
+     "title": "Uruguay Residency by Investment 2026: Real Costs and Tax Changes",
+     "date": "2026"
+    },
+    {
+     "url": "https://wiki.private.law/en/uruguay-tax-residency",
+     "title": "Uruguay Tax Residency & Tax Holidays (2026 Reform)",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Vienna",
@@ -2244,7 +3228,33 @@ window.PLACES = [
    "diversity": 0.5,
    "english": 0.5
   },
-  "rank": 35
+  "rank": 35,
+  "investor": {
+   "route_name": "Settlement permit – self-employed key worker (Section 24 NAG) / Settlement permit except gainful employment",
+   "status": "open",
+   "min_investment_usd": 117000,
+   "investment_type": "business (EUR 100,000 investment, or job creation, or transfer of know-how) — quota-limited",
+   "extra_fees_usd_low": 5000,
+   "extra_fees_usd_high": 18000,
+   "total_first_year_usd_low": 122000,
+   "total_first_year_usd_high": 135000,
+   "recoverable": true,
+   "residency_requirement": "Must live in Austria; the private-means permit demands genuine residence and bars all employment",
+   "years_to_pr": 5,
+   "years_to_citizenship": 10,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "stretch",
+   "note": "Austria has no golden visa. The self-employed key-worker permit needs roughly EUR 100,000 of investment AND sits inside a tiny annual quota that opens on 1 January and is often exhausted the same day. Austria's discretionary citizenship-for-extraordinary-contribution route is a EUR 3m+ political favour, not a programme.",
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "https://immigrantinvest.com/blog/top-7-countries-for-european-residence-by-investment/",
+     "title": "Top 7 EU Residence Permits by Investment in 2026",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Manila",
@@ -2299,7 +3309,38 @@ window.PLACES = [
    "diversity": 0.5,
    "english": 1.0
   },
-  "rank": 36
+  "rank": 36,
+  "investor": {
+   "route_name": "Special Investor's Resident Visa (SIRV)",
+   "status": "open",
+   "min_investment_usd": 75000,
+   "investment_type": "business or listed shares — USD 75,000 into PSE-listed securities or a qualifying Philippine enterprise, certified by the Board of Investments",
+   "extra_fees_usd_low": 4000,
+   "extra_fees_usd_high": 12000,
+   "total_first_year_usd_low": 79000,
+   "total_first_year_usd_high": 87000,
+   "recoverable": true,
+   "residency_requirement": "No strict minimum; the visa lapses if the investment is withdrawn",
+   "years_to_pr": 0,
+   "years_to_citizenship": 10,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "At USD 75,000 the SIRV is the cheapest indefinite-stay investor visa in Asia and includes the spouse and children under 21. Note the SRRV retirement alternative is now closed to them: the September 2025 restructuring raised the minimum age to 40 for all applicants. SIRV holders may work in the invested enterprise but need an AEP to work elsewhere.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://globallawexperts.com/philippines-srrv-visa/",
+     "title": "Philippines SRRV Visa: Key Rules 2026",
+     "date": "2026"
+    },
+    {
+     "url": "https://www.jrcconsultancy.com/blog-srrv-retirement-visa-philippines-2026",
+     "title": "SRRV Retirement Visa Philippines 2026: Age 40+, New Deposits",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Abu Dhabi",
@@ -2354,7 +3395,33 @@ window.PLACES = [
    "diversity": 1.0,
    "english": 1.0
   },
-  "rank": 37
+  "rank": 37,
+  "investor": {
+   "route_name": "UAE Golden Visa (10-year) via property",
+   "status": "open",
+   "min_investment_usd": 545000,
+   "investment_type": "real estate — AED 2,000,000 certified property value (federal rule, applies in Abu Dhabi as in Dubai)",
+   "extra_fees_usd_low": 14000,
+   "extra_fees_usd_high": 30000,
+   "total_first_year_usd_low": 559000,
+   "total_first_year_usd_high": 575000,
+   "recoverable": true,
+   "residency_requirement": "None for the Golden Visa — no six-month absence rule",
+   "years_to_pr": 99,
+   "years_to_citizenship": 99,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "stretch",
+   "note": "Same federal AED 2m threshold as Dubai, but Abu Dhabi's freehold zones are more limited and its property market is thinner, so exit liquidity is worse. Abu Dhabi also runs generous talent/culture Golden Visa nominations that cost nothing — worth exploring before spending AED 2m.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://ancova-associates.com/insights/uae-golden-visa-requirements-2026",
+     "title": "UAE Golden Visa Requirements 2026: Eligibility & Thresholds",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Almaty",
@@ -2409,7 +3476,38 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.25
   },
-  "rank": 38
+  "rank": 38,
+  "investor": {
+   "route_name": "Investor ('golden') visa — 10-year residence permit / AIFC investment tax residency",
+   "status": "open",
+   "min_investment_usd": 300000,
+   "investment_type": "business or securities — USD 300,000 into a Kazakh company's charter capital or local securities; separate AIFC 5-year tax-residency route from USD 60,000 of approved securities",
+   "extra_fees_usd_low": 5000,
+   "extra_fees_usd_high": 15000,
+   "total_first_year_usd_low": 305000,
+   "total_first_year_usd_high": 315000,
+   "recoverable": true,
+   "residency_requirement": "No hard minimum stay published for the investor permit",
+   "years_to_pr": 5,
+   "years_to_citizenship": 99,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "stretch",
+   "note": "Genuinely new: the regulation took effect 10 May 2025 with applications from 1 June 2025, giving a 10-year permit for USD 300,000. Kazakhstan does not permit dual citizenship, so naturalisation would mean surrendering the Indian passport — treat this as a residence and tax play only. The AIFC USD 60,000 securities route is far cheaper but gives tax residency, not a residence permit.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://outboundinvestment.com/kazakhstan-launches-investment-residency-program-with-300k-threshold/",
+     "title": "Kazakhstan Launches Investment Residency Program with $300K Threshold",
+     "date": "2025"
+    },
+    {
+     "url": "https://www.fragomen.com/insights/kazakhstan-investor-visa-introduced.html",
+     "title": "Kazakhstan: Investor Visa Introduced",
+     "date": "2025"
+    }
+   ]
+  }
  },
  {
   "city": "Buenos Aires",
@@ -2464,7 +3562,33 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.25
   },
-  "rank": 39
+  "rank": 39,
+  "investor": {
+   "route_name": "Visa de Inversionista (23(a) Ley 25.871) / Rentista",
+   "status": "open",
+   "min_investment_usd": 1200,
+   "investment_type": "productive/commercial business investment; statutory floor is ARS 1,500,000, which inflation has rendered nominal",
+   "extra_fees_usd_low": 3000,
+   "extra_fees_usd_high": 10000,
+   "total_first_year_usd_low": 25000,
+   "total_first_year_usd_high": 60000,
+   "recoverable": true,
+   "residency_requirement": "Cannot be absent more than 6 months per year while on temporary residency",
+   "years_to_pr": 3,
+   "years_to_citizenship": 2,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "The legal minimum (ARS 1.5m) is unindexed and now worth about USD 1,000, but Migraciones and the Ministry of Production want a credible funded business plan — in practice USD 25k–60k of real deployment. Argentina's 2-year path to citizenship is the fastest of any country here, though Decree 366/2025 tightened residency and naturalisation checks.",
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "https://uglobal.com/immigration/",
+     "title": "Uglobal — Residency & Citizenship by Investment programs",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Medellin",
@@ -2519,7 +3643,38 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.25
   },
-  "rank": 40
+  "rank": 40,
+  "investor": {
+   "route_name": "M-6 Investor Visa (company) / M-10 Property Investor Visa",
+   "status": "open",
+   "min_investment_usd": 46000,
+   "investment_type": "company capital (100 SMMLV) or real estate (350 SMMLV = COP 612,816,750 ≈ USD 161,300)",
+   "extra_fees_usd_low": 2500,
+   "extra_fees_usd_high": 8000,
+   "total_first_year_usd_low": 48500,
+   "total_first_year_usd_high": 54000,
+   "recoverable": true,
+   "residency_requirement": "Must not be outside Colombia for more than 6 continuous months on an M visa",
+   "years_to_pr": 5,
+   "years_to_citizenship": 5,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "Colombia indexes everything to the minimum wage, and the 2026 SMMLV jumped ~23% to COP 1,750,905, pushing the property route to about USD 161,300; the company route at 100 SMMLV (~USD 46,000) is the cheap door and lets you work in your own business. Buying at 650 SMMLV cuts the wait for the R (resident) visa from 5 years to 2.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://medellinlawyer.com/what-is-a-colombian-property-investor-visa/",
+     "title": "Property Investor Visa 2026: New Minimums Explained",
+     "date": "2026"
+    },
+    {
+     "url": "https://blog.stanfordbaker.com/posts/colombia-investment-visa-2026",
+     "title": "Colombia M-Investor Visa 2026: Investment Thresholds & Path to Permanent Residency",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Berlin",
@@ -2594,7 +3749,33 @@ window.PLACES = [
    "diversity": 0.75,
    "english": 0.75
   },
-  "rank": 41
+  "rank": 41,
+  "investor": {
+   "route_name": "Section 21 AufenthG self-employment / freelance residence permit",
+   "status": "open",
+   "min_investment_usd": 29000,
+   "investment_type": "business — no statutory minimum since the EUR 250,000 floor was scrapped in 2012; authorities assess economic interest, financing and business plan",
+   "extra_fees_usd_low": 3000,
+   "extra_fees_usd_high": 12000,
+   "total_first_year_usd_low": 32000,
+   "total_first_year_usd_high": 41000,
+   "recoverable": true,
+   "residency_requirement": "Must live in Germany; no more than 6 consecutive months abroad",
+   "years_to_pr": 3,
+   "years_to_citizenship": 5,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "Germany has no golden visa and no capital threshold — Section 21 turns on a credible business plan, secured financing and (for freelancers) letters of intent from German clients. For a service designer with a portfolio this is realistically the cheapest route into a top-tier Western European city, and Section 21(4) grants settlement after just 3 years if the business works.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://immigrantinvest.com/blog/top-7-countries-for-european-residence-by-investment/",
+     "title": "Top 7 EU Residence Permits by Investment in 2026",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Manama",
@@ -2649,7 +3830,38 @@ window.PLACES = [
    "diversity": 1.0,
    "english": 1.0
   },
-  "rank": 42
+  "rank": 42,
+  "investor": {
+   "route_name": "Bahrain Golden Residency / 5-year self-sponsored property residence",
+   "status": "open",
+   "min_investment_usd": 132500,
+   "investment_type": "real estate — BHD 50,000 (~USD 132,500) for the 5-year property-owner residence; BHD 130,000 (~USD 345,000) for the 10-year Golden Residency after the 2025 reduction from BHD 200,000",
+   "extra_fees_usd_low": 4000,
+   "extra_fees_usd_high": 12000,
+   "total_first_year_usd_low": 136500,
+   "total_first_year_usd_high": 144500,
+   "recoverable": true,
+   "residency_requirement": "None published for the property-linked permits",
+   "years_to_pr": 99,
+   "years_to_citizenship": 99,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "Bahrain cut its Golden Residency property threshold from BHD 200,000 to BHD 130,000, and the older BHD 50,000 five-year property residence remains the cheapest Gulf entry at about USD 132,500. Golden Residency carries work rights and family reunification, but as everywhere in the GCC there is no PR or citizenship endpoint.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://www.fragomen.com/insights/bahrain-minimum-real-estate-investment-for-golden-residency-visa-reduced.html",
+     "title": "Bahrain: Minimum Real Estate Investment for Golden Residency Visa Reduced",
+     "date": "2026"
+    },
+    {
+     "url": "https://www.imidaily.com/analysis/gcc-golden-visa-guide-2026/",
+     "title": "GCC Golden Visa Guide 2026",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Tbilisi",
@@ -2704,7 +3916,38 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.5
   },
-  "rank": 43
+  "rank": 43,
+  "investor": {
+   "route_name": "Short-term residence permit by property purchase / Investor residence permit",
+   "status": "open",
+   "min_investment_usd": 150000,
+   "investment_type": "real estate — appraised market value of at least USD 150,000 (raised from USD 100,000 on 1 March 2026); Investor permit from USD 300,000",
+   "extra_fees_usd_low": 1500,
+   "extra_fees_usd_high": 5000,
+   "total_first_year_usd_low": 151500,
+   "total_first_year_usd_high": 155000,
+   "recoverable": true,
+   "residency_requirement": "No day-count minimum, but the permit is cancelled if you are outside Georgia for more than 6 consecutive months",
+   "years_to_pr": 6,
+   "years_to_citizenship": 10,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "The cheapest fully recoverable buy-a-property-get-residence deal on this list, and Georgia lets you work and run a business freely with a flat 20% income tax and a 1% small-business regime. Two catches: the threshold rose 50% to USD 150,000 on 1 March 2026, and the permit is only 1 year at a time, renewed against an accredited appraisal that must stay above the line.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://legal.ge/en/news/georgia-raises-real-estate-investment-bar-for-residence-permits-by-50-en",
+     "title": "Georgia Raises Real Estate Investment Bar for Residence Permits by 50%",
+     "date": "2026"
+    },
+    {
+     "url": "https://realting.com/news/georgia-residence-permit-real-estate-2026",
+     "title": "Georgia Residence Permit by Property Purchase in 2026: New $150,000 Threshold",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Brisbane",
@@ -2759,7 +4002,33 @@ window.PLACES = [
    "diversity": 0.75,
    "english": 1.0
   },
-  "rank": 44
+  "rank": 44,
+  "investor": {
+   "route_name": "none — Business Innovation and Investment Program (subclass 188) CLOSED",
+   "status": "closed",
+   "min_investment_usd": 0,
+   "investment_type": "n/a",
+   "extra_fees_usd_low": 0,
+   "extra_fees_usd_high": 0,
+   "total_first_year_usd_low": 0,
+   "total_first_year_usd_high": 0,
+   "recoverable": false,
+   "residency_requirement": "n/a",
+   "years_to_pr": 0,
+   "years_to_citizenship": 4,
+   "family_included": false,
+   "can_work": false,
+   "realistic_for_them": "no",
+   "note": "No investor route exists. Queensland's state-nominated business streams closed with the federal subclass 188 on 31 July 2024 and no replacement has been legislated.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://natlawreview.com/article/australia-business-innovation-and-investment-program-ending",
+     "title": "Australia Business Innovation and Investment Program Ending",
+     "date": "2024"
+    }
+   ]
+  }
  },
  {
   "city": "Perth",
@@ -2814,7 +4083,33 @@ window.PLACES = [
    "diversity": 0.75,
    "english": 1.0
   },
-  "rank": 45
+  "rank": 45,
+  "investor": {
+   "route_name": "none — Business Innovation and Investment Program (subclass 188) CLOSED",
+   "status": "closed",
+   "min_investment_usd": 0,
+   "investment_type": "n/a",
+   "extra_fees_usd_low": 0,
+   "extra_fees_usd_high": 0,
+   "total_first_year_usd_low": 0,
+   "total_first_year_usd_high": 0,
+   "recoverable": false,
+   "residency_requirement": "n/a",
+   "years_to_pr": 0,
+   "years_to_citizenship": 4,
+   "family_included": false,
+   "can_work": false,
+   "realistic_for_them": "no",
+   "note": "No investor route exists. Western Australia's business nomination stream ended with the federal programme on 31 July 2024.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://natlawreview.com/article/australia-business-innovation-and-investment-program-ending",
+     "title": "Australia Business Innovation and Investment Program Ending",
+     "date": "2024"
+    }
+   ]
+  }
  },
  {
   "city": "Taipei",
@@ -2869,7 +4164,33 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.5
   },
-  "rank": 46
+  "rank": 46,
+  "investor": {
+   "route_name": "Investment-based resident visa (approved investment) / Entrepreneur visa",
+   "status": "open",
+   "min_investment_usd": 192000,
+   "investment_type": "business — approximately NT$6,000,000 of investment approved by the Investment Commission; entrepreneur visa route from about NT$2,000,000",
+   "extra_fees_usd_low": 4000,
+   "extra_fees_usd_high": 12000,
+   "total_first_year_usd_low": 196000,
+   "total_first_year_usd_high": 204000,
+   "recoverable": true,
+   "residency_requirement": "APRC requires 183+ days per year in Taiwan for 5 consecutive years",
+   "years_to_pr": 5,
+   "years_to_citizenship": 99,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "About NT$6m (~USD 192,000) of approved investment buys a resident visa and ARC, and 5 years at 183+ days a year converts to an APRC (permanent residence) — one of the better PR endpoints in Asia. Taiwanese naturalisation, however, generally requires renouncing your existing citizenship.",
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "https://www.imidaily.com/analysis/regional-investment-visa-guide-for-east-asian-markets/",
+     "title": "Regional Investment Visa Guide for East Asian Markets",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Santiago",
@@ -2924,7 +4245,33 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.25
   },
-  "rank": 47
+  "rank": 47,
+  "investor": {
+   "route_name": "Permiso de residencia temporal – subcategoria Inversionista",
+   "status": "open",
+   "min_investment_usd": 500000,
+   "investment_type": "business / project investment approved by InvestChile",
+   "extra_fees_usd_low": 5000,
+   "extra_fees_usd_high": 15000,
+   "total_first_year_usd_low": 505000,
+   "total_first_year_usd_high": 515000,
+   "recoverable": true,
+   "residency_requirement": "Must reside in Chile; permanent residency requires no more than 180 days abroad per year",
+   "years_to_pr": 2,
+   "years_to_citizenship": 5,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "no",
+   "note": "The 2021 migration law scrapped the old cheap 'temporary residency for investors'; the current investor subcategory expects a project of roughly USD 500,000 vetted by InvestChile. Chile's ordinary work/professional routes are far cheaper than its investor door.",
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "https://uglobal.com/immigration/",
+     "title": "Uglobal — Residency & Citizenship by Investment programs",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Seoul",
@@ -2979,7 +4326,38 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.25
   },
-  "rank": 48
+  "rank": 48,
+  "investor": {
+   "route_name": "D-8 Corporate Investment Visa / Immigrant Investor (F-2) schemes",
+   "status": "open",
+   "min_investment_usd": 72000,
+   "investment_type": "business — KRW 100,000,000 (~USD 72,000) into a Korean company under the Foreign Investment Promotion Act; KRW 500m+ with 5 Korean employees supports F-5 permanent residence; public-business investment routes start at KRW 500m",
+   "extra_fees_usd_low": 4000,
+   "extra_fees_usd_high": 14000,
+   "total_first_year_usd_low": 76000,
+   "total_first_year_usd_high": 86000,
+   "recoverable": true,
+   "residency_requirement": "Must reside in Korea and actively manage the company; F-5 requires 5 years of D-8 status",
+   "years_to_pr": 5,
+   "years_to_citizenship": 5,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "KRW 100,000,000 (~USD 72,000) is a genuinely low bar for a high-income OECD country, though investments under KRW 300m attract heavier documentation and scrutiny. Getting to F-5 permanent residence realistically needs KRW 500m and five Korean employees, and Korean naturalisation requires renouncing the Indian passport.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://wheretoemigrate.io/pathways/south-korea-d-8-corporate-investment-visa",
+     "title": "D-8 Corporate Investment Visa — South Korea Visa Guide (2026)",
+     "date": "2026"
+    },
+    {
+     "url": "https://www.bestar-asia.com/post/what-are-the-d-8-visa-requirements-in-2026-south-korea",
+     "title": "What are the D-8 visa requirements in 2026? South Korea",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Doha",
@@ -3034,7 +4412,38 @@ window.PLACES = [
    "diversity": 1.0,
    "english": 1.0
   },
-  "rank": 49
+  "rank": 49,
+  "investor": {
+   "route_name": "Real Estate Residency Permit / Permanent Residency by property",
+   "status": "open",
+   "min_investment_usd": 200000,
+   "investment_type": "real estate — QAR 730,000 (~USD 200,000) in a designated freehold zone for sponsor-free renewable residency; QAR 3,650,000 (~USD 1,000,000) for permanent residency",
+   "extra_fees_usd_low": 3000,
+   "extra_fees_usd_high": 10000,
+   "total_first_year_usd_low": 203000,
+   "total_first_year_usd_high": 210000,
+   "recoverable": true,
+   "residency_requirement": "No published minimum stay for the property-linked permit",
+   "years_to_pr": 99,
+   "years_to_citizenship": 99,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "At QAR 730,000 (~USD 200,000) this is now the cheapest fixed property threshold in the Gulf, and it frees you from the kafala sponsor system. But PR needs USD 1m, Qatari citizenship is effectively unobtainable, and the freehold zones (the Pearl, Lusail, West Bay Lagoon) are a narrow and illiquid slice of the market.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://www.globalcitizensolutions.com/qatar-launches-200k-real-estate-residency-option/",
+     "title": "Qatar Launches $200K Residency Option, Undercuts UAE and Saudi",
+     "date": "2026"
+    },
+    {
+     "url": "https://www.imidaily.com/analysis/gcc-golden-visa-guide-2026/",
+     "title": "GCC Golden Visa Guide 2026: Residency Across the Gulf",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Dubai",
@@ -3109,7 +4518,38 @@ window.PLACES = [
    "diversity": 1.0,
    "english": 1.0
   },
-  "rank": 50
+  "rank": 50,
+  "investor": {
+   "route_name": "Property Investor Visa (2-year) / Golden Visa (10-year)",
+   "status": "open",
+   "min_investment_usd": 204000,
+   "investment_type": "real estate — AED 750,000 (~USD 204,000) for the 2-year renewable investor visa; AED 2,000,000 (~USD 545,000) for the 10-year Golden Visa; AED 2m in a fund also qualifies",
+   "extra_fees_usd_low": 12000,
+   "extra_fees_usd_high": 28000,
+   "total_first_year_usd_low": 216000,
+   "total_first_year_usd_high": 232000,
+   "recoverable": true,
+   "residency_requirement": "Golden Visa has NO minimum stay; the standard 2-year investor visa lapses after 6 months outside the UAE",
+   "years_to_pr": 99,
+   "years_to_citizenship": 99,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "The AED 750,000 two-year investor visa is comfortably inside budget and the AED 2m Golden Visa (~USD 545,000) is the upgrade; off-plan and mortgaged properties now qualify if AED 2m of equity is paid. Decisive caveat: the UAE has no permanent residency and no realistic citizenship — this is a renewable tax-free residence, never a settled status, and DLD values you at the recorded purchase price, not market value.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://goldenvisaconsultant.com/uae-golden-visa-through-property-investment/",
+     "title": "UAE Golden Visa for Property Investors 2026: AED 2M Guide",
+     "date": "2026"
+    },
+    {
+     "url": "https://www.middleeastbriefing.com/news/dubai-property-investor-visa-2026-property-value-requirement/",
+     "title": "Dubai Property Investor Visa 2026: Property Value Requirement",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Melbourne",
@@ -3184,7 +4624,38 @@ window.PLACES = [
    "diversity": 1.0,
    "english": 1.0
   },
-  "rank": 51
+  "rank": 51,
+  "investor": {
+   "route_name": "none — Business Innovation and Investment Program (subclass 188) CLOSED",
+   "status": "closed",
+   "min_investment_usd": 0,
+   "investment_type": "n/a — the National Innovation visa (858) that replaced it is talent-based and invitation-only, with no investment threshold",
+   "extra_fees_usd_low": 0,
+   "extra_fees_usd_high": 0,
+   "total_first_year_usd_low": 0,
+   "total_first_year_usd_high": 0,
+   "recoverable": false,
+   "residency_requirement": "n/a",
+   "years_to_pr": 0,
+   "years_to_citizenship": 4,
+   "family_included": false,
+   "can_work": false,
+   "realistic_for_them": "no",
+   "note": "Australia closed the subclass 188 Business Innovation, Investor, Significant Investor and Entrepreneur streams to new applications on 31 July 2024 and has not replaced them. The National Innovation visa (858), live since 7 December 2024, is an EOI-based exceptional-talent visa — money cannot buy it. There is no investor route into any Australian city in 2026.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://www.fragomen.com/insights/australia-new-national-innovation-visa-to-replace-the-global-talent-visa-business-innovation-and-investment-visa-programs.html",
+     "title": "Australia: New National Innovation Visa to Replace the Global Talent and BIIP Programs",
+     "date": "2024"
+    },
+    {
+     "url": "https://hartmanimmigration.com.au/business-innovation-investment-visa-subclass-188-closed-new-era-begins-national-innovation-visa/",
+     "title": "Business Innovation and Investment Visa (Subclass 188) Closed",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Port Louis",
@@ -3239,7 +4710,38 @@ window.PLACES = [
    "diversity": 0.75,
    "english": 0.75
   },
-  "rank": 52
+  "rank": 52,
+  "investor": {
+   "route_name": "Occupation Permit (Investor) / Residence Permit by property purchase",
+   "status": "open",
+   "min_investment_usd": 100000,
+   "investment_type": "business — USD 100,000 initial investment for the 10-year Investor Occupation Permit (raised from USD 50,000 in 2026); alternatively USD 375,000 in a PDS/IRS/Smart City property gives a residence permit for the buyer and family",
+   "extra_fees_usd_low": 5000,
+   "extra_fees_usd_high": 15000,
+   "total_first_year_usd_low": 105000,
+   "total_first_year_usd_high": 115000,
+   "recoverable": true,
+   "residency_requirement": "No strict day count, but the permit is tied to a genuinely trading business",
+   "years_to_pr": 3,
+   "years_to_citizenship": 7,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "The Investor Occupation Permit doubled from USD 50,000 to USD 100,000 in 2026 and now hinges on performance — turnover of MUR 5,000,000 from year 3 and MUR 8,000,000 from year 5 to renew. That turnover test, not the entry price, is the real hurdle; the USD 375,000 property route avoids it entirely and gives residence for as long as you own.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://edbmauritius.org/newsletter-august-2026-op",
+     "title": "What's New in Occupation and Residence Permits — EDB Mauritius",
+     "date": "2026"
+    },
+    {
+     "url": "https://kickoffmauritius.com/en/guides/occupation-permit-mauritius-2026-changes",
+     "title": "Occupation Permit Mauritius 2026: All the Changes Explained",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Riyadh",
@@ -3294,7 +4796,33 @@ window.PLACES = [
    "diversity": 0.75,
    "english": 0.75
   },
-  "rank": 53
+  "rank": 53,
+  "investor": {
+   "route_name": "Premium Residency (Iqama Mumayyazah)",
+   "status": "open",
+   "min_investment_usd": 26700,
+   "investment_type": "fee, not investment — SAR 100,000/year renewable, or SAR 800,000 one-off for unlimited premium residency; property-linked premium residency requires SAR 4,000,000 (~USD 1.07m)",
+   "extra_fees_usd_low": 3000,
+   "extra_fees_usd_high": 10000,
+   "total_first_year_usd_low": 29700,
+   "total_first_year_usd_high": 36700,
+   "recoverable": false,
+   "residency_requirement": "None published; premium residency is not tied to an employer",
+   "years_to_pr": 99,
+   "years_to_citizenship": 99,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "stretch",
+   "note": "The renewable tier is a pure annual FEE of about USD 26,700 that you never recover — cheap to try, expensive over a decade, and the SAR 800,000 unlimited version is also a fee, not an asset. It does confer sponsor-free residence with the right to own property and run a business, but Saudi social and legal conditions are the real decision variable here, not the money.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://www.imidaily.com/analysis/gcc-golden-visa-guide-2026/",
+     "title": "GCC Golden Visa Guide 2026: Residency Across the Gulf",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Ho Chi Minh City",
@@ -3349,7 +4877,38 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.5
   },
-  "rank": 54
+  "rank": 54,
+  "investor": {
+   "route_name": "Investor visa DT3 + Temporary Residence Card",
+   "status": "open",
+   "min_investment_usd": 114000,
+   "investment_type": "business — capital contribution of at least VND 3,000,000,000 (~USD 114,000) into a Vietnamese company",
+   "extra_fees_usd_low": 4000,
+   "extra_fees_usd_high": 12000,
+   "total_first_year_usd_low": 118000,
+   "total_first_year_usd_high": 126000,
+   "recoverable": true,
+   "residency_requirement": "TRC holders should not be absent for extended periods; no formal day count",
+   "years_to_pr": 99,
+   "years_to_citizenship": 99,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "VND 3 billion is the exact dividing line: below it you are DT4 on a 12-month visa with no residence card and no family sponsorship; at or above it you get DT3, a 3-year visa, a temporary residence card and the right to sponsor your spouse. Vietnamese permanent residence is extremely restrictive and citizenship requires renouncing your Indian passport, so treat this as long-stay only.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://emerhub.com/vietnam/visas/dt-investor-visa/",
+     "title": "Investor (DT) Visa Vietnam 2026: DT1-DT4 Tiers, Residence Card and How to Apply",
+     "date": "2026"
+    },
+    {
+     "url": "https://visanow.vn/vietnam-temporary-residence-card-for-investors/",
+     "title": "Vietnam investor temporary residence card 2026",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Wellington",
@@ -3404,7 +4963,33 @@ window.PLACES = [
    "diversity": 0.5,
    "english": 1.0
   },
-  "rank": 55
+  "rank": 55,
+  "investor": {
+   "route_name": "Active Investor Plus visa",
+   "status": "open",
+   "min_investment_usd": 3000000,
+   "investment_type": "fund/business — NZ$5,000,000 Growth (3 years) or NZ$10,000,000 Balanced (5 years)",
+   "extra_fees_usd_low": 25000,
+   "extra_fees_usd_high": 70000,
+   "total_first_year_usd_low": 3025000,
+   "total_first_year_usd_high": 3070000,
+   "recoverable": true,
+   "residency_requirement": "21 days over 3 years (Growth) or 105 days over 5 years (Balanced)",
+   "years_to_pr": 3,
+   "years_to_citizenship": 5,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "no",
+   "note": "Identical national programme to Auckland and equally out of reach at NZ$5m. New Zealand's Skilled Migrant Category is the realistic path for a designer; the investor door is not.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://visapilot.nz/visas/active-investor-plus",
+     "title": "Active Investor Plus Visa NZ 2026",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Auckland",
@@ -3479,7 +5064,38 @@ window.PLACES = [
    "diversity": 0.75,
    "english": 1.0
   },
-  "rank": 56
+  "rank": 56,
+  "investor": {
+   "route_name": "Active Investor Plus visa",
+   "status": "open",
+   "min_investment_usd": 3000000,
+   "investment_type": "fund/business — NZ$5,000,000 in higher-risk Growth assets held 3 years, or NZ$10,000,000 in a Balanced mix held 5 years",
+   "extra_fees_usd_low": 25000,
+   "extra_fees_usd_high": 70000,
+   "total_first_year_usd_low": 3025000,
+   "total_first_year_usd_high": 3070000,
+   "recoverable": true,
+   "residency_requirement": "Only 21 days in New Zealand over 3 years on the Growth category; 105 days over 5 years on Balanced",
+   "years_to_pr": 3,
+   "years_to_citizenship": 5,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "no",
+   "note": "Relaxed on 1 April 2025 (two simple categories, English requirement dropped, minimal stay) but the floor is NZ$5,000,000 (~USD 3.0m) — roughly 10x their savings. The residence it grants is genuine permanent residence, which is why the price is high.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://www.immigration.govt.nz/about-us/media-centre/news-notifications/investor-category-update-provides-attractive-investment-options",
+     "title": "Investor category update provides attractive investment options — Immigration NZ",
+     "date": "2025"
+    },
+    {
+     "url": "https://www.fragomen.com/insights/new-zealand-rules-on-investor-visa-relaxed.html",
+     "title": "New Zealand: Rules on Investor Visa Relaxed",
+     "date": "2025"
+    }
+   ]
+  }
  },
  {
   "city": "Nicosia",
@@ -3534,7 +5150,38 @@ window.PLACES = [
    "diversity": 0.5,
    "english": 0.75
   },
-  "rank": 57
+  "rank": 57,
+  "investor": {
+   "route_name": "Permanent Residency by investment — Category 6(2) fast track",
+   "status": "open",
+   "min_investment_usd": 368550,
+   "investment_type": "real estate — EUR 300,000 plus VAT in NEW residential property bought directly from a developer; also shares or Cyprus investment funds",
+   "extra_fees_usd_low": 10000,
+   "extra_fees_usd_high": 25000,
+   "total_first_year_usd_low": 378550,
+   "total_first_year_usd_high": 393550,
+   "recoverable": true,
+   "residency_requirement": "One visit every two years; PR is lifetime but voided if the property is sold without replacement",
+   "years_to_pr": 0,
+   "years_to_citizenship": 7,
+   "family_included": true,
+   "can_work": false,
+   "realistic_for_them": "stretch",
+   "note": "Immediate lifetime PR for EUR 300,000, but three conditions bite: resale property does not qualify (new-build from a developer only), you must show EUR 50,000/year of secured income from OUTSIDE Cyprus, and Category 6(2) holders may not be employed in Cyprus — company ownership and dividends only.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://www.zenolegal.com/resources/cyprus-permanent-residency-by-investment-2026",
+     "title": "Cyprus Permanent Residency by Investment 2026: Category 6.2 Guide",
+     "date": "2026"
+    },
+    {
+     "url": "https://propertylawyer-cyprus.com/en/guides/cyprus-permanent-residency-investment",
+     "title": "Cyprus Permanent Residency by Investment 2026: EUR 300,000 Guide",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Budapest",
@@ -3589,7 +5236,38 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.5
   },
-  "rank": 58
+  "rank": 58,
+  "investor": {
+   "route_name": "Guest Investor Programme (GIP)",
+   "status": "open",
+   "min_investment_usd": 292500,
+   "investment_type": "fund — EUR 250,000 in approved investment certificates of a real-estate fund (at least 40% Hungarian residential, 5-year maturity); alternative EUR 1,000,000 donation to a higher-education institution",
+   "extra_fees_usd_low": 18000,
+   "extra_fees_usd_high": 40000,
+   "total_first_year_usd_low": 310500,
+   "total_first_year_usd_high": 332500,
+   "recoverable": true,
+   "residency_requirement": "None — no minimum stay to hold or renew the permit",
+   "years_to_pr": 5,
+   "years_to_citizenship": 8,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "stretch",
+   "note": "Reintroduced July 2024 and now the only EU golden visa priced at EUR 250,000 with a fully recoverable asset behind it, giving a 10-year permit renewable for another 10 with no stay requirement. The catch: the EUR 250k is locked in a single fund for 5 years, the money is at NAV risk, and the promised EUR 500,000 direct property option has never actually been activated.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Hungary_Guest_Investor_Program",
+     "title": "Hungary Guest Investor Program",
+     "date": "2026"
+    },
+    {
+     "url": "https://www.ibanet.org/the-latest-updates-to-the-Guest-Investor-Residency-Programme",
+     "title": "The latest updates to the Guest Investor Residency Programme — IBA",
+     "date": "2025"
+    }
+   ]
+  }
  },
  {
   "city": "Riga",
@@ -3644,7 +5322,38 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.5
   },
-  "rank": 59
+  "rank": 59,
+  "investor": {
+   "route_name": "Latvia Golden Visa (residence permit by investment)",
+   "status": "open",
+   "min_investment_usd": 70200,
+   "investment_type": "business (EUR 50,000 in a Latvian company + EUR 10,000 state fee) or real estate (EUR 250,000 in Riga or within 30 km + 5% state duty) or EUR 280,000 bank deposit or EUR 250,000 government bonds",
+   "extra_fees_usd_low": 6000,
+   "extra_fees_usd_high": 25000,
+   "total_first_year_usd_low": 76200,
+   "total_first_year_usd_high": 95200,
+   "recoverable": true,
+   "residency_requirement": "Minimal — one visit per year is enough to renew, but PR requires real residence and Latvian at A2",
+   "years_to_pr": 5,
+   "years_to_citizenship": 10,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "The EUR 50,000 company route plus a EUR 10,000 non-refundable state fee is the cheapest headline number in the EU — but the company must pay at least EUR 40,000 a year in Latvian taxes, which quietly makes it a real operating business. The property route is EUR 250,000 plus a 5% state duty (EUR 12,500) and only counts one already-built property in or near Riga.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://immigrantinvest.com/blog/latvia-residence-permit-by-investment/",
+     "title": "Latvia Golden Visa in 2026: How to Obtain Residency by Investment",
+     "date": "2026"
+    },
+    {
+     "url": "https://getwherenext.com/blog/latvia-golden-visa-2026",
+     "title": "Latvia Golden Visa 2026: EUR 60K Business Route, EUR 250K Real Estate",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Sydney",
@@ -3719,7 +5428,33 @@ window.PLACES = [
    "diversity": 1.0,
    "english": 1.0
   },
-  "rank": 60
+  "rank": 60,
+  "investor": {
+   "route_name": "none — Business Innovation and Investment Program (subclass 188) CLOSED",
+   "status": "closed",
+   "min_investment_usd": 0,
+   "investment_type": "n/a",
+   "extra_fees_usd_low": 0,
+   "extra_fees_usd_high": 0,
+   "total_first_year_usd_low": 0,
+   "total_first_year_usd_high": 0,
+   "recoverable": false,
+   "residency_requirement": "n/a",
+   "years_to_pr": 0,
+   "years_to_citizenship": 4,
+   "family_included": false,
+   "can_work": false,
+   "realistic_for_them": "no",
+   "note": "Same national closure: no general business or investor visa has been open to new applicants anywhere in Australia since 31 July 2024. Sydney is reachable only via employer sponsorship or a skilled points-tested visa.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://www.envoyglobal.com/news-alert/australia-closing-of-the-business-innovation-and-investment-subclass/",
+     "title": "Australia: Closing of the Business Innovation and Investment Subclass",
+     "date": "2024"
+    }
+   ]
+  }
  },
  {
   "city": "Vilnius",
@@ -3774,7 +5509,33 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.5
   },
-  "rank": 61
+  "rank": 61,
+  "investor": {
+   "route_name": "Temporary residence permit as company owner/manager / Start-up visa",
+   "status": "open",
+   "min_investment_usd": 33000,
+   "investment_type": "business — company equity of at least EUR 28,000 (of which EUR 14,000 your own contribution), trading 6+ months, employing 2 full-time EU/Lithuanian residents at or above average wage",
+   "extra_fees_usd_low": 2500,
+   "extra_fees_usd_high": 9000,
+   "total_first_year_usd_low": 35500,
+   "total_first_year_usd_high": 42000,
+   "recoverable": true,
+   "residency_requirement": "Must live in Lithuania; absence over 6 months voids the permit",
+   "years_to_pr": 5,
+   "years_to_citizenship": 10,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "No golden visa, but the company-owner permit is cheap in capital terms; the binding constraint is the obligation to employ two local staff at average wage from the outset. Lithuania does not permit dual citizenship for naturalised citizens, which is moot since India does not either.",
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "https://armenian-lawyer.com/global/eastern-europe-residency-by-investment-comparison/",
+     "title": "Comparing Eastern Europe's Residency by Investment Programs",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Yerevan",
@@ -3829,7 +5590,33 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.5
   },
-  "rank": 62
+  "rank": 62,
+  "investor": {
+   "route_name": "Temporary residence via company founding / Special residency status",
+   "status": "open",
+   "min_investment_usd": 6000,
+   "investment_type": "business — no statutory capital minimum; founding and funding an Armenian company is enough in practice",
+   "extra_fees_usd_low": 1500,
+   "extra_fees_usd_high": 5000,
+   "total_first_year_usd_low": 7500,
+   "total_first_year_usd_high": 11000,
+   "recoverable": true,
+   "residency_requirement": "Temporary residence is 1 year renewable; PR requires 3 years of prior temporary residence",
+   "years_to_pr": 3,
+   "years_to_citizenship": 3,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "Armenia has no golden visa but the cheapest business-founder residence anywhere in this dataset — roughly USD 6,000 of real deployment — with PR after 3 years and naturalisation 3 years after that. The trade-off is a small economy, a live security risk with Azerbaijan, and a passport far weaker than the Indian one for most purposes.",
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "https://armenian-lawyer.com/immigration/comparative-analysis-of-residency-by-investment-or-entrepreneurship-in-central-asian-countries/",
+     "title": "Comparative analysis of residency by investment or entrepreneurship in Central Asian countries",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Zagreb",
@@ -3884,7 +5671,38 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.5
   },
-  "rank": 63
+  "rank": 63,
+  "investor": {
+   "route_name": "Temporary residence as company owner/director (d.o.o.)",
+   "status": "open",
+   "min_investment_usd": 15500,
+   "investment_type": "business — d.o.o. share capital EUR 2,500 plus about EUR 13,272 invested in the company, or hire 3 Croatian employees",
+   "extra_fees_usd_low": 2500,
+   "extra_fees_usd_high": 9000,
+   "total_first_year_usd_low": 18000,
+   "total_first_year_usd_high": 24500,
+   "recoverable": true,
+   "residency_requirement": "Must live in Croatia; PR requires 5 years of continuous legal residence",
+   "years_to_pr": 5,
+   "years_to_citizenship": 8,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "Croatia has no investment migration programme; the company-director permit is the only route and it is cheap, but it demands genuine economic activity and a self-paid Croatian salary. Naturalisation requires renouncing your existing citizenship plus a Croatian language and culture exam.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://croatiaimmigrationadvisory.com/open-company-croatia-non-eu-guide-2026/",
+     "title": "Open a Company in Croatia as a Non-EU Entrepreneur (2026)",
+     "date": "2026"
+    },
+    {
+     "url": "https://mandracchio-capital.com/croatia-residency-by-investment/",
+     "title": "Croatia Residency by Investment: Real Options Explained",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Toronto",
@@ -3959,7 +5777,33 @@ window.PLACES = [
    "diversity": 1.0,
    "english": 1.0
   },
-  "rank": 64
+  "rank": 64,
+  "investor": {
+   "route_name": "Ontario Immigrant Nominee Program – Entrepreneur Stream",
+   "status": "open",
+   "min_investment_usd": 432000,
+   "investment_type": "business (CAD 600,000 inside the Greater Toronto Area + 2 permanent full-time jobs)",
+   "extra_fees_usd_low": 20000,
+   "extra_fees_usd_high": 55000,
+   "total_first_year_usd_low": 452000,
+   "total_first_year_usd_high": 487000,
+   "recoverable": true,
+   "residency_requirement": "Must run the business hands-on from Ontario for at least 20 months on a work permit before nomination",
+   "years_to_pr": 2,
+   "years_to_citizenship": 5,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "stretch",
+   "note": "CAD 600k inside the GTA (CAD 200k outside) plus CAD 800k net worth; it is a real operating business with two employees, not a passive purchase, and PR only comes after ~2 years of trading.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://www.globalcitizensolutions.com/canada-citizenship-by-investment/",
+     "title": "Canada Citizenship by Investment 2026",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Muscat",
@@ -4014,7 +5858,38 @@ window.PLACES = [
    "diversity": 0.75,
    "english": 0.75
   },
-  "rank": 65
+  "rank": 65,
+  "investor": {
+   "route_name": "Oman Golden Residency (10-year) / Investor Residency",
+   "status": "open",
+   "min_investment_usd": 520000,
+   "investment_type": "real estate, company formation, bonds or listed stock — OMR 200,000 (~USD 520,000) for the 10-year Golden Residency introduced September 2025",
+   "extra_fees_usd_low": 6000,
+   "extra_fees_usd_high": 18000,
+   "total_first_year_usd_low": 526000,
+   "total_first_year_usd_high": 538000,
+   "recoverable": true,
+   "residency_requirement": "Modest presence expected; details vary by tier",
+   "years_to_pr": 99,
+   "years_to_citizenship": 99,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "no",
+   "note": "Oman relaunched its long-term residency in September 2025 at OMR 200,000 (~USD 520,000) for 10 years — over budget, and priced above Qatar and Bahrain for a smaller, less liquid market with no permanent residency or citizenship at the end.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://www.imidaily.com/analysis/gcc-golden-visa-guide-2026/",
+     "title": "GCC Golden Visa Guide 2026: Residency Across the Gulf",
+     "date": "2026"
+    },
+    {
+     "url": "https://finsoulnetwork.com/om/blog/golden-visa-residency-guide/",
+     "title": "Oman Golden Visa 2026: Property Investment & Residency Guide",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Panama City",
@@ -4069,7 +5944,38 @@ window.PLACES = [
    "diversity": 0.5,
    "english": 0.5
   },
-  "rank": 66
+  "rank": 66,
+  "investor": {
+   "route_name": "Qualified Investor Visa (Golden Visa)",
+   "status": "open",
+   "min_investment_usd": 300000,
+   "investment_type": "real estate (USD 300,000 until 15 Oct 2026, then USD 500,000); alternatives USD 500,000 securities or USD 750,000 fixed-term deposit",
+   "extra_fees_usd_low": 22000,
+   "extra_fees_usd_high": 40000,
+   "total_first_year_usd_low": 322000,
+   "total_first_year_usd_high": 340000,
+   "recoverable": true,
+   "residency_requirement": "Essentially none — one visit every two years keeps residency alive",
+   "years_to_pr": 0,
+   "years_to_citizenship": 5,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "The only route on this list that hands you PERMANENT residency in about 30 days, and the USD 300,000 property threshold permanently rises to USD 500,000 on 15 October 2026 — a hard deadline weeks away. India is NOT on Panama's Friendly Nations list, so the cheap USD 200k alternative is unavailable to them.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://www.globalcitizensolutions.com/panama-qualified-investor-visa/",
+     "title": "Panama Qualified Investor Visa Guide for 2026",
+     "date": "2026"
+    },
+    {
+     "url": "https://www.benoitproperties.com/news/panama-golden-visa-2026-limited-window-of-opportunity-for-reduced-300000-real-estate-investment-option/",
+     "title": "Panama Golden Visa 2026: Limited Window for Reduced $300,000 Real Estate Option",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Copenhagen",
@@ -4144,7 +6050,33 @@ window.PLACES = [
    "diversity": 0.5,
    "english": 1.0
   },
-  "rank": 67
+  "rank": 67,
+  "investor": {
+   "route_name": "Start-up Denmark",
+   "status": "open",
+   "min_investment_usd": 24100,
+   "investment_type": "business — no capital threshold; an expert panel must approve the business plan, plus self-support funds of ~DKK 153,700",
+   "extra_fees_usd_low": 2500,
+   "extra_fees_usd_high": 9000,
+   "total_first_year_usd_low": 26600,
+   "total_first_year_usd_high": 33100,
+   "recoverable": false,
+   "residency_requirement": "Must live in Denmark and run the approved business",
+   "years_to_pr": 8,
+   "years_to_citizenship": 9,
+   "family_included": true,
+   "can_work": false,
+   "realistic_for_them": "no",
+   "note": "Denmark has no investor visa at all; Start-up Denmark is a merit panel capped at roughly 50 approvals a year and rejects lifestyle or consultancy businesses. Even if approved, Danish permanent residence typically takes 8 years and citizenship 9 with a hard language and history exam — the worst long-game on this list.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://www.global-fin-info.com/denmark/business-services/business-residence-permit-denmark-startup-visa/",
+     "title": "Business Residence Permit Denmark 2026",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Paris",
@@ -4219,7 +6151,38 @@ window.PLACES = [
    "diversity": 0.75,
    "english": 0.5
   },
-  "rank": 68
+  "rank": 68,
+  "investor": {
+   "route_name": "Passeport Talent – Createur d'entreprise (EUR 30,000) / Investisseur economique (EUR 300,000)",
+   "status": "open",
+   "min_investment_usd": 35100,
+   "investment_type": "business — EUR 30,000 into a French venture (business creator, requires a master's-level qualification) or EUR 300,000 direct economic investment with job commitments",
+   "extra_fees_usd_low": 4000,
+   "extra_fees_usd_high": 14000,
+   "total_first_year_usd_low": 39100,
+   "total_first_year_usd_high": 49100,
+   "recoverable": true,
+   "residency_requirement": "Must live in France; no more than 6 consecutive months abroad",
+   "years_to_pr": 5,
+   "years_to_citizenship": 5,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "yes",
+   "note": "France has no golden visa, but the Passeport Talent 'business creator' route is one of the cheapest serious EU doors at EUR 30,000 plus a viable project and a master's degree — and it issues a 4-year multi-year card. Critically, it comes with a 'passeport talent famille' card giving the spouse full, unrestricted work rights, which most investor visas do not.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://www.easystart.me/home-pages/blog/the-france-talent-passport-business-creator-guide-2026-30-000-euro-investment-drieets-and-full-process",
+     "title": "France Talent Passport Complete Guide (2026)",
+     "date": "2026"
+    },
+    {
+     "url": "https://www.goldenvisas.com/france",
+     "title": "France Golden Visa - Investor Visas and Citizenship by Investment",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Hong Kong",
@@ -4274,7 +6237,38 @@ window.PLACES = [
    "diversity": 0.75,
    "english": 1.0
   },
-  "rank": 69
+  "rank": 69,
+  "investor": {
+   "route_name": "New Capital Investment Entrant Scheme (New CIES)",
+   "status": "open",
+   "min_investment_usd": 3850000,
+   "investment_type": "financial assets and real estate — HK$27,000,000 in permissible assets plus HK$3,000,000 into the CIES Investment Portfolio managed by HKIC; also HK$30m net assets required",
+   "extra_fees_usd_low": 30000,
+   "extra_fees_usd_high": 80000,
+   "total_first_year_usd_low": 3880000,
+   "total_first_year_usd_high": 3930000,
+   "recoverable": true,
+   "residency_requirement": "Must maintain 'ordinary residence' in Hong Kong for 7 continuous years to obtain right of abode",
+   "years_to_pr": 7,
+   "years_to_citizenship": 99,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "no",
+   "note": "HK$30,000,000 (~USD 3.85m) is roughly 10x their savings, and HK$3m of it is locked into a government-directed portfolio. A March 2026 tweak eased the private-holding-company rules but did not move the threshold. Hong Kong's employer-sponsored and talent routes are far more realistic for a designer.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://www.newcies.gov.hk/en/application-procedures/application-to-investhk/investment-requirement/",
+     "title": "New CIES — Investment Requirement (official)",
+     "date": "2026"
+    },
+    {
+     "url": "https://www.newcies.gov.hk/en/new-measures/",
+     "title": "New CIES — New measure effective from 1 March 2026",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Oslo",
@@ -4329,7 +6323,33 @@ window.PLACES = [
    "diversity": 0.5,
    "english": 0.75
   },
-  "rank": 70
+  "rank": 70,
+  "investor": {
+   "route_name": "Residence permit as a self-employed person",
+   "status": "open",
+   "min_investment_usd": 29700,
+   "investment_type": "business — must demonstrate the enterprise will yield income of at least NOK ~296,550 per year",
+   "extra_fees_usd_low": 2500,
+   "extra_fees_usd_high": 9000,
+   "total_first_year_usd_low": 32200,
+   "total_first_year_usd_high": 38700,
+   "recoverable": true,
+   "residency_requirement": "Must live in Norway; permits are tied to the operating business",
+   "years_to_pr": 3,
+   "years_to_citizenship": 8,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "stretch",
+   "note": "Norway is outside the EU and has no investor scheme; the self-employed permit requires proof the business will generate a full Norwegian living wage from year one and is granted sparingly. Naturalisation takes about 8 years with a language and social-studies test.",
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "https://www.global-fin-info.com/norway/business-services/how-to-start-a-business-and-get-residency-in-norway-full-guide/",
+     "title": "Norway Business Residency 2026",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Zurich",
@@ -4384,7 +6404,38 @@ window.PLACES = [
    "diversity": 0.5,
    "english": 0.5
   },
-  "rank": 71
+  "rank": 71,
+  "investor": {
+   "route_name": "Residence by lump-sum taxation (NOT available in canton Zurich)",
+   "status": "none",
+   "min_investment_usd": 0,
+   "investment_type": "annual tax payment, not an investment — deemed base of at least CHF 434,700, i.e. roughly CHF 150,000–300,000 of tax per year",
+   "extra_fees_usd_low": 50000,
+   "extra_fees_usd_high": 150000,
+   "total_first_year_usd_low": 230000,
+   "total_first_year_usd_high": 525000,
+   "recoverable": false,
+   "residency_requirement": "Must make Switzerland your principal residence and spend substantial time there",
+   "years_to_pr": 10,
+   "years_to_citizenship": 10,
+   "family_included": true,
+   "can_work": false,
+   "realistic_for_them": "no",
+   "note": "Canton Zurich abolished lump-sum taxation by referendum in 2009 (as did Basel-Stadt, Basel-Landschaft, Schaffhausen and Appenzell Ausserrhoden), so this route simply does not exist in Zurich — you would have to live in Zug, Geneva, Vaud or Valais instead. It is also an annual tax bill you never get back, and it forbids all gainful activity in Switzerland.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://kpmg.com/ch/en/insights/taxes/lump-sum-taxation.html",
+     "title": "Swiss Lump-Sum Taxation: Eligibility, Calculation & Updates — KPMG",
+     "date": "2026"
+    },
+    {
+     "url": "https://www.richmondchambers.ch/swiss-private-client-immigration/swiss-residence-permit-by-lump-sum-taxation",
+     "title": "Swiss Residence Permit by Lump-Sum Taxation: 2026 Guide",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "London",
@@ -4459,7 +6510,38 @@ window.PLACES = [
    "diversity": 1.0,
    "english": 1.0
   },
-  "rank": 72
+  "rank": 72,
+  "investor": {
+   "route_name": "Innovator Founder visa (Tier 1 Investor CLOSED)",
+   "status": "closed",
+   "min_investment_usd": 67500,
+   "investment_type": "business — no statutory minimum since Appendix Innovator Founder replaced the old GBP 50,000 rule; endorsement body decides",
+   "extra_fees_usd_low": 16000,
+   "extra_fees_usd_high": 32000,
+   "total_first_year_usd_low": 83500,
+   "total_first_year_usd_high": 99500,
+   "recoverable": true,
+   "residency_requirement": "No more than 180 days outside the UK in any 12 months to qualify for settlement",
+   "years_to_pr": 3,
+   "years_to_citizenship": 6,
+   "family_included": true,
+   "can_work": false,
+   "realistic_for_them": "stretch",
+   "note": "The GBP 2,000,000 Tier 1 (Investor) golden visa was closed permanently at 4pm on 17 February 2022 and there is no replacement — money alone cannot buy UK residence any more. The Innovator Founder visa has no capital floor but demands an endorsing body to certify the business is innovative, viable and scalable, and it bars you from working outside your own venture.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://www.davidsonmorris.com/tier-1-investor-visa-route-closed/",
+     "title": "Tier 1 Investor Visa Route Closed",
+     "date": "2026"
+    },
+    {
+     "url": "https://immigrationbarrister.co.uk/business-immigration/business-visas/uk-innovator-founder-visa/",
+     "title": "UK Innovator Founder Visa Guide 2026",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Singapore",
@@ -4534,7 +6616,38 @@ window.PLACES = [
    "diversity": 1.0,
    "english": 1.0
   },
-  "rank": 73
+  "rank": 73,
+  "investor": {
+   "route_name": "Global Investor Programme (GIP)",
+   "status": "open",
+   "min_investment_usd": 7800000,
+   "investment_type": "business or fund — SGD 10,000,000 into a Singapore business, SGD 25,000,000 into a GIP-select fund, or a single family office with SGD 200,000,000 AUM",
+   "extra_fees_usd_low": 30000,
+   "extra_fees_usd_high": 80000,
+   "total_first_year_usd_low": 7830000,
+   "total_first_year_usd_high": 7880000,
+   "recoverable": true,
+   "residency_requirement": "Must maintain substantive presence and business activity in Singapore to renew the re-entry permit",
+   "years_to_pr": 0,
+   "years_to_citizenship": 2,
+   "family_included": true,
+   "can_work": true,
+   "realistic_for_them": "no",
+   "note": "GIP grants permanent residence outright but starts at SGD 10,000,000 — roughly 25x their liquid savings. The only accessible business route is EntrePass, which has no capital minimum but demands venture funding, IP or accelerator backing; it is a merit test, not a purchase.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://vivos.com.sg/blog/singapore-global-investor-programme-gip-2026/",
+     "title": "Singapore Global Investor Programme (GIP) 2026: Options A, B and C",
+     "date": "2026"
+    },
+    {
+     "url": "https://www.one-visa.com/singapore-visa-resources/singapore-global-investor-programme-gip/",
+     "title": "Singapore GIP Visa: S$10M Investment for PR – Criteria (2026)",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Reykjavik",
@@ -4589,7 +6702,33 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.75
   },
-  "rank": 74
+  "rank": 74,
+  "investor": {
+   "route_name": "none",
+   "status": "none",
+   "min_investment_usd": 0,
+   "investment_type": "n/a",
+   "extra_fees_usd_low": 0,
+   "extra_fees_usd_high": 0,
+   "total_first_year_usd_low": 0,
+   "total_first_year_usd_high": 0,
+   "recoverable": false,
+   "residency_requirement": "n/a",
+   "years_to_pr": 4,
+   "years_to_citizenship": 7,
+   "family_included": false,
+   "can_work": false,
+   "realistic_for_them": "no",
+   "note": "Iceland has no investor or golden-visa route of any kind. The only self-employment permit requires proving the business is necessary to Iceland and is granted to a handful of people a year; capital buys nothing.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://immigrantinvest.com/residence/",
+     "title": "Residence by Investment Programs in 2026",
+     "date": "2026"
+    }
+   ]
+  }
  },
  {
   "city": "Tel Aviv",
@@ -4644,7 +6783,33 @@ window.PLACES = [
    "diversity": 0.25,
    "english": 0.75
   },
-  "rank": 75
+  "rank": 75,
+  "investor": {
+   "route_name": "none",
+   "status": "none",
+   "min_investment_usd": 0,
+   "investment_type": "n/a",
+   "extra_fees_usd_low": 0,
+   "extra_fees_usd_high": 0,
+   "total_first_year_usd_low": 0,
+   "total_first_year_usd_high": 0,
+   "recoverable": false,
+   "residency_requirement": "n/a",
+   "years_to_pr": 99,
+   "years_to_citizenship": 99,
+   "family_included": false,
+   "can_work": false,
+   "realistic_for_them": "no",
+   "note": "Israel has no investor, golden or entrepreneur residence route of any kind. Immigration is essentially limited to the Law of Return (Jewish ancestry or conversion) and employer-sponsored B/1 work permits; buying property confers no immigration status whatsoever.",
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://immigrantinvest.com/residence/",
+     "title": "Residence by Investment Programs in 2026",
+     "date": "2026"
+    }
+   ]
+  }
  }
 ];
 window.WEIGHT_DEFAULTS = {"dog": 3, "visa": 3, "cost": 2, "diversity": 2, "english": 1};
