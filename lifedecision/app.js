@@ -134,6 +134,27 @@
     }
   }
 
+  function popupHTML(p) {
+    var s = p._s || scoreOf(p);
+    return '<div class="pop">' +
+      '<button class="popclose" data-close type="button" aria-label="Close">×</button>' +
+      '<div class="pophead"><span class="popcity">' + esc(p.city) + '</span>' +
+        (p.yours ? '<span class="chip yours">yours</span>' : '') +
+        (!p.deep ? '<span class="chip">screened</span>' : '') +
+        '<span class="popcn">' + esc(p.country) + '</span></div>' +
+      '<div class="popstat"><span class="status st-' + esc(p.dog_status) + '"><span class="dot"></span>' +
+        esc(cap(p.dog_status)) + '</span><span class="popfit">Fit ' + Math.round(s.score * 100) + '</span></div>' +
+      '<div class="popgrid">' +
+        '<span>Visa</span><span>' + meter(p.visa_comfort, 5, 'var(--s-visa)', 'Visa comfort') + '</span>' +
+        '<span>Cost</span><span>' + costMark(p.cost_band) + '</span>' +
+        '<span>Diversity</span><span>' + meter(p.diversity, 5, 'var(--s-div)', 'Diversity') + '</span>' +
+        '<span>English</span><span>' + meter(p.english, 5, 'var(--s-eng)', 'English') + '</span>' +
+        '<span>Weather</span><span class="popw">' + esc(cap(p.weather_band)) + '</span>' +
+      '</div>' +
+      detailHTML(p) +
+    '</div>';
+  }
+
   function detailHTML(p) {
     var b = [];
     b.push('<div class="dblock"><h4>Monet</h4>');
@@ -161,6 +182,23 @@
     }
     b.push('</div>');
 
+    if (p.investor) {
+      var iv = p.investor;
+      b.push('<div class="dblock"><h4>Investor route</h4>');
+      b.push('<p class="kv"><b>' + esc(iv.route_name || 'none') + '</b> · ' + esc(iv.status || '?') + '</p>');
+      if (iv.min_investment_usd != null)
+        b.push('<p class="kv">Minimum: <b>$' + Number(iv.min_investment_usd).toLocaleString() + '</b>' +
+               (iv.investment_type ? ' in ' + esc(iv.investment_type) : '') + '</p>');
+      if (iv.total_first_year_usd_low != null)
+        b.push('<p class="kv">First year all-in: <b>' + esc(money(iv.total_first_year_usd_low, iv.total_first_year_usd_high)) + '</b></p>');
+      if (iv.recoverable != null)
+        b.push('<p class="kv">Capital recoverable: <b>' + (iv.recoverable ? 'yes' : 'no') + '</b></p>');
+      if (iv.years_to_pr != null) b.push('<p class="kv">To permanent residence: <b>' + iv.years_to_pr + ' yrs</b></p>');
+      if (iv.residency_requirement) b.push('<p class="kv">Presence needed: <b>' + esc(iv.residency_requirement) + '</b></p>');
+      if (iv.realistic_for_them) b.push('<p class="kv">Within reach: <b>' + esc(iv.realistic_for_them) + '</b></p>');
+      if (iv.note) b.push('<p>' + esc(iv.note) + '</p>');
+      b.push('</div>');
+    }
     b.push('<div class="dblock"><h4>The place</h4>');
     b.push('<p class="kv">' + esc(p.region || '—') + '</p>');
     b.push('<p class="kv">Cost: <b>' + esc(cap(p.cost_band)) + '</b> <span class="unver">(coarse)</span></p>');
@@ -177,6 +215,7 @@
   }
 
   function render() {
+    if (state.view === 'map') { renderMap(); markActive(); return; }
     var rows = PLACES.filter(function (p) {
       if (state.yours && !p.yours) return false;
       if (state.deep && !p.deep) return false;
@@ -240,6 +279,13 @@
     buildHead();
   }
 
+  function markActive() {
+    var c = window.MapView.current();
+    Array.prototype.forEach.call(document.querySelectorAll('#ranks button'), function (b) {
+      b.classList.toggle('on', !!c && b.getAttribute('data-city') === c.city);
+    });
+  }
+
   function filterBtn(id, key) {
     var el = document.getElementById(id);
     el.addEventListener('click', function () {
@@ -247,6 +293,49 @@
       el.setAttribute('aria-pressed', String(state[key]));
       render();
     });
+  }
+
+  /* ---------------- views ---------------- */
+  var visible = [];
+  function currentRows() {
+    var rows = PLACES.filter(function (p) {
+      if (state.yours && !p.yours) return false;
+      if (state.deep && !p.deep) return false;
+      if (state.dogOK && p.dog_status === 'banned') return false;
+      if (state.q && (p.city + ' ' + p.country + ' ' + (p.region || '')).toLowerCase().indexOf(state.q) === -1) return false;
+      return true;
+    });
+    rows.forEach(function (p) { p._s = scoreOf(p); });
+    rows.sort(function (a, b) { return b._s.score - a._s.score || a.city.localeCompare(b.city); });
+    return rows;
+  }
+  function renderMap() {
+    visible = currentRows();
+    window.MapView.setDots(visible);
+    document.getElementById('ranks').innerHTML = visible.map(function (p, i) {
+      return '<li><button type="button" data-city="' + esc(p.city) + '">' +
+        '<span class="rk">' + (i + 1) + '</span>' +
+        '<span class="rc">' + esc(p.city) + '<em>' + esc(p.country) + '</em></span>' +
+        '<span class="rd s-' + esc(p.dog_status) + '" title="' + esc(cap(p.dog_status)) + '"></span>' +
+        '<span class="rf">' + Math.round(p._s.score * 100) + '</span></button></li>';
+    }).join('');
+    Array.prototype.forEach.call(document.querySelectorAll('#ranks button'), function (b) {
+      b.addEventListener('click', function () {
+        var p = visible.filter(function (q) { return q.city === b.getAttribute('data-city'); })[0];
+        if (p) window.MapView.select(p);
+      });
+    });
+    var banned = visible.filter(function (p) { return p.dog_status === 'banned'; }).length;
+    document.getElementById('count').textContent =
+      visible.length + ' places' + (banned ? ' · ' + banned + ' closed to Monet' : '');
+  }
+  function setView(v) {
+    state.view = v;
+    document.getElementById('panel-map').hidden = (v !== 'map');
+    document.getElementById('panel-table').hidden = (v !== 'table');
+    document.getElementById('v-map').setAttribute('aria-pressed', String(v === 'map'));
+    document.getElementById('v-table').setAttribute('aria-pressed', String(v === 'table'));
+    render();
   }
 
   buildControls();
@@ -257,6 +346,17 @@
   document.getElementById('search').addEventListener('input', function (e) {
     state.q = e.target.value.trim().toLowerCase(); render();
   });
+  state.view = 'map';
+  var used = window.MapView.init({
+    host: document.getElementById('maphost'),
+    places: PLACES,
+    render: popupHTML,
+    onPick: function () { markActive(); }
+  });
+  document.getElementById('m-reset').addEventListener('click', function () { window.MapView.reset(); markActive(); });
+  document.getElementById('v-map').addEventListener('click', function () { setView('map'); });
+  document.getElementById('v-table').addEventListener('click', function () { setView('table'); });
+
   var tb = document.getElementById('theme');
   tb.addEventListener('click', function () {
     var dark = document.documentElement.getAttribute('data-theme') === 'dark';

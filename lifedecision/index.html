@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Where next</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%AD%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,6 +14,10 @@
 <header class="top">
   <h1>Where next</h1>
   <span class="meta">75 places · researched Sept 2026</span>
+  <div class="views" role="group" aria-label="View">
+    <button id="v-map" class="chipbtn" type="button" aria-pressed="true">Map</button>
+    <button id="v-table" class="chipbtn" type="button" aria-pressed="false">Table</button>
+  </div>
   <button class="themebtn" id="theme" type="button" title="Switch theme" aria-label="Switch theme">
     <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false">
       <circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/>
@@ -33,27 +38,44 @@
   <span class="count" id="count" aria-live="polite"></span>
 </div>
 
-<div class="tablewrap">
-  <table id="tbl">
-    <caption class="vh">Places ranked by weighted score. Select a row for the reasons behind its rank.</caption>
-    <thead><tr id="head"></tr></thead>
-    <tbody id="body"></tbody>
-  </table>
-</div>
-
-<footer>
-  <div class="legend">
+<section id="panel-map">
+  <div class="maprow">
+    <div class="maphost" id="maphost"></div>
+    <aside class="ranklist" aria-label="Ranked places">
+      <div class="rankhead"><span>Ranked</span>
+        <button class="linkbtn" id="m-reset" type="button">Zoom out</button></div>
+      <ol id="ranks"></ol>
+    </aside>
+  </div>
+  <div class="legend maplegend">
     <span><i style="background:var(--good)"></i>Allowed</span>
     <span><i style="background:var(--serious)"></i>Restricted</span>
     <span><i style="background:var(--warning)"></i>Murky</span>
     <span><i style="background:var(--critical)"></i>Banned</span>
+    <span class="dimnote">Dot size = fit · select a dot for details</span>
   </div>
+</section>
+
+<section id="panel-table" hidden>
+  <div class="tablewrap">
+    <table id="tbl">
+      <caption class="vh">Places ranked by weighted score. Select a row for the reasons behind its rank.</caption>
+      <thead><tr id="head"></tr></thead>
+      <tbody id="body"></tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
   <p>Cost and weather are coarse bands; detailed budgets and climate figures are still being researched.
-  Verify anything you would act on against the sources in each row.</p>
+  Verify anything you would act on against the sources in each place.</p>
 </footer>
 
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="world.js"></script>
 <script src="data.js"></script>
+<script src="map.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
