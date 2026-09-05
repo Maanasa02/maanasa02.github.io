@@ -19,21 +19,13 @@
     <p>75 places that let an Indian citizen immigrate, weighed against what matters to us.</p>
   </header>
 
-  <section class="hud-panel hud-controls" id="ctlpanel">
-    <button class="paneltoggle" id="ctl-toggle" type="button" aria-expanded="true" aria-controls="ctl-body">
-      <span>What matters</span><span class="caret">▾</span>
-    </button>
-    <div id="ctl-body">
-      <div id="controls"></div>
-      <div class="filters">
-        <label for="search" class="vh">Search places</label>
-        <input id="search" type="search" placeholder="Search…" autocomplete="off">
-        <button class="chipbtn" id="f-yours" type="button" aria-pressed="false">My list</button>
-        <button class="chipbtn" id="f-deep" type="button" aria-pressed="false">Researched</button>
-        <button class="chipbtn" id="f-dog" type="button" aria-pressed="false">Monet can come</button>
-      </div>
-    </div>
-  </section>
+  <div class="hud-filters">
+    <label for="search" class="vh">Search places</label>
+    <input id="search" type="search" placeholder="Search…" autocomplete="off">
+    <button class="chipbtn" id="f-yours" type="button" aria-pressed="false">My list</button>
+    <button class="chipbtn" id="f-deep" type="button" aria-pressed="false">Researched</button>
+    <button class="chipbtn" id="f-dog" type="button" aria-pressed="false">Monet can come</button>
+  </div>
 
   <aside class="hud-panel hud-ranks" id="rankpanel" aria-label="Ranked places">
     <button class="paneltoggle" id="rank-toggle" type="button" aria-expanded="true" aria-controls="rank-body">
@@ -87,6 +79,8 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="world.js"></script>
+<script src="states.js"></script>
+<script src="cities.js"></script>
 <script src="data.js"></script>
 <script src="map.js"></script>
 <script src="app.js"></script>

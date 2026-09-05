@@ -65,7 +65,8 @@
 
   /* ---------------- SVG fallback backend ---------------- */
   function Svgy() {
-    var svg, gWorld, gDots, popup, view = { x:0,y:0,w:W,h:H }, anim = null, drag = null, self = {};
+    var svg, gWorld, gStates, gPlaces, gDots, popup, view = { x:0,y:0,w:W,h:H },
+        anim = null, drag = null, lastKey = '', self = {};
     self.name = 'svg';
 
     function setView(v) {
@@ -73,12 +74,49 @@
       svg.setAttribute('viewBox', v.x + ' ' + v.y + ' ' + v.w + ' ' + v.h);
       var k = W / v.w;
       gWorld.setAttribute('stroke-width', (0.5 / k).toFixed(3));
+      gStates.setAttribute('stroke-width', (0.4 / k).toFixed(3));
+      gStates.setAttribute('opacity', k < 2.2 ? 0 : Math.min(0.85, (k - 2.2) / 3));
       Array.prototype.forEach.call(gDots.childNodes, function (c) {
         c.setAttribute('r', (+c.getAttribute('data-r') / k).toFixed(3));
         c.setAttribute('stroke-width', (1.1 / k).toFixed(3));
       });
+      drawPlaces(k);
       place();
     }
+
+    /* City labels: culled to the visible rectangle, then capped by importance,
+       so panning stays cheap and the map never fills with type. */
+    function drawPlaces(k) {
+      var rank = k < 2.5 ? -1 : k < 5 ? 2 : k < 9 ? 4 : k < 18 ? 6 : 7;
+      if (rank < 0) { if (gPlaces.childNodes.length) gPlaces.innerHTML = ''; lastKey = ''; return; }
+      var list = window.CITIES || [];
+      var pad = view.w * 0.06;
+      var x0 = view.x - pad, x1 = view.x + view.w + pad;
+      var y0 = view.y - pad, y1 = view.y + view.h + pad;
+      var vis = [];
+      for (var i = 0; i < list.length && vis.length < 90; i++) {
+        var c = list[i];
+        if (c.r <= rank && c.x > x0 && c.x < x1 && c.y > y0 && c.y < y1) vis.push(c);
+      }
+      var fs = 3.4 / k, r = 0.85 / k;
+      var sig = rank + '|' + vis.length + '|' + (vis[0] ? vis[0].n : '') + '|' + (vis[vis.length-1] ? vis[vis.length-1].n : '');
+      if (sig !== lastKey) {
+        lastKey = sig;
+        gPlaces.innerHTML = vis.map(function (c) {
+          return '<g class="pl"><circle cx="' + c.x + '" cy="' + c.y + '"/><text x="' + c.x +
+                 '" y="' + c.y + '">' + c.n + '</text></g>';
+        }).join('');
+      }
+      Array.prototype.forEach.call(gPlaces.childNodes, function (g) {
+        g.firstChild.setAttribute('r', r.toFixed(3));
+        var t = g.lastChild;
+        t.setAttribute('font-size', fs.toFixed(3));
+        t.setAttribute('dx', (r * 2.4).toFixed(3));
+        t.setAttribute('dy', (fs * 0.36).toFixed(3));
+        t.setAttribute('stroke-width', (fs * 0.16).toFixed(3));
+      });
+    }
+
     function clamp(v) {
       v.w = Math.min(W, Math.max(W / 60, v.w));
       v.h = v.w * (H / W);
@@ -86,6 +124,7 @@
       v.y = Math.min(H - v.h, Math.max(0, v.y));
       return v;
     }
+
     /* Flight between two views. The camera climbs to a width that frames both
        endpoints, crosses, then descends — so distant hops read as travel rather
        than a smear. Width is interpolated in log space; a bell term lifts the
@@ -112,6 +151,7 @@
         if (q < 1) anim = requestAnimationFrame(step); else { anim = null; place(); }
       })(performance.now());
     }
+
     function hide() { popup.hidden = true; popup.innerHTML = ''; }
     function place() {
       if (popup.hidden || !current) return;
@@ -138,13 +178,18 @@
     self.init = function () {
       host.innerHTML = '<svg id="svgmap" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet" ' +
         'role="img" aria-label="World map of candidate places">' +
-        '<g id="world" fill="none" stroke-linejoin="round"></g><g id="dots"></g></svg>' +
+        '<g id="world" fill="none" stroke-linejoin="round"></g>' +
+        '<path id="states" fill="none" stroke-linejoin="round"></path>' +
+        '<g id="places"></g><g id="dots"></g></svg>' +
         '<div class="popup" id="popup" hidden></div>' +
         '<p class="offline-note">Offline map · connect to the internet for the CARTO basemap</p>';
       svg = host.querySelector('#svgmap');
       gWorld = host.querySelector('#world');
+      gStates = host.querySelector('#states');
+      gPlaces = host.querySelector('#places');
       gDots = host.querySelector('#dots');
       popup = host.querySelector('#popup');
+      if (window.STATES) gStates.setAttribute('d', window.STATES);
       gWorld.innerHTML = (window.WORLD || []).map(function (c) {
         return '<path d="' + c.d + '"><title>' + c.n + '</title></path>';
       }).join('');

@@ -83,6 +83,7 @@
 
   function buildControls() {
     var host = document.getElementById('controls');
+    if (!host) return;   /* the importance panel is hidden for now; defaults still score */
     host.innerHTML = CRIT.map(function (c) {
       return '<div class="crit"><div class="cname"><span class="sw" style="background:' + c.color + '"></span>' +
         esc(c.label) + '</div><div class="seg" role="group" aria-label="Importance of ' + esc(c.label) + '">' +
@@ -380,6 +381,7 @@
   }
   function panelToggle(btnId, bodyId) {
     var b = document.getElementById(btnId), body = document.getElementById(bodyId);
+    if (!b || !body) return;
     b.addEventListener('click', function () {
       var open = b.getAttribute('aria-expanded') === 'true';
       b.setAttribute('aria-expanded', String(!open));

@@ -6,7 +6,7 @@
   --accent:#2a78d6;
   --s-dog:#2a78d6; --s-visa:#eb6834; --s-cost:#1baf7a; --s-div:#eda100; --s-eng:#e87ba4;
   --good:#0ca30c; --warning:#fab219; --serious:#ec835a; --critical:#d03b3b;
-  --ocean:#dde5ea; --land:#ffffff; --coast:#b9c3ca; --glass:rgba(255,255,255,.86);
+  --ocean:#dde5ea; --land:#ffffff; --coast:#b9c3ca; --statel:#d3dae0; --glass:rgba(255,255,255,.86);
   --font-serif: Georgia,'Iowan Old Style','Times New Roman',serif;
   --font-sans: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
 }
@@ -18,7 +18,7 @@
     --rule:#383835; --rule-2:#4a4a46;
     --accent:#3987e5;
     --s-dog:#3987e5; --s-visa:#d95926; --s-cost:#199e70; --s-div:#c98500; --s-eng:#d55181;
-    --ocean:#14181b; --land:#2e3236; --coast:#474d52; --glass:rgba(30,30,29,.86);
+    --ocean:#14181b; --land:#2e3236; --coast:#474d52; --statel:#3c4247; --glass:rgba(30,30,29,.86);
   }
 }
 :root[data-theme="dark"]{
@@ -28,7 +28,7 @@
   --rule:#383835; --rule-2:#4a4a46;
   --accent:#3987e5;
   --s-dog:#3987e5; --s-visa:#d95926; --s-cost:#199e70; --s-div:#c98500; --s-eng:#d55181;
-  --ocean:#14181b; --land:#2e3236; --coast:#474d52; --glass:rgba(30,30,29,.86);
+  --ocean:#14181b; --land:#2e3236; --coast:#474d52; --statel:#3c4247; --glass:rgba(30,30,29,.86);
 }
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--font-sans);font-size:14px;line-height:1.5;margin:0}
@@ -163,7 +163,12 @@ body.mapmode{overflow:hidden}
 .hud-title p{margin:3px 0 0;font-size:12.5px;color:var(--ink-2);max-width:31ch;
   text-shadow:0 1px 10px var(--ocean)}
 .hud-actions{grid-column:3;grid-row:1;justify-self:end;display:flex;gap:8px;align-items:flex-start}
-.hud-controls{grid-column:1;grid-row:2;align-self:end;max-width:330px}
+.hud-filters{grid-column:1;grid-row:2;align-self:start;display:flex;flex-wrap:wrap;gap:6px;
+  max-width:330px;margin-top:-4px}
+.hud-filters #search{flex:1 1 100%;background:var(--glass);backdrop-filter:blur(10px);
+  border:1px solid var(--rule);border-radius:999px;padding:6px 13px;font-size:12px;
+  font-family:inherit;color:var(--ink);min-width:0}
+.hud-filters .chipbtn{background:var(--glass);backdrop-filter:blur(10px);border-color:var(--rule)}
 .hud-ranks{grid-column:3;grid-row:2;align-self:stretch;display:flex;flex-direction:column;min-height:0}
 .hud-legend{grid-column:2;grid-row:3;justify-self:center;align-self:end;display:flex;gap:14px;
   background:var(--glass);backdrop-filter:blur(10px);border:1px solid var(--rule);
@@ -305,7 +310,7 @@ tr.detail>td{background:var(--surface-2);padding:2px 16px 20px 46px;border-botto
   .hud{grid-template-columns:1fr;grid-template-rows:auto auto 1fr auto;padding:12px}
   .hud-title{grid-column:1;grid-row:1}
   .hud-actions{grid-column:1;grid-row:1;justify-self:end}
-  .hud-controls{grid-column:1;grid-row:2;align-self:start;max-width:none}
+  .hud-filters{grid-column:1;grid-row:2;align-self:start;max-width:none}
   .hud-ranks{grid-column:1;grid-row:3;align-self:end;max-height:34vh}
   .hud-legend{grid-column:1;grid-row:4;justify-self:start;flex-wrap:wrap;gap:10px;font-size:10.5px}
   .hud-zoom{grid-column:1;grid-row:4;justify-self:end}
@@ -328,3 +333,11 @@ tr.detail>td{background:var(--surface-2);padding:2px 16px 20px 46px;border-botto
 .popmore[open] summary::after{content:' ▾'}
 .popmore summary:hover{color:var(--ink)}
 .popmore .dgrid{padding-top:11px;border-top:0}
+
+/* state borders + city labels (offline map only; CARTO draws its own) */
+#states{stroke:var(--statel);opacity:0;transition:opacity .25s;pointer-events:none;
+  vector-effect:non-scaling-stroke;stroke-dasharray:none}
+#places{pointer-events:none}
+#places circle{fill:var(--coast)}
+#places text{fill:var(--ink-2);font-family:var(--font-sans);
+  paint-order:stroke;stroke:var(--ocean);stroke-linejoin:round;opacity:.9}
