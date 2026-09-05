@@ -67,7 +67,7 @@
 
   /* ---------------- SVG fallback backend ---------------- */
   function Svgy() {
-    var svg, gWorld, gStates, gPlaces, gDots, popup, view = { x:0,y:0,w:W,h:H },
+    var svg, gWorld, gStates, gPlaces, gDots, gLabels, popup, view = { x:0,y:0,w:W,h:H },
         anim = null, drag = null, lastKey = '', self = {};
     self.name = 'svg';
 
@@ -83,6 +83,7 @@
         c.setAttribute('stroke-width', (1.1 / k).toFixed(3));
       });
       drawPlaces(k);
+      drawDotLabels(k);
       place();
     }
 
@@ -154,6 +155,37 @@
       })(performance.now());
     }
 
+    /* Names for our own candidates, drawn above the basemap labels. The selected
+       place also gets its status and fit, so a zoomed view stands on its own. */
+    function drawDotLabels(k) {
+      if (!gLabels) return;
+      if (k < 3) { if (gLabels.childNodes.length) gLabels.innerHTML = ''; return; }
+      var fs = 4.6 / k, pad = view.w * 0.04;
+      var x0 = view.x - pad, x1 = view.x + view.w + pad;
+      var y0 = view.y - pad, y1 = view.y + view.h + pad;
+      var html = '';
+      places.forEach(function (p) {
+        if (p.lat == null || p.lng == null) return;
+        var x = lonx(p.lng), y = laty(p.lat);
+        if (x < x0 || x > x1 || y < y0 || y > y1) return;
+        var sel = current && current.city === p.city;
+        var off = ((+ (p._s ? p._s.score : 0.5)) * 3.4 + 3.4) / k;
+        html += '<g class="dl' + (sel ? ' on' : '') + '">' +
+          '<text class="dln" x="' + x + '" y="' + y + '" dx="' + off.toFixed(3) +
+          '" dy="' + (fs * 0.34).toFixed(3) + '" font-size="' + fs.toFixed(3) +
+          '" stroke-width="' + (fs * 0.18).toFixed(3) + '">' + p.city + '</text>';
+        if (sel) {
+          var sub = cap(p.dog_status) + ' · fit ' + Math.round((p._s ? p._s.score : 0) * 100);
+          html += '<text class="dls" x="' + x + '" y="' + y + '" dx="' + off.toFixed(3) +
+            '" dy="' + (fs * 1.5).toFixed(3) + '" font-size="' + (fs * 0.62).toFixed(3) +
+            '" stroke-width="' + (fs * 0.12).toFixed(3) + '">' + sub + '</text>';
+        }
+        html += '</g>';
+      });
+      gLabels.innerHTML = html;
+    }
+    function cap(s) { s = String(s || ''); return s.charAt(0).toUpperCase() + s.slice(1); }
+
     function hide() { popup.hidden = true; popup.innerHTML = ''; }
     function place() {
       if (popup.hidden || !current) return;
@@ -176,13 +208,14 @@
       Array.prototype.forEach.call(gDots.childNodes, function (c) {
         c.classList.toggle('sel', c.getAttribute('data-city') === city);
       });
+      drawDotLabels(W / view.w);
     }
     self.init = function () {
       host.innerHTML = '<svg id="svgmap" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet" ' +
         'role="img" aria-label="World map of candidate places">' +
         '<g id="world" fill="none" stroke-linejoin="round"></g>' +
         '<path id="states" fill="none" stroke-linejoin="round"></path>' +
-        '<g id="places"></g><g id="dots"></g></svg>' +
+        '<g id="places"></g><g id="dots"></g><g id="dotlabels"></g></svg>' +
         '<div class="popup" id="popup" hidden></div>' +
         '<p class="offline-note">Offline map · connect to the internet for the CARTO basemap</p>';
       svg = host.querySelector('#svgmap');
@@ -190,6 +223,7 @@
       gStates = host.querySelector('#states');
       gPlaces = host.querySelector('#places');
       gDots = host.querySelector('#dots');
+      gLabels = host.querySelector('#dotlabels');
       popup = host.querySelector('#popup');
       if (window.STATES) gStates.setAttribute('d', window.STATES);
       gWorld.innerHTML = (window.WORLD || []).map(function (c) {

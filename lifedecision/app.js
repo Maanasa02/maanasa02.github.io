@@ -154,6 +154,33 @@
     return value ? '<div class="fact"><span>' + esc(label) + '</span><span>' + value + '</span></div>' : '';
   }
 
+  /* The headline is chosen against what is actually carrying this place's score:
+     if diversity is doing the work, sentiment is the news that matters; if visa
+     comfort is, the settlement or threshold change is. */
+  function newsHTML(p) {
+    var nw = p.news;
+    if (!nw || !nw.headline) return '';
+    var sc = p._s || scoreOf(p);
+    var top = CRIT.slice().sort(function (a, b) {
+      return (sc.contrib[b.key] || 0) - (sc.contrib[a.key] || 0);
+    })[0];
+    var line = nw.headline, why = '';
+    if (top && top.key === 'diversity' && nw.sentiment_note &&
+        (nw.anti_immigrant_sentiment === 'elevated' || nw.anti_immigrant_sentiment === 'high')) {
+      line = nw.sentiment_note; why = 'Sentiment';
+    } else if (top && top.key === 'visa' && nw.years_to_pr_now != null &&
+               nw.years_to_pr_before != null && nw.years_to_pr_now !== nw.years_to_pr_before) {
+      line = 'Settlement moved from ' + nw.years_to_pr_before + ' to ' + nw.years_to_pr_now + ' years. ' + nw.headline;
+      why = 'Visa';
+    }
+    var dir = nw.direction || '';
+    return '<div class="news n-' + esc(dir) + '">' +
+      '<div class="newshead"><span class="newsdir">' + esc(cap(dir) || 'News') + '</span>' +
+      (why ? '<span class="newswhy">matters for ' + esc(why.toLowerCase()) + '</span>' : '') +
+      (nw.effective_date ? '<span class="newsdate">' + esc(nw.effective_date) + '</span>' : '') +
+      '</div><p>' + esc(firstSentence(line, 150)) + '</p></div>';
+  }
+
   function popupHTML(p) {
     var sc = p._s || scoreOf(p), f = [];
 
@@ -193,6 +220,7 @@
         '<span>Weather</span><span class="popw">' + esc(cap(p.weather_band)) + '</span>' +
       '</div>' +
       '<div class="facts">' + f.join('') + '</div>' +
+      newsHTML(p) +
       '<p class="popnote">' + esc(firstSentence(p.note, 120)) + '</p>' +
       '<details class="popmore"><summary>Full research</summary>' + detailHTML(p) + '</details>' +
     '</div>';

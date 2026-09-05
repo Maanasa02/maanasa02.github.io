@@ -344,3 +344,23 @@ tr.detail>td{background:var(--surface-2);padding:2px 16px 20px 46px;border-botto
 #places circle{fill:var(--label)}
 #places text{fill:var(--label);font-family:var(--font-sans);
   paint-order:stroke;stroke:var(--halo);stroke-linejoin:round}
+
+/* candidate names on the map when zoomed in */
+#dotlabels{pointer-events:none}
+#dotlabels text{paint-order:stroke;stroke:var(--halo);stroke-linejoin:round;
+  font-family:var(--font-sans)}
+#dotlabels .dln{fill:var(--ink-2);font-weight:600}
+#dotlabels .dls{fill:var(--ink-3)}
+#dotlabels .on .dln{fill:var(--ink);font-family:var(--font-serif);font-weight:400}
+
+/* latest immigration news, keyed to what drives this place's score */
+.news{border-left:2px solid var(--rule-2);padding:0 0 0 10px;margin:0 0 10px}
+.news.n-tightening{border-left-color:var(--critical)}
+.news.n-opening{border-left-color:var(--good)}
+.news.n-mixed{border-left-color:var(--warning)}
+.news.n-stable{border-left-color:var(--s-cost)}
+.newshead{display:flex;gap:8px;align-items:baseline;margin-bottom:3px;flex-wrap:wrap}
+.newsdir{font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--ink-2)}
+.newswhy{font-size:10px;color:var(--ink-3)}
+.newsdate{font-size:10px;color:var(--ink-3);margin-left:auto;font-variant-numeric:tabular-nums}
+.news p{margin:0;font-size:12px;line-height:1.45;color:var(--ink-2)}
