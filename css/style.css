@@ -495,6 +495,63 @@ img {
   }
 }
 
+/* Service design + Research share one row as static grids (no side-scroll).
+   Three equal columns: Service design takes one, Research spans two and
+   splits them with the same gap, so all three cards are the same width. */
+.project-pair {
+  --card-gap: 32px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 64px var(--card-gap);
+  align-items: start;
+  margin-top: 64px;
+}
+
+.project-pair .project-group + .project-group {
+  margin-top: 0;
+}
+
+.project-pair #research {
+  grid-column: span 2;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols, 1), minmax(0, 1fr));
+  gap: var(--card-gap);
+  align-items: start;
+}
+
+.project-pair #research .project-grid {
+  --grid-cols: 2;
+}
+
+/* Tablet: three cards would drop below ~260px, so stack the groups and
+   keep every card at half the content width. */
+@media (max-width: 860px) {
+  .project-pair {
+    --card-gap: 24px;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .project-pair #research {
+    grid-column: auto;
+  }
+  .project-pair .project-grid {
+    --grid-cols: 2;
+  }
+}
+
+/* Phones: one column, Service design then Research. */
+@media (max-width: 640px) {
+  .project-pair {
+    --card-gap: 20px;
+  }
+  .project-pair .project-grid,
+  .project-pair #research .project-grid {
+    --grid-cols: 1;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .project-track { scroll-behavior: auto; }
 }

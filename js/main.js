@@ -202,19 +202,42 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const visible = new Set();
+    // Sections that sit side by side (Service design + Research) are in view
+    // together; the one picked from the nav stays highlighted until it
+    // scrolls out of view.
+    let pinned = null;
+    let pinnedSeen = false;
+    const pin = (id) => {
+      if (ids.indexOf(id) === -1) return;
+      pinned = id;
+      pinnedSeen = visible.has(id);
+      setCurrent(id);
+    };
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         if (e.isIntersecting) visible.add(e.target.id);
         else visible.delete(e.target.id);
       });
+      if (pinned) {
+        if (visible.has(pinned)) pinnedSeen = true;
+        else if (pinnedSeen) pinned = null;
+      }
       // Bottom of the page: the last section wins even if it is short.
       const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
-      const current = atBottom ? ids[ids.length - 1] : ids.find((id) => visible.has(id));
+      let current = atBottom ? ids[ids.length - 1] : ids.find((id) => visible.has(id));
+      if (!atBottom && pinned && (visible.has(pinned) || !pinnedSeen)) current = pinned;
       if (current) setCurrent(current);
     }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
 
+    Object.keys(linkFor).forEach((id) => {
+      const a = linkFor[id];
+      if (a) a.addEventListener('click', () => pin(id));
+    });
+
     sections.forEach((s) => observer.observe(s));
     setCurrent('about');
+    if (location.hash) pin(location.hash.slice(1));
 
     window.addEventListener('scroll', () => {
       if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
