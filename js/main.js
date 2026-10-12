@@ -5,7 +5,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const links = document.querySelector('.nav-links');
   if (toggle && links) {
     toggle.addEventListener('click', () => {
-      links.classList.toggle('open');
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    // Close the mobile menu after choosing a link (e.g. in-page #work / #about).
+    links.addEventListener('click', (e) => {
+      if (e.target.closest('a') && links.classList.contains('open')) {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
     });
   }
 
@@ -62,3 +70,162 @@ document.addEventListener('DOMContentLoaded', () => {
   // observer never fired for some elements.
   setTimeout(forceShowAll, 2500);
 });
+
+// Side-scrolling project card rows (homepage). Independent of the code above.
+(function () {
+  const init = () => {
+    const tracks = document.querySelectorAll('.project-track');
+    if (!tracks.length) return;
+
+    const root = document.documentElement;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    // Classic (non-overlay) scrollbars make 100vw wider than the layout
+    // viewport; expose the difference so the CSS bleed stops at the edge.
+    const setScrollbarWidth = () => {
+      const sbw = Math.max(0, window.innerWidth - root.clientWidth);
+      root.style.setProperty('--sbw', sbw + 'px');
+    };
+    setScrollbarWidth();
+
+    const rows = [];
+
+    tracks.forEach((track) => {
+      const group = track.closest('.project-group');
+      const header = group && group.querySelector('.group-header');
+      const list = track.querySelector('.project-list');
+      if (!header || !list) return;
+
+      const heading = header.querySelector('.group-heading');
+      const name = heading ? heading.textContent.trim() : 'projects';
+
+      const controls = document.createElement('div');
+      controls.className = 'track-controls';
+      controls.hidden = true;
+
+      const makeBtn = (dir, label, glyph) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'track-btn track-btn--' + dir;
+        btn.setAttribute('aria-label', label + ' ' + name + ' project');
+        btn.innerHTML = '<span aria-hidden="true">' + glyph + '</span>';
+        return btn;
+      };
+      const prev = makeBtn('prev', 'Previous', '&larr;');
+      const next = makeBtn('next', 'Next', '&rarr;');
+      controls.append(prev, next);
+      header.appendChild(controls);
+
+      const step = () => {
+        const card = list.firstElementChild;
+        if (!card) return track.clientWidth * 0.8;
+        const gap = parseFloat(getComputedStyle(list).columnGap) || 0;
+        return card.getBoundingClientRect().width + gap;
+      };
+
+      const scrollByCards = (dir) => {
+        track.scrollBy({ left: dir * step(), behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+      };
+
+      const setDisabled = (btn, disabled) => {
+        btn.setAttribute('aria-disabled', String(disabled));
+      };
+
+      const update = () => {
+        const last = list.lastElementChild;
+        const trackRect = track.getBoundingClientRect();
+        // Overflows only if a card is actually cut off (not just the
+        // bleed padding on the right).
+        const cardsRight = last ? last.getBoundingClientRect().right + track.scrollLeft : 0;
+        const visibleRight = trackRect.left + track.clientWidth;
+        const overflows = track.scrollWidth - track.clientWidth > 1 &&
+          (cardsRight - visibleRight > 1 || track.scrollLeft > 1);
+        controls.hidden = !overflows;
+        const max = track.scrollWidth - track.clientWidth;
+        setDisabled(prev, track.scrollLeft <= 1);
+        setDisabled(next, track.scrollLeft >= max - 1);
+      };
+
+      prev.addEventListener('click', () => {
+        if (prev.getAttribute('aria-disabled') !== 'true') scrollByCards(-1);
+      });
+      next.addEventListener('click', () => {
+        if (next.getAttribute('aria-disabled') !== 'true') scrollByCards(1);
+      });
+
+      let ticking = false;
+      track.addEventListener('scroll', () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => { ticking = false; update(); });
+      }, { passive: true });
+
+      rows.push(update);
+    });
+
+    const updateAll = () => { setScrollbarWidth(); rows.forEach((fn) => fn()); };
+    updateAll();
+    window.addEventListener('resize', updateAll);
+    window.addEventListener('load', updateAll);
+    // Images are lazy and sized by aspect-ratio, but re-check once they land.
+    document.querySelectorAll('.project-track img').forEach((img) => {
+      if (!img.complete) img.addEventListener('load', updateAll, { once: true });
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+// Homepage scroll-spy: soft pill on the nav item for the section in view.
+(function () {
+  const init = () => {
+    const ids = ['about', 'work', 'credentials'];
+    const sections = ids.map((id) => document.getElementById(id)).filter(Boolean);
+    if (sections.length !== ids.length || !('IntersectionObserver' in window)) return;
+
+    const linkFor = {};
+    ids.forEach((id) => {
+      linkFor[id] = document.querySelector('.nav-links a[href$="#' + id + '"]');
+    });
+
+    const setCurrent = (id) => {
+      ids.forEach((other) => {
+        const a = linkFor[other];
+        if (!a) return;
+        if (other === id) a.setAttribute('aria-current', 'location');
+        else a.removeAttribute('aria-current');
+      });
+    };
+
+    const visible = new Set();
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) visible.add(e.target.id);
+        else visible.delete(e.target.id);
+      });
+      // Bottom of the page: the last section wins even if it is short.
+      const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+      const current = atBottom ? ids[ids.length - 1] : ids.find((id) => visible.has(id));
+      if (current) setCurrent(current);
+    }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+
+    sections.forEach((s) => observer.observe(s));
+    setCurrent('about');
+
+    window.addEventListener('scroll', () => {
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+        setCurrent(ids[ids.length - 1]);
+      }
+    }, { passive: true });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();

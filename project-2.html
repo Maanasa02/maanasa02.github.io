@@ -6,18 +6,22 @@
   <title>San Francisco's Homeless Response &mdash; ASTRID &middot; Maanasa Sivashankar</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body class="cs-redesign">
   <header class="site-header">
-    <div class="container nav">
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">About</a></li>
-        <li><a href="https://www.linkedin.com/in/maanasa-sivashankar/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+    <nav class="container nav" aria-label="Primary">
+      <a href="index.html" class="nav-name">Maanasa Sivashankar</a>
+      <ul class="nav-links" id="site-nav">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#credentials">Speaking &amp; publications</a></li>
+        <li><a href="mailto:maan.shiv@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/maanasa-sivashankar/" target="_blank" rel="noopener">LinkedIn</a></li>
       </ul>
-      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
-    </div>
+      <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">&#9776;</button>
+    </nav>
   </header>
 
   <main class="cs-main">
@@ -333,6 +337,11 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <span>&copy; 2026 Maanasa Sivashankar</span>
+      <ul class="footer-links">
+        <li><a href="mailto:maan.shiv@gmail.com">maan.shiv@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/maanasa-sivashankar/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li>San Francisco</li>
+      </ul>
     </div>
   </footer>
 

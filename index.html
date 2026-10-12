@@ -7,132 +7,200 @@
   <meta name="description" content="Portfolio of Maanasa Sivashankar, a product strategist and designer taking products from first field interview to shipped 0-to-1 in civic tech, health and financial services." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header class="site-header">
-    <div class="container nav">
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">About</a></li>
-        <li><a href="https://www.linkedin.com/in/maanasa-sivashankar/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+    <nav class="container nav" aria-label="Primary">
+      <a href="index.html" class="nav-name">Maanasa Sivashankar</a>
+      <ul class="nav-links" id="site-nav">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#credentials">Speaking &amp; publications</a></li>
+        <li><a href="mailto:maan.shiv@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/maanasa-sivashankar/" target="_blank" rel="noopener">LinkedIn</a></li>
       </ul>
-      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
-    </div>
+      <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">&#9776;</button>
+    </nav>
   </header>
 
-  <main class="page container">
-    <section class="about-hero about-hero--single">
-      <div>
-        <h1 class="page-title about-name">Maanasa Sivashankar <span class="about-pronunciation">(Mahn-sa)</span></h1>
-        <p class="about-intro-lead">I&rsquo;m a product strategist and designer who takes products from first field interview to shipped 0-to-1.</p>
-        <p class="about-intro-body">For 9 years I&rsquo;ve worked in high-stakes domains &mdash; civic tech, health and financial services &mdash; and today I lead design and research at San Francisco&rsquo;s Mayor&rsquo;s Office of Innovation.</p>
+  <main class="home container">
+    <section id="about" class="intro" aria-labelledby="intro-statement">
+      <h1 id="intro-statement" class="intro-statement">I&rsquo;m Maanasa Sivashankar, a product strategist and designer who takes products from first field interview to shipped <span class="nowrap">0-to-1</span>. Today I lead design and research at San Francisco&rsquo;s Mayor&rsquo;s Office of Innovation.</h1>
+      <p class="intro-pronunciation">(Mahn-sa)</p>
+      <dl class="contact-row">
+        <div>
+          <dt>Email</dt>
+          <dd><a href="mailto:maan.shiv@gmail.com">maan.shiv@gmail.com</a></dd>
+        </div>
+        <div>
+          <dt>LinkedIn</dt>
+          <dd><a href="https://www.linkedin.com/in/maanasa-sivashankar/" target="_blank" rel="noopener">in/maanasa-sivashankar</a></dd>
+        </div>
+        <div>
+          <dt>Based in</dt>
+          <dd>San Francisco</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section id="work" class="home-section" aria-labelledby="work-heading">
+      <div class="section-head">
+        <h2 id="work-heading" class="section-heading">Selected projects</h2>
+        <p class="section-sub">Product strategy and 0-to-1 work, then service design and research.</p>
+      </div>
+
+      <div class="project-group">
+        <div class="group-header">
+          <h3 class="group-heading">Product</h3>
+        </div>
+        <div class="project-track" tabindex="0" role="region" aria-label="Product projects, scrollable">
+          <ul class="project-list">
+            <li>
+              <article class="project-row project-row--static">
+                <div class="project-thumb project-thumb--placeholder">
+                  <span class="project-thumb-label">Screens coming soon</span>
+                </div>
+                <div class="project-text">
+                  <h4 class="project-title"><span class="hl">Good Neighbor: helping front-desk staff document their block</span></h4>
+                  <p class="project-soon">Case study coming soon</p>
+                </div>
+              </article>
+            </li>
+            <li>
+              <a href="project-2.html" class="project-row">
+                <div class="project-thumb">
+                  <img src="project2-title.jpeg" alt="" loading="lazy" />
+                </div>
+                <div class="project-text">
+                  <h4 class="project-title"><span class="hl">Coordinating care across San Francisco&rsquo;s homeless response</span></h4>
+                  <p class="project-meta-line">Design lead &middot; 2023&ndash;present</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="project-group">
+        <div class="group-header">
+          <h3 class="group-heading">Service design &amp; research</h3>
+        </div>
+        <div class="project-track" tabindex="0" role="region" aria-label="Service design and research projects, scrollable">
+          <ul class="project-list">
+            <li>
+              <a href="project-1.html" class="project-row">
+                <div class="project-thumb">
+                  <img src="project1-title.jpg" alt="" loading="lazy" />
+                </div>
+                <div class="project-text">
+                  <h4 class="project-title"><span class="hl">Fixing a two-year police hiring pipeline</span></h4>
+                  <p class="project-meta-line">Service design lead &middot; 2025</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="project-3.html" class="project-row">
+                <div class="project-thumb">
+                  <img src="project3-title.jpg" alt="" loading="lazy" />
+                </div>
+                <div class="project-text">
+                  <h4 class="project-title"><span class="hl">Why Penske was losing new customers</span></h4>
+                  <p class="project-meta-line">Project lead &middot; 2022</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="project-4.html" class="project-row">
+                <div class="project-thumb">
+                  <img src="jnj.png" alt="" loading="lazy" />
+                </div>
+                <div class="project-text">
+                  <h4 class="project-title"><span class="hl">Mapping Johnson &amp; Johnson&rsquo;s product-labeling operations</span></h4>
+                  <p class="project-meta-line">Senior design strategist &middot; 2023</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section id="work" class="work-section work-section--grouped" aria-labelledby="product-heading">
-      <div class="work-section-header">
-        <h2 id="product-heading" class="work-section-title">Product case studies</h2>
+    <section id="credentials" class="home-section creds" aria-labelledby="creds-heading">
+      <div class="section-head">
+        <h2 id="creds-heading" class="section-heading">Speaking &amp; publications</h2>
+        <p class="section-sub">Last updated October 2026</p>
       </div>
 
-      <div class="work-grid work-grid--cols work-grid--2up">
-        <article class="work-card work-card--static" aria-label="Good Neighbor: case study coming soon">
-          <div class="work-card-content">
-            <span class="work-card-eyebrow">0-to-1 product · AI</span>
-            <div class="work-card-title">Good Neighbor: helping front-desk staff document their block</div>
-            <p class="work-card-outcome">A tablet tool that turns perimeter photos into a neutral record and routes issues to the city.</p>
-            <ul class="work-card-tags">
-              <li>0-to-1</li>
-              <li>AI trust</li>
-              <li>Civic tech</li>
-            </ul>
-            <span class="work-card-cta work-card-cta--soon">Case study coming soon</span>
-          </div>
-          <div class="work-card-media work-card-media--placeholder">
-            <span class="work-card-placeholder-label">Screens coming soon</span>
-          </div>
-        </article>
-
-        <a href="project-2.html" class="work-card">
-          <div class="work-card-content">
-            <span class="work-card-eyebrow">Product case study</span>
-            <div class="work-card-title">San Francisco's Homeless Response</div>
-            <p class="work-card-outcome">ASTRID is now the operational backbone of Mayor Lurie's Neighborhood Street Teams model.</p>
-            <ul class="work-card-tags">
-              <li>Systems</li>
-              <li>0-to-1</li>
-              <li>Government</li>
-            </ul>
-            <span class="work-card-cta">See case study <span aria-hidden="true">&rarr;</span></span>
-          </div>
-          <div class="work-card-media">
-            <img src="project2-title.jpeg" alt="San Francisco's Homeless Response" />
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <section class="work-section work-section--grouped" aria-labelledby="service-heading">
-      <div class="work-section-header">
-        <h2 id="service-heading" class="work-section-title">Service design &amp; research</h2>
+      <div class="creds-group">
+        <h3 class="group-heading">Exhibitions</h3>
+        <ul class="creds-list">
+          <li class="creds-row">
+            <span class="creds-title"><span class="hl">Re-imagining BPL Community Services for People Experiencing Homelessness</span></span>
+            <span class="creds-venue">Collaborative City Exhibition, Lille World Capital of Design</span>
+            <span class="creds-year">2020</span>
+          </li>
+          <li class="creds-row">
+            <span class="creds-title"><span class="hl">United for Housing: Reclaiming Local Cooperativism in Sunset Park</span></span>
+            <span class="creds-venue">National Museum of History of Immigration, Palais de la Porte Dor&eacute;e, Paris</span>
+            <span class="creds-year">2021</span>
+          </li>
+        </ul>
       </div>
 
-      <div class="work-grid work-grid--cols work-grid--3up">
-        <a href="project-1.html" class="work-card">
-          <div class="work-card-content">
-            <span class="work-card-eyebrow">Service design &amp; research</span>
-            <div class="work-card-title">Fixing a two-year police hiring pipeline with data-driven decisions</div>
-            <p class="work-card-outcome">Dashboard design and service improvements project</p>
-            <ul class="work-card-tags">
-              <li>Product Design</li>
-              <li>Dashboard</li>
-              <li>Funnel Analysis</li>
-            </ul>
-            <span class="work-card-cta">See case study <span aria-hidden="true">&rarr;</span></span>
-          </div>
-          <div class="work-card-media">
-            <img src="project1-title.jpg" alt="Fixing a two-year police hiring pipeline with data-driven decisions" />
-          </div>
-        </a>
+      <div class="creds-group">
+        <h3 class="group-heading">Speaking</h3>
+        <ul class="creds-list">
+          <li class="creds-row">
+            <span class="creds-title"><span class="hl">Plain Language &amp; Government Communications</span></span>
+            <span class="creds-venue">Code for America Summit &middot; Speaker</span>
+            <span class="creds-year">2025</span>
+          </li>
+          <li class="creds-row">
+            <span class="creds-title"><span class="hl">Community-Centered Design Practice</span></span>
+            <span class="creds-venue">UC Berkeley &middot; Guest lecturer</span>
+            <span class="creds-year">2025</span>
+          </li>
+          <li class="creds-row">
+            <span class="creds-title"><span class="hl">San Francisco Civic Hackathon</span></span>
+            <span class="creds-venue">Judge</span>
+            <span class="creds-year">2025</span>
+          </li>
+        </ul>
+      </div>
 
-        <a href="project-3.html" class="work-card">
-          <div class="work-card-content">
-            <span class="work-card-eyebrow">Service design &amp; research</span>
-            <div class="work-card-title">Penske's Customer Onboarding</div>
-            <p class="work-card-outcome">Set the strategic direction for service redesign at key high-value customer touchpoints.</p>
-            <ul class="work-card-tags">
-              <li>Fortune 100</li>
-              <li>Customer Onboarding</li>
-            </ul>
-            <span class="work-card-cta">See case study <span aria-hidden="true">&rarr;</span></span>
-          </div>
-          <div class="work-card-media">
-            <img src="project3-title.jpg" alt="Penske's Customer Onboarding" />
-          </div>
-        </a>
-
-        <a href="project-4.html" class="work-card">
-          <div class="work-card-content">
-            <span class="work-card-eyebrow">Service design &amp; research</span>
-            <div class="work-card-title">Johnson &amp; Johnson Product Labeling Operations</div>
-            <p class="work-card-outcome">A data operations model that surfaced the structural gaps blocking Johnson &amp; Johnson's Digital First transformation.</p>
-            <ul class="work-card-tags">
-              <li>Fortune 100</li>
-              <li>Digital Transformation</li>
-            </ul>
-            <span class="work-card-cta">See case study <span aria-hidden="true">&rarr;</span></span>
-          </div>
-          <div class="work-card-media">
-            <img src="jnj.png" alt="Johnson &amp; Johnson Product Labeling Operations" />
-          </div>
-        </a>
+      <div class="creds-group">
+        <h3 class="group-heading">Publications</h3>
+        <ul class="creds-list">
+          <li class="creds-row">
+            <span class="creds-title"><span class="hl">Implementing Co-Design to Include Youth in Civic Projects</span></span>
+            <span class="creds-venue">Plot(s) Journal of Design Studies</span>
+            <span class="creds-year">2021</span>
+          </li>
+          <li class="creds-row">
+            <span class="creds-title"><span class="hl">Policy Analysis and Recommendations for Sustainable Housing</span></span>
+            <span class="creds-venue">IFC / World Bank Group</span>
+            <span class="creds-year">2017</span>
+          </li>
+          <li class="creds-row">
+            <span class="creds-title"><span class="hl">Guidelines for Primary Health Care Infrastructure</span></span>
+            <span class="creds-venue">Karnataka Health System Development and Reform Project</span>
+            <span class="creds-year">2016</span>
+          </li>
+        </ul>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <span>© 2026 Maanasa Sivashankar</span>
+      <span>&copy; 2026 Maanasa Sivashankar</span>
+      <ul class="footer-links">
+        <li><a href="mailto:maan.shiv@gmail.com">maan.shiv@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/maanasa-sivashankar/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li>San Francisco</li>
+      </ul>
     </div>
   </footer>
 
