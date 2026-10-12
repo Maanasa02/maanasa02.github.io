@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Good Neighbor app &middot; Maanasa Sivashankar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="gnp-case">
+  <header class="site-header">
+    <nav class="container nav" aria-label="Primary">
+      <a href="index.html" class="nav-name">Maanasa Sivashankar</a>
+      <ul class="nav-links" id="site-nav">
+        <li><a href="index.html#product-strategy">Product strategy</a></li>
+        <li><a href="index.html#service-design">Service design</a></li>
+        <li><a href="index.html#research">Research</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#credentials">Speaking &amp; publications</a></li>
+        <li><a href="mailto:maan.shiv@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/maanasa-sivashankar/" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+      <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">&#9776;</button>
+    </nav>
+  </header>
+
+  <main class="gnp-main">
+    <div class="gnp-wrap">
+
+      <!-- Hero panel -->
+      <figure class="gnp-hero">
+        <div class="gnp-hero-photo">
+          <img class="gnp-hero-screen" src="gnp-03-home-todo.png" alt="Home screen for a provider site: District 4, its last check, and To do cards grouped by check." />
+        </div>
+        <figcaption class="gnp-hero-caption">
+          <h1 class="gnp-title">Good Neighbor app</h1>
+        </figcaption>
+      </figure>
+
+      <!-- Meta row -->
+      <dl class="gnp-meta">
+        <div><dt>Role</dt><dd>Design lead</dd></div>
+        <div><dt>Team</dt><dd><span class="gnp-fill">[PM, # engineers, others]</span></dd></div>
+        <div><dt>Timeline</dt><dd>3 months, <span class="gnp-fill">[start &rarr; release]</span></dd></div>
+        <div><dt>Platform</dt><dd>Phone and tablet, in the field and at a desk</dd></div>
+      </dl>
+
+      <!-- Intro -->
+      <section class="gnp-intro">
+        <p>Service providers under the City&rsquo;s Good Neighbor Policy have to check the area around their sites and report what they find. Before this app, that meant <span class="gnp-fill">[paper logs, emails, calling 311 by hand]</span>. The app turns a walk around the building into a short list of what&rsquo;s left to do.</p>
+      </section>
+
+      <!-- 01 Leadership -->
+      <section class="gnp-section" aria-labelledby="gnp-s1">
+        <div class="gnp-label">
+          <div class="gnp-num">01</div>
+          <h2 id="gnp-s1">Getting senior leadership aligned</h2>
+        </div>
+        <div class="gnp-body gnp-prose">
+          <p><strong>Who was involved.</strong> <span class="gnp-fill">[Mayor&rsquo;s Office sponsor, department directors, 311 / Public Works ops lead, provider-relations lead, legal/policy, the PM]</span></p>
+          <p><strong>Compliance or service?</strong> Is the app a tool for checking up on providers, or one that helps them do the job? This set the tone: no reminders inside the app, no instructions telling clerks how to do their work, and the header shows the provider their own record.</p>
+          <p><strong>How much to trust the AI.</strong> Should the AI file 311 tickets on its own, or should a person always confirm? The design keeps a person in the loop: filing a 311 is always an explicit button.</p>
+          <p><strong>Which agency owns follow-up.</strong> <span class="gnp-fill">[311 vs. SFPD non-emergency vs. the provider.]</span> This became the To do / In progress / History split.</p>
+          <p><strong>What changed their minds.</strong> <span class="gnp-fill">[A walkthrough of the clickable prototype, recordings from provider sessions, duplicate-311 data, a pilot result]</span></p>
+        </div>
+      </section>
+
+      <!-- Rules map stat band -->
+      <div class="gnp-band">
+        <p class="gnp-band-note">The shared reference: 34 policy rules, one card each, showing leaders exactly what the AI would do for every finding.</p>
+        <div class="gnp-stats gnp-stats--three">
+          <div class="gnp-stat"><div class="gnp-stat-value">9</div><div class="gnp-stat-label">On-site actions</div></div>
+          <div class="gnp-stat"><div class="gnp-stat-value">8</div><div class="gnp-stat-label">Escalations</div></div>
+          <div class="gnp-stat"><div class="gnp-stat-value">17</div><div class="gnp-stat-label">Non-actionable</div></div>
+        </div>
+      </div>
+
+      <!-- Media pair: capture + AI summary -->
+      <div class="gnp-pair">
+        <figure class="gnp-figure">
+          <div class="gnp-panel gnp-panel--neutral gnp-panel--center">
+            <img class="gnp-shot-capture" src="gnp-01-capture.png" alt="Photo capture: Front, Sides and Back, each recorded with a photo or a typed note." loading="lazy" />
+          </div>
+          <figcaption class="gnp-caption"><span class="gnp-caption-lead">Photo capture.</span> Three named sides, each a photo or a typed note.</figcaption>
+        </figure>
+        <figure class="gnp-figure">
+          <div class="gnp-panel gnp-panel--accent gnp-panel--top">
+            <img class="gnp-shot-summary" src="gnp-02-ai-summary.png" alt="AI summary under the camera: 3 issues found, 2 new and 1 duplicate." loading="lazy" />
+          </div>
+          <figcaption class="gnp-caption"><span class="gnp-caption-lead">AI summary.</span> Findings sort into routes as you go; duplicates collapse into a receipt.</figcaption>
+        </figure>
+      </div>
+
+      <!-- 02 User testing -->
+      <section class="gnp-section" aria-labelledby="gnp-s2">
+        <div class="gnp-label">
+          <div class="gnp-num">02</div>
+          <h2 id="gnp-s2">User testing</h2>
+          <p class="gnp-label-note"><span class="gnp-fill">[# providers: site clerks, desk staff, managers] &middot; [# sessions] &middot; [field / remote / desk]</span></p>
+        </div>
+        <div class="gnp-body gnp-findings">
+          <article class="gnp-finding">
+            <h3>Providers don&rsquo;t want an app telling them what to do.</h3>
+            <p>A desk clerk already knows what to do about litter. We cut the imperative guidance from the cards. Now a card says what was found and asks one question. Two exceptions stayed: phone numbers (a fact, not an order) and safety warnings.</p>
+            <div class="gnp-change"><span class="gnp-change-label">Changed</span><span>&ldquo;Clean up the litter&rdquo; &rarr; &ldquo;Were you able to pick this up?&rdquo;</span></div>
+          </article>
+          <article class="gnp-finding">
+            <h3>The &ldquo;done&rdquo; button looked like it was already done.</h3>
+            <p>Dark fill, a tick, past-tense copy. <span class="gnp-fill">[Confirm this came from testing.]</span></p>
+            <div class="gnp-change"><span class="gnp-change-label">Changed</span><span>A button means the app is about to do something. A checkbox means you did something and are telling us.</span></div>
+          </article>
+          <article class="gnp-finding">
+            <h3>&ldquo;Take 3 photos&rdquo; felt like a quota.</h3>
+            <p><span class="gnp-fill">[Confirm.]</span> A counter reading &ldquo;0 of 3&rdquo; framed the walk as paperwork.</p>
+            <div class="gnp-change"><span class="gnp-change-label">Changed</span><span>Three named sides &mdash; Front, Sides, Back &mdash; each a photo or a typed note.</span></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Full-width before/after panel -->
+      <figure class="gnp-figure gnp-figure--spaced">
+        <div class="gnp-compare">
+          <div class="gnp-compare-col gnp-compare-col--before">
+            <div class="gnp-compare-label">Before</div>
+            <img src="gnp-05-site-switch.png" alt="Earlier home screen with a Mark as done button and site switcher open." loading="lazy" />
+          </div>
+          <div class="gnp-compare-col gnp-compare-col--after">
+            <div class="gnp-compare-label">After</div>
+            <img src="gnp-03-home-todo.png" alt="Final To do card asking Were you able to pick this up? with Yes and No." loading="lazy" />
+          </div>
+        </div>
+        <figcaption class="gnp-caption"><span class="gnp-caption-lead">From instruction to question.</span> &ldquo;Mark as done&rdquo; became one question per card.</figcaption>
+      </figure>
+
+      <!-- 03 Build -->
+      <section class="gnp-section" aria-labelledby="gnp-s3">
+        <div class="gnp-label">
+          <div class="gnp-num">03</div>
+          <h2 id="gnp-s3">The 3-month build</h2>
+        </div>
+        <div class="gnp-body gnp-prose">
+          <p><strong>Three tabs, one mental model.</strong> To do is anything you can still act on. In progress is waiting on someone else. History is settled. A ticket is never in two lists at once.</p>
+          <p><strong>Checkbox vs. button, decided by what the tap does.</strong> On-site actions get a checkbox. 311s get a button, because the tap submits something to the City. Calls stay a button: a tick can&rsquo;t say which number was called, and a call isn&rsquo;t finished when it&rsquo;s made. Calls cover 17 of the 34 rules, so this was the call that mattered most.</p>
+          <p><strong>De-duplicate at capture, not later.</strong> A photo that matches an open ticket merges right away into a short receipt, &ldquo;Added as an update to #P1-0033&rdquo;, with one way back out.</p>
+          <p><strong>Reuse before building.</strong> Toasts used the success / error / undo system already shipped with 311 filing. Only the informational tone was new.</p>
+          <p><strong>Accessibility as a constraint.</strong> Text on the capture flow meets 7:1 (AAA), which meant changing two design-kit tokens.</p>
+        </div>
+      </section>
+
+      <!-- In progress panel -->
+      <figure class="gnp-figure gnp-figure--spaced">
+        <div class="gnp-panel gnp-panel--accent gnp-panel--wide">
+          <img class="gnp-shot-progress" src="gnp-04-in-progress.png" alt="In progress tab: items waiting on the City or SFPD with status in each card&rsquo;s header line." loading="lazy" />
+        </div>
+        <figcaption class="gnp-caption"><span class="gnp-caption-lead">In progress.</span> Waiting on the City or SFPD, with status in the header line.</figcaption>
+      </figure>
+
+      <!-- 04 Cut + Outcome -->
+      <section class="gnp-section" aria-labelledby="gnp-s4">
+        <div class="gnp-label">
+          <div class="gnp-num">04</div>
+          <h2 id="gnp-s4">What we cut, and where it landed</h2>
+        </div>
+        <div class="gnp-body gnp-outcome">
+          <ul class="gnp-cuts">
+            <li><span class="gnp-fill">[In-app reminders: decided against, not just cut]</span></li>
+            <li><span class="gnp-fill">[Tablet layouts beyond a centred 480px column]</span></li>
+            <li><span class="gnp-fill">[Editing the AI&rsquo;s first-pass action]</span></li>
+            <li><span class="gnp-fill">[Full In-progress tracking for calls in v1]</span></li>
+          </ul>
+          <div class="gnp-stats gnp-stats--auto">
+            <div class="gnp-stat"><div class="gnp-stat-value gnp-stat-value--sm gnp-fill">[#]</div><div class="gnp-stat-label">Providers / sites onboarded</div></div>
+            <div class="gnp-stat"><div class="gnp-stat-value gnp-stat-value--sm gnp-fill">[#]</div><div class="gnp-stat-label">Checks logged</div></div>
+            <div class="gnp-stat"><div class="gnp-stat-value gnp-stat-value--sm gnp-fill">[#]</div><div class="gnp-stat-label">Duplicate 311s avoided</div></div>
+          </div>
+          <blockquote class="gnp-quote"><span class="gnp-fill">[A quote from a provider or sponsor]</span></blockquote>
+        </div>
+      </section>
+
+      <!-- Back to work -->
+      <div class="gnp-back">
+        <a href="index.html#product-strategy">&larr; Back to work</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>&copy; 2026 Maanasa Sivashankar</span>
+      <ul class="footer-links">
+        <li><a href="mailto:maan.shiv@gmail.com">maan.shiv@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/maanasa-sivashankar/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li>San Francisco</li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
