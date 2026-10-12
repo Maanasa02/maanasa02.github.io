@@ -243,6 +243,27 @@ img {
   max-width: 62ch;
 }
 
+/* Homepage intro (two-sentence positioning) */
+.about-hero .about-intro-lead {
+  font-family: var(--font-sans);
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--fg);
+  margin-bottom: 14px;
+  max-width: 52ch;
+}
+
+.about-hero .about-intro-body {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-bottom: 0;
+  max-width: 60ch;
+}
+
 /* ---------- Projects grid ---------- */
 .projects-grid {
   display: grid;
@@ -477,6 +498,138 @@ img {
   .work-card-media img {
     min-height: 180px;
     max-height: 260px;
+  }
+}
+
+/* ---------- Grouped work sections (homepage: Product / Service design) ---------- */
+.work-section--grouped + .work-section--grouped {
+  margin-top: 96px;
+}
+
+.work-section--grouped .work-section-header {
+  margin-bottom: 32px;
+}
+
+.work-section--grouped .work-section-title {
+  margin-bottom: 0;
+}
+
+/* Multi-column grids: cards stack vertically (image on top, text below). */
+.work-grid--cols {
+  max-width: none;
+  align-items: stretch;
+}
+
+.work-grid--2up {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.work-grid--3up {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.work-grid--cols .work-card {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+}
+
+.work-grid--cols .work-card-media {
+  order: -1;
+}
+
+.work-grid--cols .work-card-media img {
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 16 / 10;
+}
+
+.work-grid--3up .work-card-content {
+  padding: 26px 24px 28px;
+}
+
+.work-grid--3up .work-card-title {
+  font-size: 1.3rem;
+}
+
+/* Non-link card (no case study page yet): no hover lift, no pointer. */
+.work-card--static {
+  cursor: default;
+}
+
+.work-card--static:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.work-card-cta--soon,
+.work-card--static:hover .work-card-cta--soon {
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--border);
+}
+
+/* Neutral placeholder in place of a project image. */
+.work-card-media--placeholder {
+  background: var(--border);
+  align-items: center;
+  justify-content: center;
+}
+
+/* Reserve the same height as a framed 16:10 image (padding % = width-based). */
+.work-grid--cols .work-card-media--placeholder::before {
+  content: "";
+  display: block;
+  width: 0;
+  padding-bottom: 62.5%;
+}
+
+.work-card-placeholder-label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+/* 861-1024px: keep three columns (no orphaned third card), tighten card padding. */
+@media (min-width: 861px) and (max-width: 1024px) {
+  .work-grid--3up {
+    gap: 20px;
+  }
+  .work-grid--3up .work-card-content {
+    padding: 22px 20px 24px;
+  }
+  .work-grid--3up .work-card-title {
+    font-size: 1.15rem;
+  }
+}
+
+/* Homepage hero: keep the pronunciation inline after the name on desktop. */
+@media (min-width: 861px) {
+  .about-hero--single {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 860px) {
+  .work-section--grouped + .work-section--grouped {
+    margin-top: 56px;
+  }
+  .work-section--grouped .work-section-header {
+    margin-bottom: 20px;
+  }
+  .work-grid--2up,
+  .work-grid--3up {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .work-grid--cols .work-card-media {
+    order: -1;
+  }
+  .work-grid--cols .work-card-media img {
+    max-height: none;
   }
 }
 
