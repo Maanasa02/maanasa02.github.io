@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Homepage scroll-spy: soft pill on the nav item for the section in view.
 (function () {
   const init = () => {
-    const ids = ['about', 'work', 'credentials'];
+    const ids = ['about', 'product-strategy', 'service-design', 'research', 'credentials'];
     const sections = ids.map((id) => document.getElementById(id)).filter(Boolean);
     if (sections.length !== ids.length || !('IntersectionObserver' in window)) return;
 
