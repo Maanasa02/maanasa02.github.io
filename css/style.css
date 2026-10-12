@@ -14,10 +14,13 @@
   --font-display: var(--font-sans);
 
   /* Type scale */
-  --fs-meta: 14px;         /* meta, labels, captions */
+  /* Three text sizes: body (= meta), heading (= h2 = h3), h1.
+     Hierarchy below h1 comes from weight (500 vs 400) and colour (--muted). */
   --fs-body: 16px;
-  --fs-h3: 20px;           /* card titles, h3, ledes */
-  --fs-h2: 28px;           /* section headings */
+  --fs-meta: var(--fs-body);    /* meta, labels, captions: same size as body; set apart by --muted */
+  --fs-heading: 24px;           /* the one heading size: section headings, h3, card titles, ledes */
+  --fs-h2: var(--fs-heading);
+  --fs-h3: var(--fs-heading);
   --fs-h1: 40px;           /* page titles */
   --fs-intro: clamp(1.5rem, 3vw, 2rem);   /* homepage statement, 24 -> 32px */
 
@@ -40,8 +43,7 @@ body.case-dark {
 
 @media (max-width: 640px) {
   :root {
-    --fs-h3: 18px;
-    --fs-h2: 24px;
+    --fs-heading: 20px;         /* h2 and h3 follow */
     --fs-h1: 32px;
   }
 }
@@ -779,6 +781,12 @@ img {
 .footer-links li + li::before {
   content: "\00B7";
   margin: 0 10px;
+}
+
+/* At 16px meta the links wrap on phones; drop the dots so no line starts with one. */
+@media (max-width: 640px) {
+  .footer-links { gap: 8px 20px; }
+  .footer-links li + li::before { content: none; }
 }
 
 /* ---------- Responsive (shared) ---------- */
