@@ -3333,3 +3333,165 @@ body.cs-redesign .cs-quote {
 @media (max-width: 640px) {
   body.cs-redesign .cs-quote { width: calc(100% - 40px); padding-left: 18px; }
 }
+
+/* =========================================================================
+   GOOD NEIGHBOR (good-neighbor.html): app screens shown as device frames
+   on the --mat background. Scoped to body.cs-redesign.
+   ========================================================================= */
+body.cs-redesign .gnp-frame {
+  flex: none;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--cs-line);
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(21, 24, 28, 0.05), 0 14px 32px -20px rgba(21, 24, 28, 0.3);
+}
+body.cs-redesign .gnp-frame img {
+  display: block;
+  width: auto;
+  max-width: none;
+  height: var(--gnp-h, 600px);
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  object-fit: contain;
+  object-position: top center;
+}
+/* Very tall phone capture: show its lower half (routing + receipt). */
+body.cs-redesign .gnp-frame img.gnp-crop-bottom {
+  aspect-ratio: 11 / 21;
+  object-fit: cover;
+  object-position: bottom center;
+}
+
+/* Hero: a row of three screens on the mat band. */
+body.cs-redesign .cs-hero-media.gnp-hero {
+  --gnp-h: clamp(320px, 50vh, 440px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 28px;
+  padding: 32px;
+}
+body.cs-redesign .cs-hero-media.gnp-hero .gnp-frame img {
+  height: var(--gnp-h);
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  border: 0;
+  border-radius: 0;
+}
+body.cs-redesign .cs-hero-media.gnp-hero .gnp-frame img.gnp-crop-bottom {
+  object-fit: cover;
+  object-position: bottom center;
+}
+
+/* Key decisions: text beside its screen. */
+body.cs-redesign .gnp-decisions {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0 32px;
+  max-width: var(--cs-read);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+body.cs-redesign .gnp-decision {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 48px;
+  align-items: center;
+  padding-top: 40px;
+  border-top: 1px solid var(--cs-line);
+}
+body.cs-redesign .gnp-decision--text { grid-template-columns: minmax(0, 1fr); }
+body.cs-redesign .gnp-decision .cs-num {
+  display: block;
+  margin-bottom: 10px;
+}
+body.cs-redesign .gnp-decision-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--cs-ink);
+  margin: 0 0 10px;
+}
+body.cs-redesign .gnp-decision p {
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--fg);
+  margin: 0;
+  max-width: 34rem;
+}
+body.cs-redesign .gnp-device {
+  margin: 0;
+  padding: 28px;
+  background: var(--mat);
+  border-radius: 16px;
+  --gnp-h: 600px;
+}
+
+@media (max-width: 860px) {
+  body.cs-redesign .gnp-decision {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+  body.cs-redesign .gnp-device { justify-self: center; }
+}
+
+@media (max-width: 640px) {
+  body.cs-redesign .gnp-decisions { padding: 0 20px; gap: 32px; }
+  body.cs-redesign .gnp-decision { padding-top: 32px; }
+  body.cs-redesign .gnp-device {
+    justify-self: stretch;
+    padding: 16px;
+  }
+  body.cs-redesign .gnp-device .gnp-frame { max-height: 620px; }
+  body.cs-redesign .gnp-device .gnp-frame img {
+    width: 100%;
+    height: auto;
+  }
+  /* Hero: horizontal scroll inside the band (never the page). */
+  body.cs-redesign .cs-hero-media.gnp-hero {
+    --gnp-h: 400px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    gap: 16px;
+    padding: 20px;
+    scroll-snap-type: x mandatory;
+  }
+  body.cs-redesign .cs-hero-media.gnp-hero .gnp-frame { scroll-snap-align: center; }
+}
+
+/* Homepage thumb anchored to the top of a tall app screen. */
+.project-thumb--top img { object-position: top center; }
+
+/* Tablet captures have wide side margins: frame at 2:3 and zoom into the
+   content column so the UI stays legible. --gnp-zt shifts the window down. */
+body.cs-redesign .gnp-frame--zoom {
+  position: relative;
+  height: var(--gnp-h, 600px);
+  aspect-ratio: 2 / 3;
+}
+body.cs-redesign .gnp-frame--zoom img,
+body.cs-redesign .cs-hero-media.gnp-hero .gnp-frame--zoom img {
+  position: absolute;
+  top: var(--gnp-zt, 0%);
+  left: -35%;
+  width: 170%;
+  max-width: none;
+  height: auto;
+}
+body.cs-redesign .gnp-frame--mid { --gnp-zt: -37%; }
+body.cs-redesign .gnp-frame--mid img { left: -25%; width: 150%; }
+@media (max-width: 640px) {
+  body.cs-redesign .gnp-device .gnp-frame--zoom {
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+  body.cs-redesign .gnp-device .gnp-frame--zoom img { width: 170%; height: auto; margin: 0; }
+  body.cs-redesign .gnp-device .gnp-frame--mid img { width: 150%; }
+}
+body.cs-redesign .cs-hero-media.gnp-hero .gnp-frame--mid img { left: -25%; width: 150%; }
