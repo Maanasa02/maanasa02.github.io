@@ -268,8 +268,8 @@ img {
   margin: 0 auto 16px;
 }
 
-.intro-pronunciation {
-  font-size: var(--fs-meta);
+/* Inline pronunciation: same size as the statement, muted. */
+.intro-say {
   color: var(--muted);
 }
 
@@ -320,7 +320,7 @@ img {
   margin-bottom: 4px;
 }
 
-/* ---------- Selected projects: side-scrolling card rows ---------- */
+/* ---------- Case studies: side-scrolling card rows ---------- */
 .project-group {
   /* Gutter mirrors .container padding; bleed = distance from the content's
      right edge to the viewport's right edge (scrollbar excluded via --sbw,
@@ -476,6 +476,7 @@ img {
   font-weight: 500;
   line-height: 1.35;
   margin-bottom: 4px;
+  text-wrap: pretty;
 }
 
 .project-meta-line {
