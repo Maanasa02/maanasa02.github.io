@@ -243,8 +243,7 @@ img {
 }
 
 .intro,
-.home-section,
-.project-group {
+.home-section {
   scroll-margin-top: 96px;
 }
 
@@ -320,7 +319,7 @@ img {
   margin-bottom: 4px;
 }
 
-/* ---------- Case studies: side-scrolling card rows ---------- */
+/* ---------- Case studies: one side-scrolling card row ---------- */
 .project-group {
   /* Gutter mirrors .container padding; bleed = distance from the content's
      right edge to the viewport's right edge (scrollbar excluded via --sbw,
@@ -332,20 +331,17 @@ img {
   --ring: 8px;              /* room for focus rings inside the clipped track */
 }
 
-.project-group + .project-group {
-  margin-top: 64px;
-}
-
+/* "Case studies" heading row: heading left, arrow buttons right. */
 .group-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   min-height: 34px;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
-.group-header .group-heading {
+.group-header .section-heading {
   margin-bottom: 0;
 }
 
@@ -471,6 +467,13 @@ img {
   padding-top: 16px;
 }
 
+/* Category label above each card title. */
+.project-cat {
+  font-size: var(--fs-meta);
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
 .project-title {
   font-size: var(--fs-h3);
   font-weight: 500;
@@ -493,63 +496,6 @@ img {
     --gutter: 20px;
     --card-gap: 20px;
     --card-w: min(82vw, 340px);
-  }
-}
-
-/* Service design + Research share one row as static grids (no side-scroll).
-   Three equal columns: Service design takes one, Research spans two and
-   splits them with the same gap, so all three cards are the same width. */
-.project-pair {
-  --card-gap: 32px;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 64px var(--card-gap);
-  align-items: start;
-  margin-top: 64px;
-}
-
-.project-pair .project-group + .project-group {
-  margin-top: 0;
-}
-
-.project-pair #research {
-  grid-column: span 2;
-}
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(var(--grid-cols, 1), minmax(0, 1fr));
-  gap: var(--card-gap);
-  align-items: start;
-}
-
-.project-pair #research .project-grid {
-  --grid-cols: 2;
-}
-
-/* Tablet: three cards would drop below ~260px, so stack the groups and
-   keep every card at half the content width. */
-@media (max-width: 860px) {
-  .project-pair {
-    --card-gap: 24px;
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .project-pair #research {
-    grid-column: auto;
-  }
-  .project-pair .project-grid {
-    --grid-cols: 2;
-  }
-}
-
-/* Phones: one column, Service design then Research. */
-@media (max-width: 640px) {
-  .project-pair {
-    --card-gap: 20px;
-  }
-  .project-pair .project-grid,
-  .project-pair #research .project-grid {
-    --grid-cols: 1;
   }
 }
 
